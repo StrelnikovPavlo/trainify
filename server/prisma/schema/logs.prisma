@@ -1,0 +1,24 @@
+model WorkoutLog {
+  id            String          @id @default(cuid())
+  sessionId     String          @map("session_id")
+  session       WorkoutSession  @relation(fields: [sessionId], references: [id])
+  exerciseId    String          @map("exercise_id")
+  exercise      Exercise        @relation(fields: [exerciseId], references: [id])
+  sets          Int
+  reps          Int
+  weight        Float?
+  completedSets Int           @map("completed_sets")
+  completedReps Int           @map("completed_reps")
+  createdAt     DateTime      @default(now()) @map("created_at")
+  @@map("workout_log")
+}
+
+model WeightLog {
+  id        String    @id @default(cuid())
+  userId    String    @map("user_id")
+  user      User      @relation(fields: [userId], references: [id])
+  weight    Float
+  loggedAt  DateTime  @default(now()) @map("logged_at")
+  @@map("weight_log")
+  @@index([userId, loggedAt])
+}

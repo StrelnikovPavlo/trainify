@@ -1,0 +1,55 @@
+model TrainingPlan {
+  id            String        @id @default(cuid())
+  user          User          @relation(fields: [userId], references: [id])
+  userId        String        @map("user_id")
+  name          String
+  startDate     DateTime      @map("start_date")
+  durationDays  Int           @map("duration_days")
+  trainingDays  TrainingDay[]
+  generatedAt   DateTime      @default(now()) @map("generated_at")
+
+  @@map("training_plan")
+}
+
+model TrainingDay {
+  id              String                @id @default(cuid())
+  trainingPlanId  String                @map("training_plan_id")
+  trainingPlan    TrainingPlan          @relation(fields: [trainingPlanId], references: [id])
+  date            DateTime
+  isRestDay       Boolean               @default(false) @map("is_rest_day")
+  status          TrainingDayStatus     @default(PLANNED)
+  exercises       TrainingDayExercise[]
+  sessions        WorkoutSession[]
+  createdAt       DateTime              @default(now()) @map("created_at")
+  @@unique([trainingPlanId, date])
+  @@map("training_day")
+  @@index([date])
+}
+
+model TrainingDayExercise {
+  id             String       @id @default(cuid())
+  trainingDayId  String       @map("training_day_id")
+  trainingDay    TrainingDay  @relation(fields: [trainingDayId], references: [id])
+  exerciseId     String       @map("exercise_id")
+  exercise       Exercise     @relation(fields: [exerciseId], references: [id])
+  sets           Int
+  reps           Int
+  restSeconds    Int          @map("rest_seconds")
+  order          Int
+  @@index([trainingDayId])
+  @@map("training_day_exercise")
+}
+
+model WorkoutSession {
+  id             String       @id @default(cuid())
+  userId         String       @map("user_id")
+  user           User         @relation(fields: [userId], references: [id])
+  trainingDayId  String       @map("training_day_id")
+  trainingDay    TrainingDay  @relation(fields: [trainingDayId], references: [id])
+  logs           WorkoutLog[]
+  startedAt      DateTime     @default(now()) @map("started_at")
+  completedAt    DateTime?    @map("completed_at")
+
+  @@map("workout_session")
+  @@index([userId, trainingDayId])
+}

@@ -1,0 +1,46 @@
+enum Role {
+  USER
+  ADMIN
+}
+
+enum Gender {
+  MALE
+  FEMALE
+}
+
+enum Level {
+  BEGINNER
+  INTERMEDIATE
+  ADVANCED
+}
+
+enum Activity {
+  PASSIVE
+  LIGHTACTIVE
+  MODERATELYACTIVE
+  VERYACTIVE
+  SUPERACTIVE
+}
+
+enum WorkoutType {
+  GYM
+  HOME
+}
+
+enum BodyType {
+  ECTOMORPH
+  MESOMORPH
+  ENDOMORPH
+}
+
+enum Goal {
+  MASS
+  MOBILITY
+  FAT_LOSS
+}
+
+enum TrainingDayStatus {
+  PLANNED
+  COMPLETED
+  SKIPPED
+}
