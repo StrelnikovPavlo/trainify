@@ -1,34 +1,36 @@
 model User {
-  id              String    @id @default(cuid())
+  id              String           @id @default(cuid())
   username        String
   surname         String
-  email           String    @unique
+  email           String           @unique
   password        String
-  role            Role
-  createdAt       DateTime  @default(now()) @map("created_at")
-  updatedAt       DateTime  @updatedAt @map("updated_at")
+  role            Role             @default(USER)
+  createdAt       DateTime         @default(now()) @map("created_at")
+  updatedAt       DateTime         @updatedAt @map("updated_at")
   trainingPlans   TrainingPlan[]
   userProfiles    UserProfile?
   workoutSessions WorkoutSession[]
   weightLogs      WeightLog[]
+
   @@map("user")
 }
 
 model UserProfile {
-  id            String      @id @default(cuid())
-  userId        String      @unique
-  user          User        @relation(fields: [userId], references: [id])
-  age           Int
-  weight        Float
-  targetWeight  Float       @map("target_weight")
-  height        Float
-  gender        Gender
-  level         Level
-  goal          Goal
-  activity      Activity
-  workoutType   WorkoutType @map("workout_type")
-  bodyType      BodyType    @map("body_type")
-  createdAt     DateTime    @default(now()) @map("created_at")
-  updatedAt     DateTime    @updatedAt @map("updated_at")
+  id           String      @id @default(cuid())
+  userId       String      @unique
+  user         User        @relation(fields: [userId], references: [id])
+  age          Int
+  weight       Float
+  targetWeight Float       @map("target_weight")
+  height       Float
+  gender       Gender
+  level        Level
+  goal         Goal
+  activity     Activity
+  workoutType  WorkoutType @map("workout_type")
+  bodyType     BodyType    @map("body_type")
+  createdAt    DateTime    @default(now()) @map("created_at")
+  updatedAt    DateTime    @updatedAt @map("updated_at")
+
   @@map("user_profile")
 }

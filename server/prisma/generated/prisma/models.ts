@@ -8,13 +8,13 @@
  *
  * 🟢 You can import this file directly.
  */
-export type * from './models/Exercise'
-export type * from './models/WorkoutLog'
-export type * from './models/WeightLog'
-export type * from './models/TrainingPlan'
-export type * from './models/TrainingDay'
-export type * from './models/TrainingDayExercise'
-export type * from './models/WorkoutSession'
-export type * from './models/User'
-export type * from './models/UserProfile'
-export type * from './commonInputTypes'
+export type * from './models/Exercise.js'
+export type * from './models/WorkoutLog.js'
+export type * from './models/WeightLog.js'
+export type * from './models/TrainingPlan.js'
+export type * from './models/TrainingDay.js'
+export type * from './models/TrainingDayExercise.js'
+export type * from './models/WorkoutSession.js'
+export type * from './models/User.js'
+export type * from './models/UserProfile.js'
+export type * from './commonInputTypes.js'

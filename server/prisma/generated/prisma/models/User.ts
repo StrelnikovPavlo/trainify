@@ -9,8 +9,8 @@
  * 🟢 You can import this file directly.
  */
 import type * as runtime from "@prisma/client/runtime/client"
-import type * as $Enums from "../enums"
-import type * as Prisma from "../internal/prismaNamespace"
+import type * as $Enums from "../enums.js"
+import type * as Prisma from "../internal/prismaNamespace.js"
 
 /**
  * Model User
@@ -279,7 +279,7 @@ export type UserCreateInput = {
   surname: string
   email: string
   password: string
-  role: $Enums.Role
+  role?: $Enums.Role
   createdAt?: Date | string
   updatedAt?: Date | string
   trainingPlans?: Prisma.TrainingPlanCreateNestedManyWithoutUserInput
@@ -294,7 +294,7 @@ export type UserUncheckedCreateInput = {
   surname: string
   email: string
   password: string
-  role: $Enums.Role
+  role?: $Enums.Role
   createdAt?: Date | string
   updatedAt?: Date | string
   trainingPlans?: Prisma.TrainingPlanUncheckedCreateNestedManyWithoutUserInput
@@ -339,7 +339,7 @@ export type UserCreateManyInput = {
   surname: string
   email: string
   password: string
-  role: $Enums.Role
+  role?: $Enums.Role
   createdAt?: Date | string
   updatedAt?: Date | string
 }
@@ -470,7 +470,7 @@ export type UserCreateWithoutWeightLogsInput = {
   surname: string
   email: string
   password: string
-  role: $Enums.Role
+  role?: $Enums.Role
   createdAt?: Date | string
   updatedAt?: Date | string
   trainingPlans?: Prisma.TrainingPlanCreateNestedManyWithoutUserInput
@@ -484,7 +484,7 @@ export type UserUncheckedCreateWithoutWeightLogsInput = {
   surname: string
   email: string
   password: string
-  role: $Enums.Role
+  role?: $Enums.Role
   createdAt?: Date | string
   updatedAt?: Date | string
   trainingPlans?: Prisma.TrainingPlanUncheckedCreateNestedManyWithoutUserInput
@@ -542,7 +542,7 @@ export type UserCreateWithoutTrainingPlansInput = {
   surname: string
   email: string
   password: string
-  role: $Enums.Role
+  role?: $Enums.Role
   createdAt?: Date | string
   updatedAt?: Date | string
   userProfiles?: Prisma.UserProfileCreateNestedOneWithoutUserInput
@@ -556,7 +556,7 @@ export type UserUncheckedCreateWithoutTrainingPlansInput = {
   surname: string
   email: string
   password: string
-  role: $Enums.Role
+  role?: $Enums.Role
   createdAt?: Date | string
   updatedAt?: Date | string
   userProfiles?: Prisma.UserProfileUncheckedCreateNestedOneWithoutUserInput
@@ -614,7 +614,7 @@ export type UserCreateWithoutWorkoutSessionsInput = {
   surname: string
   email: string
   password: string
-  role: $Enums.Role
+  role?: $Enums.Role
   createdAt?: Date | string
   updatedAt?: Date | string
   trainingPlans?: Prisma.TrainingPlanCreateNestedManyWithoutUserInput
@@ -628,7 +628,7 @@ export type UserUncheckedCreateWithoutWorkoutSessionsInput = {
   surname: string
   email: string
   password: string
-  role: $Enums.Role
+  role?: $Enums.Role
   createdAt?: Date | string
   updatedAt?: Date | string
   trainingPlans?: Prisma.TrainingPlanUncheckedCreateNestedManyWithoutUserInput
@@ -686,7 +686,7 @@ export type UserCreateWithoutUserProfilesInput = {
   surname: string
   email: string
   password: string
-  role: $Enums.Role
+  role?: $Enums.Role
   createdAt?: Date | string
   updatedAt?: Date | string
   trainingPlans?: Prisma.TrainingPlanCreateNestedManyWithoutUserInput
@@ -700,7 +700,7 @@ export type UserUncheckedCreateWithoutUserProfilesInput = {
   surname: string
   email: string
   password: string
-  role: $Enums.Role
+  role?: $Enums.Role
   createdAt?: Date | string
   updatedAt?: Date | string
   trainingPlans?: Prisma.TrainingPlanUncheckedCreateNestedManyWithoutUserInput
