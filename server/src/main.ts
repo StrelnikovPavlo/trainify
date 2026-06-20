@@ -1,3 +1,4 @@
+import { ValidationPipe } from '@nestjs/common'
 import { NestFactory } from '@nestjs/core'
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger'
 import { AppModule } from './app.module'
@@ -7,6 +8,7 @@ async function bootstrap() {
 	const app = await NestFactory.create(AppModule)
 
 	app.setGlobalPrefix('api')
+	app.useGlobalPipes(new ValidationPipe())
 
 	const config = new DocumentBuilder()
 		.addGlobalResponse({
@@ -24,7 +26,7 @@ async function bootstrap() {
 
 	await app.listen(PORT, () =>
 		console.log(
-			`Server started on port ${process.env.PORT}, http://localhost:3000`
+			`Server started on port ${process.env.PORT}, http://localhost:${process.env.PORT}`
 		)
 	)
 }
