@@ -1,6 +1,6 @@
 import { NestFactory } from '@nestjs/core'
-import { AppModule } from './app.module'
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger'
+import { AppModule } from './app.module'
 
 async function bootstrap() {
 	const PORT = process.env.PORT || 5100
@@ -9,7 +9,12 @@ async function bootstrap() {
 	app.setGlobalPrefix('api')
 
 	const config = new DocumentBuilder()
+		.addGlobalResponse({
+			status: 500,
+			description: 'Internal server error'
+		})
 		.setTitle('Trainify API')
+		.setDescription('Applications for organization ang generation trainings')
 		.setVersion('1.0')
 		.build()
 
@@ -18,7 +23,9 @@ async function bootstrap() {
 	SwaggerModule.setup('api/docs', app, documentFactory)
 
 	await app.listen(PORT, () =>
-		console.log(`Server started on port ${process.env.PORT}`)
+		console.log(
+			`Server started on port ${process.env.PORT}, http://localhost:3000`
+		)
 	)
 }
 
