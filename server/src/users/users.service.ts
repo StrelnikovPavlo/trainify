@@ -1,71 +1,88 @@
-import { PrismaService } from '@/prisma/prisma.service'
-import {
-	ConflictException,
-	Injectable,
-	NotFoundException
-} from '@nestjs/common'
+import { Injectable, Logger } from '@nestjs/common'
 import { hash } from 'argon2'
-import { User } from 'prisma/generated/prisma/client'
+import { Prisma } from 'prisma/generated/prisma/client'
 import { CreateUserDto } from './dto/create-user.dto'
 import { UpdateUserDto } from './dto/update-user.dto'
+import { UserAlreadyExistsException } from './exceptions/user-already-exists.exceptions'
+import { UserNotFoundExceptions } from './exceptions/user-not-fount.exceptions'
+import { UserRepository } from './user.repository'
 
 @Injectable()
 export class UsersService {
-	constructor(private readonly prismaService: PrismaService) {}
+	private readonly logger = new Logger(UsersService.name)
 
-	async create(createUserDto: CreateUserDto) {
-		const { email, password } = createUserDto
+	constructor(private readonly usersRepository: UserRepository) {}
 
-		await this.validateUser(email)
+	async create(dto: CreateUserDto) {
+		await this.ensureEmailIsFree(dto.email)
 
-		const hashPassword = await hash(password)
+		const password = await hash(dto.password)
 
-		const user = await this.prismaService.user.create({
-			data: {
-				...createUserDto,
-				password: hashPassword
-			}
-		})
+		try {
+			const user = await this.usersRepository.create({
+				...dto,
+				password
+			})
+
+			this.logger.log(`Created user ${user.id}`)
+
+			return user
+		} catch (error) {
+			throw this.handleKnownErrors(error, dto.email)
+		}
+	}
+
+	async findAll() {
+		const [users, count] = await Promise.all([
+			this.usersRepository.count(),
+			this.usersRepository.findMany()
+		])
+		return { users, count }
+	}
+
+	async findOne(id: string) {
+		const user = await this.usersRepository.findById(id)
+
+		if (!user) throw new UserNotFoundExceptions(id)
 
 		return user
 	}
 
-	findAll() {
-		return this.prismaService.user.findMany()
+	async update(id: string, dto: UpdateUserDto) {
+		await this.findOne(id)
+
+		try {
+			const user = await this.usersRepository.update(id, dto)
+			this.logger.log(`Updated user ${user.id}`)
+			return user
+		} catch (error) {
+			throw this.handleKnownErrors(error, dto.email)
+		}
 	}
 
-	async findOne(id: string): Promise<User> {
-		const user = await this.prismaService.user.findUnique({
-			where: { id }
-		})
+	async remove(id: string): Promise<void> {
+		await this.findOne(id)
+		await this.usersRepository.delete(id)
+		this.logger.log(`Removed user ${id}`)
+	}
 
-		if (!user) {
-			throw new NotFoundException('User not found')
+	private async ensureEmailIsFree(email: string): Promise<void> {
+		const existing = await this.usersRepository.findByEmail(email)
+
+		if (existing) {
+			throw new UserAlreadyExistsException(email)
+		}
+	}
+
+	private handleKnownErrors(error: unknown, email?: string): Error {
+		const isUniqueViolation =
+			error instanceof Prisma.PrismaClientKnownRequestError &&
+			error.code === 'P2002'
+
+		if (isUniqueViolation) {
+			return new UserAlreadyExistsException(email ?? 'unknown')
 		}
 
-		return user
-	}
-
-	async update(id: string, updateUserDto: UpdateUserDto): Promise<User> {
-		return await this.prismaService.user.update({
-			where: { id },
-			data: updateUserDto
-		})
-	}
-
-	async remove(id: string): Promise<User> {
-		return await this.prismaService.user.delete({
-			where: { id }
-		})
-	}
-
-	private async validateUser(email: string): Promise<void> {
-		const user = await this.prismaService.user.findUnique({
-			where: { email }
-		})
-
-		if (user) {
-			throw new ConflictException('User already exist')
-		}
+		return error as Error
 	}
 }
