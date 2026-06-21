@@ -1,7 +1,6 @@
 import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common'
 import {
 	ApiCreatedResponse,
-	ApiNoContentResponse,
 	ApiOkResponse,
 	ApiOperation,
 	ApiTags
@@ -45,9 +44,9 @@ export class UsersController {
 		return this.usersService.update(id, dto)
 	}
 
-	@ApiOperation({ summary: 'Remove user' })
-	@ApiNoContentResponse({ description: 'User deleted successfully.' })
 	@Delete(':id')
+	@ApiOperation({ summary: 'Remove user' })
+	@ApiOkResponse({ description: 'User deleted successfully.' })
 	delete(@Param('id') id: string) {
 		return this.usersService.remove(id)
 	}
