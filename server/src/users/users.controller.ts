@@ -27,14 +27,14 @@ export class UsersController {
 	@ApiOperation({ summary: 'Get all users' })
 	@ApiOkResponse({ description: 'List of users retrieved successfully.' })
 	findMany() {
-		return this.usersService.findAll()
+		return this.usersService.findMany()
 	}
 
 	@Get(':id')
 	@ApiOperation({ summary: 'Get user' })
 	@ApiOkResponse({ description: 'User found successfully.' })
 	findById(@Param('id') id: string) {
-		return this.usersService.findOne(id)
+		return this.usersService.findById(id)
 	}
 
 	@Put(':id')
@@ -48,6 +48,6 @@ export class UsersController {
 	@ApiOperation({ summary: 'Remove user' })
 	@ApiOkResponse({ description: 'User deleted successfully.' })
 	delete(@Param('id') id: string) {
-		return this.usersService.remove(id)
+		return this.usersService.delete(id)
 	}
 }

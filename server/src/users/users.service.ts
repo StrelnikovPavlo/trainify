@@ -32,7 +32,7 @@ export class UsersService {
 		}
 	}
 
-	async findAll() {
+	async findMany() {
 		const [users, count] = await Promise.all([
 			this.usersRepository.count(),
 			this.usersRepository.findMany()
@@ -40,7 +40,7 @@ export class UsersService {
 		return { users, count }
 	}
 
-	async findOne(id: string) {
+	async findById(id: string) {
 		const user = await this.usersRepository.findById(id)
 
 		if (!user) throw new UserNotFoundExceptions(id)
@@ -48,8 +48,12 @@ export class UsersService {
 		return user
 	}
 
+	async findByEmailWithPassword(email: string) {
+		return this.usersRepository.findByEmail(email)
+	}
+
 	async update(id: string, dto: UpdateUserDto) {
-		await this.findOne(id)
+		await this.findById(id)
 
 		try {
 			const user = await this.usersRepository.update(id, dto)
@@ -60,8 +64,8 @@ export class UsersService {
 		}
 	}
 
-	async remove(id: string): Promise<void> {
-		await this.findOne(id)
+	async delete(id: string): Promise<void> {
+		await this.findById(id)
 		await this.usersRepository.delete(id)
 		this.logger.log(`Removed user ${id}`)
 	}
