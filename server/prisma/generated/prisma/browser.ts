@@ -58,6 +58,11 @@ export type WorkoutSession = Prisma.WorkoutSessionModel
  */
 export type User = Prisma.UserModel
 /**
+ * Model RefreshToken
+ * 
+ */
+export type RefreshToken = Prisma.RefreshTokenModel
+/**
  * Model UserProfile
  * 
  */
