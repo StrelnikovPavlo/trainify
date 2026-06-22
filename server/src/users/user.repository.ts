@@ -19,7 +19,7 @@ export class UserRepository {
 		})
 	}
 
-	findByEmail(email: string): Promise<SafeUser | null> {
+	findByEmail(email: string): Promise<User | null> {
 		return this.prismaServices.user.findUnique({
 			where: { email }
 		})

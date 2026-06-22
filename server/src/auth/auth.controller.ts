@@ -1,7 +1,7 @@
 import { CreateUserDto } from '@/users/dto/create-user.dto'
 import { Body, Controller, Post } from '@nestjs/common'
 import { AuthService } from './auth.service'
-import { AUTH_ROUTES } from './constants/path.constants'
+import { AUTH_ROUTES } from './constants/routes.constants'
 import { LoginDto } from './dto/login.dto'
 
 @Controller(AUTH_ROUTES.CONTROLLER)
