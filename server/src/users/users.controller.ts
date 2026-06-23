@@ -1,3 +1,5 @@
+import { Public } from '@/auth/decorators/public.decorator'
+import { Roles } from '@/auth/decorators/roles.decorator'
 import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common'
 import {
 	ApiCreatedResponse,
@@ -5,6 +7,7 @@ import {
 	ApiOperation,
 	ApiTags
 } from '@nestjs/swagger'
+import { Role } from 'prisma/generated/prisma/enums'
 import { CreateUserDto } from './dto/create-user.dto'
 import { UpdateUserDto } from './dto/update-user.dto'
 import { UsersService } from './users.service'
@@ -14,6 +17,7 @@ import { UsersService } from './users.service'
 export class UsersController {
 	constructor(private readonly usersService: UsersService) {}
 
+	@Public()
 	@Post()
 	@ApiOperation({ summary: 'Create user' })
 	@ApiCreatedResponse({
@@ -23,6 +27,7 @@ export class UsersController {
 		return this.usersService.create(dto)
 	}
 
+	@Roles(Role.ADMIN, Role.MODERATOR)
 	@Get()
 	@ApiOperation({ summary: 'Get all users' })
 	@ApiOkResponse({ description: 'List of users retrieved successfully.' })
@@ -37,6 +42,7 @@ export class UsersController {
 		return this.usersService.findById(id)
 	}
 
+	@Public()
 	@Put(':id')
 	@ApiOperation({ summary: 'Update data user' })
 	@ApiOkResponse({ description: 'User data updated successfully.' })
@@ -44,6 +50,7 @@ export class UsersController {
 		return this.usersService.update(id, dto)
 	}
 
+	@Roles(Role.ADMIN)
 	@Delete(':id')
 	@ApiOperation({ summary: 'Remove user' })
 	@ApiOkResponse({ description: 'User deleted successfully.' })
