@@ -10,22 +10,22 @@ import { LoginDto } from './dto/login.dto'
 
 @Injectable()
 export class AuthService {
-	REFRESH_TOKEN_TTL_DAYS = 15
+	EXPIRE_DAY_REFRESH_TOKEN = 15
 
 	constructor(
-		private readonly userServices: UsersService,
-		private readonly prismaServices: PrismaService,
+		private readonly userService: UsersService,
+		private readonly prismaService: PrismaService,
 		private readonly jwtService: JwtService,
 		private readonly configService: ConfigService
 	) {}
 
 	async register(dto: CreateUserDto) {
-		const user = await this.userServices.create(dto)
+		const user = await this.userService.create(dto)
 		return this.issueTokens(user.id, user.email, user.role)
 	}
 
 	async login(dto: LoginDto) {
-		const user = await this.userServices.findByEmailWithPassword(dto.email)
+		const user = await this.userService.findByEmailWithPassword(dto.email)
 		const isValid = user && (await verify(user.password, dto.password))
 
 		if (!isValid) {
@@ -37,7 +37,7 @@ export class AuthService {
 
 	async logout(rawRefreshToken: string) {
 		const hashedToken = this.hashToken(rawRefreshToken)
-		await this.prismaServices.refreshToken.deleteMany({
+		await this.prismaService.refreshToken.deleteMany({
 			where: { hashedToken }
 		})
 	}
@@ -57,14 +57,14 @@ export class AuthService {
 		return { accessToken, refreshToken }
 	}
 
-	private async storeRefreshToken(userId: string, rawToken: string) {
+	private async storeRefreshToken(userId: string, token: string) {
 		const expiresAt = new Date()
-		expiresAt.setDate(expiresAt.getDate() + this.REFRESH_TOKEN_TTL_DAYS)
+		expiresAt.setDate(expiresAt.getDate() + this.EXPIRE_DAY_REFRESH_TOKEN)
 
-		await this.prismaServices.refreshToken.create({
+		await this.prismaService.refreshToken.create({
 			data: {
 				userId,
-				hashedToken: this.hashToken(rawToken),
+				hashedToken: this.hashToken(token),
 				expiresAt
 			}
 		})
@@ -72,5 +72,25 @@ export class AuthService {
 
 	private hashToken(token: string): string {
 		return createHash('sha256').update(token).digest('hex')
+	}
+
+	async refreshTokens(rawRefreshToken: string) {
+		const hashedToken = this.hashToken(rawRefreshToken)
+
+		const stored = await this.prismaService.refreshToken.findUnique({
+			where: { hashedToken }
+		})
+
+		if (!stored || stored.expiresAt < new Date()) {
+			throw new UnauthorizedException('Invalid or expired refresh token')
+		}
+
+		await this.prismaService.refreshToken.delete({
+			where: { id: stored.id }
+		})
+
+		const user = await this.userService.findById(stored.userId)
+
+		return this.issueTokens(user.id, user.email, user.role)
 	}
 }
