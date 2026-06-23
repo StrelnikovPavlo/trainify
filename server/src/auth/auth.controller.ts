@@ -2,23 +2,28 @@ import { CreateUserDto } from '@/users/dto/create-user.dto'
 import {
 	Body,
 	Controller,
+	HttpCode,
+	HttpStatus,
 	Post,
 	Req,
 	Res,
 	UnauthorizedException
 } from '@nestjs/common'
+import { ApiOperation, ApiTags } from '@nestjs/swagger'
 import type { Request, Response } from 'express'
 import { AuthService } from './auth.service'
 import { AUTH_ROUTES } from './constants/routes.constants'
 import { LoginDto } from './dto/login.dto'
 
+@ApiTags('Auth')
 @Controller(AUTH_ROUTES.CONTROLLER)
 export class AuthController {
 	REFRESH_TOKEN_NAME = 'refreshToken'
-	REFRESH_TOKEN_MAX_AGE = 30 * 24 * 60 * 60 * 1000
+	REFRESH_TOKEN_MAX_AGE = 15 * 24 * 60 * 60 * 1000
 
 	constructor(private readonly authService: AuthService) {}
 
+	@ApiOperation({ summary: 'Registration' })
 	@Post(AUTH_ROUTES.REGISTER)
 	async register(
 		@Body() dto: CreateUserDto,
@@ -29,7 +34,9 @@ export class AuthController {
 		return { accessToken }
 	}
 
+	@HttpCode(HttpStatus.OK)
 	@Post(AUTH_ROUTES.LOGIN)
+	@ApiOperation({ summary: 'Login' })
 	async login(
 		@Body() dto: LoginDto,
 		@Res({ passthrough: true }) res: Response
@@ -39,7 +46,9 @@ export class AuthController {
 		return { accessToken }
 	}
 
+	@HttpCode(HttpStatus.OK)
 	@Post(AUTH_ROUTES.LOGOUT)
+	@ApiOperation({ summary: 'Logout' })
 	async logout(@Req() req: Request, @Res({ passthrough: true }) res: Response) {
 		const rawRefreshToken = req.cookies?.[this.REFRESH_TOKEN_NAME] as
 			| string
@@ -53,7 +62,9 @@ export class AuthController {
 		return { message: 'Logged out' }
 	}
 
+	@HttpCode(HttpStatus.OK)
 	@Post(AUTH_ROUTES.REFRESH)
+	@ApiOperation({ summary: 'Refresh access token' })
 	async refresh(
 		@Req() req: Request,
 		@Res({ passthrough: true }) res: Response
