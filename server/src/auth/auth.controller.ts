@@ -13,6 +13,7 @@ import { ApiOperation, ApiTags } from '@nestjs/swagger'
 import type { Request, Response } from 'express'
 import { AuthService } from './auth.service'
 import { AUTH_ROUTES } from './constants/routes.constants'
+import { Public } from './decorators/public.decorator'
 import { LoginDto } from './dto/login.dto'
 
 @ApiTags('Auth')
@@ -23,6 +24,7 @@ export class AuthController {
 
 	constructor(private readonly authService: AuthService) {}
 
+	@Public()
 	@ApiOperation({ summary: 'Registration' })
 	@Post(AUTH_ROUTES.REGISTER)
 	async register(
@@ -34,9 +36,10 @@ export class AuthController {
 		return { accessToken }
 	}
 
-	@HttpCode(HttpStatus.OK)
-	@Post(AUTH_ROUTES.LOGIN)
+	@Public()
 	@ApiOperation({ summary: 'Login' })
+	@Post(AUTH_ROUTES.LOGIN)
+	@HttpCode(HttpStatus.OK)
 	async login(
 		@Body() dto: LoginDto,
 		@Res({ passthrough: true }) res: Response
@@ -46,9 +49,10 @@ export class AuthController {
 		return { accessToken }
 	}
 
-	@HttpCode(HttpStatus.OK)
-	@Post(AUTH_ROUTES.LOGOUT)
+	@Public()
 	@ApiOperation({ summary: 'Logout' })
+	@Post(AUTH_ROUTES.LOGOUT)
+	@HttpCode(HttpStatus.OK)
 	async logout(@Req() req: Request, @Res({ passthrough: true }) res: Response) {
 		const rawRefreshToken = req.cookies?.[this.REFRESH_TOKEN_NAME] as
 			| string
@@ -62,9 +66,10 @@ export class AuthController {
 		return { message: 'Logged out' }
 	}
 
-	@HttpCode(HttpStatus.OK)
-	@Post(AUTH_ROUTES.REFRESH)
+	@Public()
 	@ApiOperation({ summary: 'Refresh access token' })
+	@Post(AUTH_ROUTES.REFRESH)
+	@HttpCode(HttpStatus.OK)
 	async refresh(
 		@Req() req: Request,
 		@Res({ passthrough: true }) res: Response

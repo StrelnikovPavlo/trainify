@@ -1,7 +1,8 @@
 import {
 	CanActivate,
 	ExecutionContext,
-	ForbiddenException
+	ForbiddenException,
+	Injectable
 } from '@nestjs/common'
 import { Reflector } from '@nestjs/core'
 import { Request } from 'express'
@@ -16,6 +17,7 @@ interface AuthenticatedRequest extends Request {
 	}
 }
 
+@Injectable()
 export class RolesGuard implements CanActivate {
 	constructor(private readonly reflector: Reflector) {}
 

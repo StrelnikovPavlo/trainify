@@ -1,7 +1,7 @@
 import { PrismaService } from '@/prisma/prisma.service'
 import { CreateUserDto } from '@/users/dto/create-user.dto'
 import { UsersService } from '@/users/users.service'
-import { Injectable, UnauthorizedException } from '@nestjs/common'
+import { Injectable, Logger, UnauthorizedException } from '@nestjs/common'
 import { ConfigService } from '@nestjs/config'
 import { JwtService } from '@nestjs/jwt'
 import { verify } from 'argon2'
@@ -12,6 +12,8 @@ import { LoginDto } from './dto/login.dto'
 export class AuthService {
 	EXPIRE_DAY_REFRESH_TOKEN = 15
 
+	private readonly logger = new Logger(AuthService.name)
+
 	constructor(
 		private readonly userService: UsersService,
 		private readonly prismaService: PrismaService,
@@ -21,6 +23,7 @@ export class AuthService {
 
 	async register(dto: CreateUserDto) {
 		const user = await this.userService.create(dto)
+		this.logger.log(`User registered: ${user.id}`)
 		return this.issueTokens(user.id, user.email, user.role)
 	}
 
@@ -29,9 +32,10 @@ export class AuthService {
 		const isValid = user && (await verify(user.password, dto.password))
 
 		if (!isValid) {
+			this.logger.warn(`Failed login attempt for email: ${dto.email}`)
 			throw new UnauthorizedException('Invalid credentials')
 		}
-
+		this.logger.log(`User logged in: ${user.id}`)
 		return this.issueTokens(user.id, user.email, user.role)
 	}
 
@@ -40,6 +44,27 @@ export class AuthService {
 		await this.prismaService.refreshToken.deleteMany({
 			where: { hashedToken }
 		})
+		this.logger.log('User logged out')
+	}
+
+	async refreshTokens(rawRefreshToken: string) {
+		const hashedToken = this.hashToken(rawRefreshToken)
+
+		const stored = await this.prismaService.refreshToken.findUnique({
+			where: { hashedToken }
+		})
+
+		if (!stored || stored.expiresAt < new Date()) {
+			throw new UnauthorizedException('Invalid or expired refresh token')
+		}
+
+		await this.prismaService.refreshToken.delete({
+			where: { id: stored.id }
+		})
+
+		const user = await this.userService.findById(stored.userId)
+		this.logger.log(`Tokens refreshed for user: ${user.id}`)
+		return this.issueTokens(user.id, user.email, user.role)
 	}
 
 	private async issueTokens(userId: string, email: string, role: string) {
@@ -52,7 +77,16 @@ export class AuthService {
 		)
 
 		const refreshToken = randomBytes(64).toString('hex')
-		await this.storeRefreshToken(userId, refreshToken)
+
+		try {
+			await this.storeRefreshToken(userId, refreshToken)
+		} catch (error) {
+			const errorMessage = error instanceof Error ? error.stack : String(error)
+			this.logger.error(
+				`Failed to store refresh token for user ${userId}`,
+				errorMessage
+			)
+		}
 
 		return { accessToken, refreshToken }
 	}
@@ -72,25 +106,5 @@ export class AuthService {
 
 	private hashToken(token: string): string {
 		return createHash('sha256').update(token).digest('hex')
-	}
-
-	async refreshTokens(rawRefreshToken: string) {
-		const hashedToken = this.hashToken(rawRefreshToken)
-
-		const stored = await this.prismaService.refreshToken.findUnique({
-			where: { hashedToken }
-		})
-
-		if (!stored || stored.expiresAt < new Date()) {
-			throw new UnauthorizedException('Invalid or expired refresh token')
-		}
-
-		await this.prismaService.refreshToken.delete({
-			where: { id: stored.id }
-		})
-
-		const user = await this.userService.findById(stored.userId)
-
-		return this.issueTokens(user.id, user.email, user.role)
 	}
 }
