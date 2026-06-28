@@ -1,16 +1,18 @@
+import { Roles } from '@/auth/decorators/roles.decorator'
 import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common'
 import {
+	ApiBearerAuth,
 	ApiCreatedResponse,
 	ApiOkResponse,
 	ApiOperation,
 	ApiTags
 } from '@nestjs/swagger'
+import { Role } from 'prisma/generated/prisma/enums'
 import { CreateUserDto } from './dto/create-user.dto'
 import { UpdateUserDto } from './dto/update-user.dto'
 import { UsersService } from './users.service'
-import { Roles } from '@/auth/decorators/roles.decorator'
-import { Role } from 'prisma/generated/prisma/enums'
 
+@ApiBearerAuth()
 @ApiTags('Users')
 @Controller('users')
 export class UsersController {

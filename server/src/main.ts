@@ -14,6 +14,7 @@ async function bootstrap() {
 	app.useGlobalPipes(new ValidationPipe())
 
 	const config = new DocumentBuilder()
+		.addBearerAuth()
 		.addGlobalResponse({
 			status: 500,
 			description: 'Internal server error'
