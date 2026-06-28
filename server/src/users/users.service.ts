@@ -33,7 +33,7 @@ export class UsersService {
 	}
 
 	async findMany() {
-		const [users, count] = await Promise.all([
+		const [count, users] = await Promise.all([
 			this.usersRepository.count(),
 			this.usersRepository.findMany()
 		])
