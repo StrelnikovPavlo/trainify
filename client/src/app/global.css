@@ -1,0 +1,33 @@
+@import 'tailwindcss';
+
+@theme {
+	--color-gray: #cacaca;
+	--color-green: #51FF54;
+	--font-sans: var(--font-manrope);
+	--font-alumni: var(--font-alumniSans);
+}
+
+:root {
+	--background: #ffffff;
+	--foreground: #171717;
+}
+
+body {
+}
+
+button {
+	cursor: pointer;
+}
+
+input {
+	/* outline: none; */
+	outline-color: #171717;
+}
+
+input[placeholder]:not([data-placeholder-nohiden])::placeholder {
+	transition: opacity 0.2s;
+}
+
+input[placeholder]:not([data-placeholder-nohiden]):focus::placeholder {
+	opacity: 0;
+}
