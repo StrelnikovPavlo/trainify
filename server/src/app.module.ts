@@ -4,6 +4,7 @@ import { APP_GUARD } from '@nestjs/core'
 import { AuthModule } from './auth/auth.module'
 import { JwtAuthGuard } from './auth/guards/jwt-auth.guard'
 import { RolesGuard } from './auth/guards/roles.guard'
+import { UserProfileModule } from './user-profile/user-profile.module'
 import { UsersModule } from './users/users.module'
 
 @Module({
@@ -14,7 +15,8 @@ import { UsersModule } from './users/users.module'
 			isGlobal: true
 		}),
 		UsersModule,
-		AuthModule
+		AuthModule,
+		UserProfileModule
 	],
 	controllers: [],
 	providers: [
