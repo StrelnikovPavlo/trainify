@@ -1,33 +1,73 @@
 @import 'tailwindcss';
 
 @theme {
+	--color-primary: #fff600;
 	--color-gray: #cacaca;
-	--color-green: #51FF54;
+	--color-green: #51ff54;
+	--color-red: #f02020;
+	--color-foreground: var(--foreground);
+
 	--font-sans: var(--font-manrope);
 	--font-alumni: var(--font-alumniSans);
 }
 
 :root {
-	--background: #ffffff;
-	--foreground: #171717;
+	--background: #f6f6f6;
+	--foreground: #231f1f;
 }
 
-body {
+@layer base {
+	body {
+		background: var(--background);
+		color: var(--foreground);
+	}
+
+	button {
+		cursor: pointer;
+	}
+
+	input {
+		outline-color: var(--foreground);
+	}
+
+	input[placeholder]:not([data-placeholder-nohiden])::placeholder {
+		transition: opacity 0.2s;
+	}
+
+	input[placeholder]:not([data-placeholder-nohiden]):focus::placeholder {
+		opacity: 0;
+	}
 }
 
-button {
-	cursor: pointer;
-}
+@layer components {
+	.btn {
+		@apply text-[20px] uppercase font-bold font-alumni h-[48px] rounded-[8px] py-[5px] px-[30px];
+	}
+	.btn-black {
+		@apply text-white bg-foreground;
+	}
 
-input {
-	/* outline: none; */
-	outline-color: #171717;
-}
+	.btn-yellow {
+		@apply text-black bg-primary;
+	}
 
-input[placeholder]:not([data-placeholder-nohiden])::placeholder {
-	transition: opacity 0.2s;
-}
+	.input {
+		@apply text-center w-full h-[48px] text-2xl text-foreground font-medium border border-gray rounded-[8px] px-[23px];
+	}
+	.input::placeholder {
+		@apply text-gray;
+	}
 
-input[placeholder]:not([data-placeholder-nohiden]):focus::placeholder {
-	opacity: 0;
+	.radio {
+    @apply flex cursor-pointer items-center justify-between rounded-[10px] border px-4 py-3 transition-all;
+  }
+
+  .radio--checked {
+    @apply border-black bg-neutral-50;
+  }
+
+  .radio--unchecked {
+    @apply border-neutral-200 hover:border-neutral-300;
+  }
+
 }

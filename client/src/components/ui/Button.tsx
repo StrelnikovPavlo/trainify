@@ -1,14 +1,19 @@
+import clsx from 'clsx'
 import React, { ButtonHTMLAttributes } from 'react'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 	children: React.ReactNode
 }
 
-export function Button({ children, ...props }: ButtonProps) {
+export function Button({ children, className, disabled, ...props }: ButtonProps) {
 	return (
 		<button
 			{...props}
-			className='text-[20px] uppercase font-bold font-alumni text-white bg-black w-full h-[48px] rounded-[8px]'
+			className={clsx(
+				'btn',
+				disabled && 'opacity-50 cursor-not-allowed',
+				className,
+			)}
 		>
 			{children}
 		</button>

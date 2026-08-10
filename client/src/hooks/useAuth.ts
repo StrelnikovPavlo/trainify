@@ -16,7 +16,7 @@ export function useAuth() {
 	const isAuthenticated = useAuthStore(state => state.isAuthenticated)
 
 	useEffect(() => {
-		if (isAuthenticated) router.push('/dashboard')
+		if (isAuthenticated) router.push('/onboarding')
 	}, [isAuthenticated])
 
 	const toggleMode = () => {
@@ -33,7 +33,12 @@ export function useAuth() {
 				: await AuthService.login(data)
 
 			setAccessToken(accessToken)
-			router.push('/dashboard')
+
+			if (isRegister) {
+				router.push('/onboarding')
+			} else {
+				router.push('/dashboard')
+			}
 		} catch (error) {
 			if (axios.isAxiosError(error)) {
 				const message = error.response?.data?.message
