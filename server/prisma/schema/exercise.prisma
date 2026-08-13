@@ -1,12 +1,40 @@
+model MuscleGroup {
+  id       String     @id @default(cuid())
+  name     String     @unique
+  exercise Exercise[]
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("muscle_group")
+}
+
+model Equipment {
+  id       String     @id @default(cuid())
+  name     String     @unique
+  exercise Exercise[]
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("equipment")
+}
+
 model Exercise {
-  id                    String      @id @default(cuid())
-  name                  String      @unique
-  videoUrl              String      @map("video_url")
-  muscleGroup           String      @map("muscle_group")
-  equipment             String
-  createdAt             DateTime    @default(now()) @map("created_at")
-  updatedAt             DateTime    @updatedAt @map("updated_at")
-  logs                  WorkoutLog[]
-  trainingDayExercises  TrainingDayExercise[]
+  id            String @id @default(cuid())
+  name          String @unique
+  videoUrl      String @map("video_url")
+  muscleGroupId String @map("muscle_group_id")
+  equipmentId   String @map("equipment_id")
+
+  muscleGroup MuscleGroup @relation(fields: [muscleGroupId], references: [id])
+  equipment   Equipment   @relation(fields: [equipmentId], references: [id])
+
+  logs                 WorkoutLog[]
+  trainingDayExercises TrainingDayExercise[]
+
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
   @@map("exercise")
 }

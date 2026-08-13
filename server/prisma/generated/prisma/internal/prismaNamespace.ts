@@ -384,6 +384,8 @@ type FieldRefInputType<Model, FieldType> = Model extends never ? never : FieldRe
 
 
 export const ModelName = {
+  MuscleGroup: 'MuscleGroup',
+  Equipment: 'Equipment',
   Exercise: 'Exercise',
   WorkoutLog: 'WorkoutLog',
   WeightLog: 'WeightLog',
@@ -409,10 +411,158 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "exercise" | "workoutLog" | "weightLog" | "trainingPlan" | "trainingDay" | "trainingDayExercise" | "workoutSession" | "user" | "refreshToken" | "userProfile"
+    modelProps: "muscleGroup" | "equipment" | "exercise" | "workoutLog" | "weightLog" | "trainingPlan" | "trainingDay" | "trainingDayExercise" | "workoutSession" | "user" | "refreshToken" | "userProfile"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
+    MuscleGroup: {
+      payload: Prisma.$MuscleGroupPayload<ExtArgs>
+      fields: Prisma.MuscleGroupFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.MuscleGroupFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$MuscleGroupPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.MuscleGroupFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$MuscleGroupPayload>
+        }
+        findFirst: {
+          args: Prisma.MuscleGroupFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$MuscleGroupPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.MuscleGroupFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$MuscleGroupPayload>
+        }
+        findMany: {
+          args: Prisma.MuscleGroupFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$MuscleGroupPayload>[]
+        }
+        create: {
+          args: Prisma.MuscleGroupCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$MuscleGroupPayload>
+        }
+        createMany: {
+          args: Prisma.MuscleGroupCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.MuscleGroupCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$MuscleGroupPayload>[]
+        }
+        delete: {
+          args: Prisma.MuscleGroupDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$MuscleGroupPayload>
+        }
+        update: {
+          args: Prisma.MuscleGroupUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$MuscleGroupPayload>
+        }
+        deleteMany: {
+          args: Prisma.MuscleGroupDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.MuscleGroupUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.MuscleGroupUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$MuscleGroupPayload>[]
+        }
+        upsert: {
+          args: Prisma.MuscleGroupUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$MuscleGroupPayload>
+        }
+        aggregate: {
+          args: Prisma.MuscleGroupAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateMuscleGroup>
+        }
+        groupBy: {
+          args: Prisma.MuscleGroupGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.MuscleGroupGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.MuscleGroupCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.MuscleGroupCountAggregateOutputType> | number
+        }
+      }
+    }
+    Equipment: {
+      payload: Prisma.$EquipmentPayload<ExtArgs>
+      fields: Prisma.EquipmentFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.EquipmentFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EquipmentPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.EquipmentFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EquipmentPayload>
+        }
+        findFirst: {
+          args: Prisma.EquipmentFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EquipmentPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.EquipmentFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EquipmentPayload>
+        }
+        findMany: {
+          args: Prisma.EquipmentFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EquipmentPayload>[]
+        }
+        create: {
+          args: Prisma.EquipmentCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EquipmentPayload>
+        }
+        createMany: {
+          args: Prisma.EquipmentCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.EquipmentCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EquipmentPayload>[]
+        }
+        delete: {
+          args: Prisma.EquipmentDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EquipmentPayload>
+        }
+        update: {
+          args: Prisma.EquipmentUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EquipmentPayload>
+        }
+        deleteMany: {
+          args: Prisma.EquipmentDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.EquipmentUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.EquipmentUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EquipmentPayload>[]
+        }
+        upsert: {
+          args: Prisma.EquipmentUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$EquipmentPayload>
+        }
+        aggregate: {
+          args: Prisma.EquipmentAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateEquipment>
+        }
+        groupBy: {
+          args: Prisma.EquipmentGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.EquipmentGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.EquipmentCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.EquipmentCountAggregateOutputType> | number
+        }
+      }
+    }
     Exercise: {
       payload: Prisma.$ExercisePayload<ExtArgs>
       fields: Prisma.ExerciseFieldRefs
@@ -1192,12 +1342,32 @@ export const TransactionIsolationLevel = runtime.makeStrictEnum({
 export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
+export const MuscleGroupScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type MuscleGroupScalarFieldEnum = (typeof MuscleGroupScalarFieldEnum)[keyof typeof MuscleGroupScalarFieldEnum]
+
+
+export const EquipmentScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type EquipmentScalarFieldEnum = (typeof EquipmentScalarFieldEnum)[keyof typeof EquipmentScalarFieldEnum]
+
+
 export const ExerciseScalarFieldEnum = {
   id: 'id',
   name: 'name',
   videoUrl: 'videoUrl',
-  muscleGroup: 'muscleGroup',
-  equipment: 'equipment',
+  muscleGroupId: 'muscleGroupId',
+  equipmentId: 'equipmentId',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const
@@ -1637,6 +1807,8 @@ export type PrismaClientOptions = ({
   queryPlanCacheMaxSize?: number
 }
 export type GlobalOmitConfig = {
+  muscleGroup?: Prisma.MuscleGroupOmit
+  equipment?: Prisma.EquipmentOmit
   exercise?: Prisma.ExerciseOmit
   workoutLog?: Prisma.WorkoutLogOmit
   weightLog?: Prisma.WeightLogOmit

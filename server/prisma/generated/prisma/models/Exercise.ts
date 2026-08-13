@@ -28,8 +28,8 @@ export type ExerciseMinAggregateOutputType = {
   id: string | null
   name: string | null
   videoUrl: string | null
-  muscleGroup: string | null
-  equipment: string | null
+  muscleGroupId: string | null
+  equipmentId: string | null
   createdAt: Date | null
   updatedAt: Date | null
 }
@@ -38,8 +38,8 @@ export type ExerciseMaxAggregateOutputType = {
   id: string | null
   name: string | null
   videoUrl: string | null
-  muscleGroup: string | null
-  equipment: string | null
+  muscleGroupId: string | null
+  equipmentId: string | null
   createdAt: Date | null
   updatedAt: Date | null
 }
@@ -48,8 +48,8 @@ export type ExerciseCountAggregateOutputType = {
   id: number
   name: number
   videoUrl: number
-  muscleGroup: number
-  equipment: number
+  muscleGroupId: number
+  equipmentId: number
   createdAt: number
   updatedAt: number
   _all: number
@@ -60,8 +60,8 @@ export type ExerciseMinAggregateInputType = {
   id?: true
   name?: true
   videoUrl?: true
-  muscleGroup?: true
-  equipment?: true
+  muscleGroupId?: true
+  equipmentId?: true
   createdAt?: true
   updatedAt?: true
 }
@@ -70,8 +70,8 @@ export type ExerciseMaxAggregateInputType = {
   id?: true
   name?: true
   videoUrl?: true
-  muscleGroup?: true
-  equipment?: true
+  muscleGroupId?: true
+  equipmentId?: true
   createdAt?: true
   updatedAt?: true
 }
@@ -80,8 +80,8 @@ export type ExerciseCountAggregateInputType = {
   id?: true
   name?: true
   videoUrl?: true
-  muscleGroup?: true
-  equipment?: true
+  muscleGroupId?: true
+  equipmentId?: true
   createdAt?: true
   updatedAt?: true
   _all?: true
@@ -163,8 +163,8 @@ export type ExerciseGroupByOutputType = {
   id: string
   name: string
   videoUrl: string
-  muscleGroup: string
-  equipment: string
+  muscleGroupId: string
+  equipmentId: string
   createdAt: Date
   updatedAt: Date
   _count: ExerciseCountAggregateOutputType | null
@@ -194,10 +194,12 @@ export type ExerciseWhereInput = {
   id?: Prisma.StringFilter<"Exercise"> | string
   name?: Prisma.StringFilter<"Exercise"> | string
   videoUrl?: Prisma.StringFilter<"Exercise"> | string
-  muscleGroup?: Prisma.StringFilter<"Exercise"> | string
-  equipment?: Prisma.StringFilter<"Exercise"> | string
+  muscleGroupId?: Prisma.StringFilter<"Exercise"> | string
+  equipmentId?: Prisma.StringFilter<"Exercise"> | string
   createdAt?: Prisma.DateTimeFilter<"Exercise"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Exercise"> | Date | string
+  muscleGroup?: Prisma.XOR<Prisma.MuscleGroupScalarRelationFilter, Prisma.MuscleGroupWhereInput>
+  equipment?: Prisma.XOR<Prisma.EquipmentScalarRelationFilter, Prisma.EquipmentWhereInput>
   logs?: Prisma.WorkoutLogListRelationFilter
   trainingDayExercises?: Prisma.TrainingDayExerciseListRelationFilter
 }
@@ -206,10 +208,12 @@ export type ExerciseOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   name?: Prisma.SortOrder
   videoUrl?: Prisma.SortOrder
-  muscleGroup?: Prisma.SortOrder
-  equipment?: Prisma.SortOrder
+  muscleGroupId?: Prisma.SortOrder
+  equipmentId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
+  muscleGroup?: Prisma.MuscleGroupOrderByWithRelationInput
+  equipment?: Prisma.EquipmentOrderByWithRelationInput
   logs?: Prisma.WorkoutLogOrderByRelationAggregateInput
   trainingDayExercises?: Prisma.TrainingDayExerciseOrderByRelationAggregateInput
 }
@@ -221,10 +225,12 @@ export type ExerciseWhereUniqueInput = Prisma.AtLeast<{
   OR?: Prisma.ExerciseWhereInput[]
   NOT?: Prisma.ExerciseWhereInput | Prisma.ExerciseWhereInput[]
   videoUrl?: Prisma.StringFilter<"Exercise"> | string
-  muscleGroup?: Prisma.StringFilter<"Exercise"> | string
-  equipment?: Prisma.StringFilter<"Exercise"> | string
+  muscleGroupId?: Prisma.StringFilter<"Exercise"> | string
+  equipmentId?: Prisma.StringFilter<"Exercise"> | string
   createdAt?: Prisma.DateTimeFilter<"Exercise"> | Date | string
   updatedAt?: Prisma.DateTimeFilter<"Exercise"> | Date | string
+  muscleGroup?: Prisma.XOR<Prisma.MuscleGroupScalarRelationFilter, Prisma.MuscleGroupWhereInput>
+  equipment?: Prisma.XOR<Prisma.EquipmentScalarRelationFilter, Prisma.EquipmentWhereInput>
   logs?: Prisma.WorkoutLogListRelationFilter
   trainingDayExercises?: Prisma.TrainingDayExerciseListRelationFilter
 }, "id" | "name">
@@ -233,8 +239,8 @@ export type ExerciseOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   name?: Prisma.SortOrder
   videoUrl?: Prisma.SortOrder
-  muscleGroup?: Prisma.SortOrder
-  equipment?: Prisma.SortOrder
+  muscleGroupId?: Prisma.SortOrder
+  equipmentId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
   _count?: Prisma.ExerciseCountOrderByAggregateInput
@@ -249,8 +255,8 @@ export type ExerciseScalarWhereWithAggregatesInput = {
   id?: Prisma.StringWithAggregatesFilter<"Exercise"> | string
   name?: Prisma.StringWithAggregatesFilter<"Exercise"> | string
   videoUrl?: Prisma.StringWithAggregatesFilter<"Exercise"> | string
-  muscleGroup?: Prisma.StringWithAggregatesFilter<"Exercise"> | string
-  equipment?: Prisma.StringWithAggregatesFilter<"Exercise"> | string
+  muscleGroupId?: Prisma.StringWithAggregatesFilter<"Exercise"> | string
+  equipmentId?: Prisma.StringWithAggregatesFilter<"Exercise"> | string
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"Exercise"> | Date | string
   updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Exercise"> | Date | string
 }
@@ -259,10 +265,10 @@ export type ExerciseCreateInput = {
   id?: string
   name: string
   videoUrl: string
-  muscleGroup: string
-  equipment: string
   createdAt?: Date | string
   updatedAt?: Date | string
+  muscleGroup: Prisma.MuscleGroupCreateNestedOneWithoutExerciseInput
+  equipment: Prisma.EquipmentCreateNestedOneWithoutExerciseInput
   logs?: Prisma.WorkoutLogCreateNestedManyWithoutExerciseInput
   trainingDayExercises?: Prisma.TrainingDayExerciseCreateNestedManyWithoutExerciseInput
 }
@@ -271,8 +277,8 @@ export type ExerciseUncheckedCreateInput = {
   id?: string
   name: string
   videoUrl: string
-  muscleGroup: string
-  equipment: string
+  muscleGroupId: string
+  equipmentId: string
   createdAt?: Date | string
   updatedAt?: Date | string
   logs?: Prisma.WorkoutLogUncheckedCreateNestedManyWithoutExerciseInput
@@ -283,10 +289,10 @@ export type ExerciseUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   videoUrl?: Prisma.StringFieldUpdateOperationsInput | string
-  muscleGroup?: Prisma.StringFieldUpdateOperationsInput | string
-  equipment?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  muscleGroup?: Prisma.MuscleGroupUpdateOneRequiredWithoutExerciseNestedInput
+  equipment?: Prisma.EquipmentUpdateOneRequiredWithoutExerciseNestedInput
   logs?: Prisma.WorkoutLogUpdateManyWithoutExerciseNestedInput
   trainingDayExercises?: Prisma.TrainingDayExerciseUpdateManyWithoutExerciseNestedInput
 }
@@ -295,8 +301,8 @@ export type ExerciseUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   videoUrl?: Prisma.StringFieldUpdateOperationsInput | string
-  muscleGroup?: Prisma.StringFieldUpdateOperationsInput | string
-  equipment?: Prisma.StringFieldUpdateOperationsInput | string
+  muscleGroupId?: Prisma.StringFieldUpdateOperationsInput | string
+  equipmentId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   logs?: Prisma.WorkoutLogUncheckedUpdateManyWithoutExerciseNestedInput
@@ -307,8 +313,8 @@ export type ExerciseCreateManyInput = {
   id?: string
   name: string
   videoUrl: string
-  muscleGroup: string
-  equipment: string
+  muscleGroupId: string
+  equipmentId: string
   createdAt?: Date | string
   updatedAt?: Date | string
 }
@@ -317,8 +323,6 @@ export type ExerciseUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   videoUrl?: Prisma.StringFieldUpdateOperationsInput | string
-  muscleGroup?: Prisma.StringFieldUpdateOperationsInput | string
-  equipment?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -327,18 +331,28 @@ export type ExerciseUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   videoUrl?: Prisma.StringFieldUpdateOperationsInput | string
-  muscleGroup?: Prisma.StringFieldUpdateOperationsInput | string
-  equipment?: Prisma.StringFieldUpdateOperationsInput | string
+  muscleGroupId?: Prisma.StringFieldUpdateOperationsInput | string
+  equipmentId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type ExerciseListRelationFilter = {
+  every?: Prisma.ExerciseWhereInput
+  some?: Prisma.ExerciseWhereInput
+  none?: Prisma.ExerciseWhereInput
+}
+
+export type ExerciseOrderByRelationAggregateInput = {
+  _count?: Prisma.SortOrder
 }
 
 export type ExerciseCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   name?: Prisma.SortOrder
   videoUrl?: Prisma.SortOrder
-  muscleGroup?: Prisma.SortOrder
-  equipment?: Prisma.SortOrder
+  muscleGroupId?: Prisma.SortOrder
+  equipmentId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
@@ -347,8 +361,8 @@ export type ExerciseMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   name?: Prisma.SortOrder
   videoUrl?: Prisma.SortOrder
-  muscleGroup?: Prisma.SortOrder
-  equipment?: Prisma.SortOrder
+  muscleGroupId?: Prisma.SortOrder
+  equipmentId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
@@ -357,8 +371,8 @@ export type ExerciseMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   name?: Prisma.SortOrder
   videoUrl?: Prisma.SortOrder
-  muscleGroup?: Prisma.SortOrder
-  equipment?: Prisma.SortOrder
+  muscleGroupId?: Prisma.SortOrder
+  equipmentId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
 }
@@ -368,12 +382,88 @@ export type ExerciseScalarRelationFilter = {
   isNot?: Prisma.ExerciseWhereInput
 }
 
-export type StringFieldUpdateOperationsInput = {
-  set?: string
+export type ExerciseCreateNestedManyWithoutMuscleGroupInput = {
+  create?: Prisma.XOR<Prisma.ExerciseCreateWithoutMuscleGroupInput, Prisma.ExerciseUncheckedCreateWithoutMuscleGroupInput> | Prisma.ExerciseCreateWithoutMuscleGroupInput[] | Prisma.ExerciseUncheckedCreateWithoutMuscleGroupInput[]
+  connectOrCreate?: Prisma.ExerciseCreateOrConnectWithoutMuscleGroupInput | Prisma.ExerciseCreateOrConnectWithoutMuscleGroupInput[]
+  createMany?: Prisma.ExerciseCreateManyMuscleGroupInputEnvelope
+  connect?: Prisma.ExerciseWhereUniqueInput | Prisma.ExerciseWhereUniqueInput[]
 }
 
-export type DateTimeFieldUpdateOperationsInput = {
-  set?: Date | string
+export type ExerciseUncheckedCreateNestedManyWithoutMuscleGroupInput = {
+  create?: Prisma.XOR<Prisma.ExerciseCreateWithoutMuscleGroupInput, Prisma.ExerciseUncheckedCreateWithoutMuscleGroupInput> | Prisma.ExerciseCreateWithoutMuscleGroupInput[] | Prisma.ExerciseUncheckedCreateWithoutMuscleGroupInput[]
+  connectOrCreate?: Prisma.ExerciseCreateOrConnectWithoutMuscleGroupInput | Prisma.ExerciseCreateOrConnectWithoutMuscleGroupInput[]
+  createMany?: Prisma.ExerciseCreateManyMuscleGroupInputEnvelope
+  connect?: Prisma.ExerciseWhereUniqueInput | Prisma.ExerciseWhereUniqueInput[]
+}
+
+export type ExerciseUpdateManyWithoutMuscleGroupNestedInput = {
+  create?: Prisma.XOR<Prisma.ExerciseCreateWithoutMuscleGroupInput, Prisma.ExerciseUncheckedCreateWithoutMuscleGroupInput> | Prisma.ExerciseCreateWithoutMuscleGroupInput[] | Prisma.ExerciseUncheckedCreateWithoutMuscleGroupInput[]
+  connectOrCreate?: Prisma.ExerciseCreateOrConnectWithoutMuscleGroupInput | Prisma.ExerciseCreateOrConnectWithoutMuscleGroupInput[]
+  upsert?: Prisma.ExerciseUpsertWithWhereUniqueWithoutMuscleGroupInput | Prisma.ExerciseUpsertWithWhereUniqueWithoutMuscleGroupInput[]
+  createMany?: Prisma.ExerciseCreateManyMuscleGroupInputEnvelope
+  set?: Prisma.ExerciseWhereUniqueInput | Prisma.ExerciseWhereUniqueInput[]
+  disconnect?: Prisma.ExerciseWhereUniqueInput | Prisma.ExerciseWhereUniqueInput[]
+  delete?: Prisma.ExerciseWhereUniqueInput | Prisma.ExerciseWhereUniqueInput[]
+  connect?: Prisma.ExerciseWhereUniqueInput | Prisma.ExerciseWhereUniqueInput[]
+  update?: Prisma.ExerciseUpdateWithWhereUniqueWithoutMuscleGroupInput | Prisma.ExerciseUpdateWithWhereUniqueWithoutMuscleGroupInput[]
+  updateMany?: Prisma.ExerciseUpdateManyWithWhereWithoutMuscleGroupInput | Prisma.ExerciseUpdateManyWithWhereWithoutMuscleGroupInput[]
+  deleteMany?: Prisma.ExerciseScalarWhereInput | Prisma.ExerciseScalarWhereInput[]
+}
+
+export type ExerciseUncheckedUpdateManyWithoutMuscleGroupNestedInput = {
+  create?: Prisma.XOR<Prisma.ExerciseCreateWithoutMuscleGroupInput, Prisma.ExerciseUncheckedCreateWithoutMuscleGroupInput> | Prisma.ExerciseCreateWithoutMuscleGroupInput[] | Prisma.ExerciseUncheckedCreateWithoutMuscleGroupInput[]
+  connectOrCreate?: Prisma.ExerciseCreateOrConnectWithoutMuscleGroupInput | Prisma.ExerciseCreateOrConnectWithoutMuscleGroupInput[]
+  upsert?: Prisma.ExerciseUpsertWithWhereUniqueWithoutMuscleGroupInput | Prisma.ExerciseUpsertWithWhereUniqueWithoutMuscleGroupInput[]
+  createMany?: Prisma.ExerciseCreateManyMuscleGroupInputEnvelope
+  set?: Prisma.ExerciseWhereUniqueInput | Prisma.ExerciseWhereUniqueInput[]
+  disconnect?: Prisma.ExerciseWhereUniqueInput | Prisma.ExerciseWhereUniqueInput[]
+  delete?: Prisma.ExerciseWhereUniqueInput | Prisma.ExerciseWhereUniqueInput[]
+  connect?: Prisma.ExerciseWhereUniqueInput | Prisma.ExerciseWhereUniqueInput[]
+  update?: Prisma.ExerciseUpdateWithWhereUniqueWithoutMuscleGroupInput | Prisma.ExerciseUpdateWithWhereUniqueWithoutMuscleGroupInput[]
+  updateMany?: Prisma.ExerciseUpdateManyWithWhereWithoutMuscleGroupInput | Prisma.ExerciseUpdateManyWithWhereWithoutMuscleGroupInput[]
+  deleteMany?: Prisma.ExerciseScalarWhereInput | Prisma.ExerciseScalarWhereInput[]
+}
+
+export type ExerciseCreateNestedManyWithoutEquipmentInput = {
+  create?: Prisma.XOR<Prisma.ExerciseCreateWithoutEquipmentInput, Prisma.ExerciseUncheckedCreateWithoutEquipmentInput> | Prisma.ExerciseCreateWithoutEquipmentInput[] | Prisma.ExerciseUncheckedCreateWithoutEquipmentInput[]
+  connectOrCreate?: Prisma.ExerciseCreateOrConnectWithoutEquipmentInput | Prisma.ExerciseCreateOrConnectWithoutEquipmentInput[]
+  createMany?: Prisma.ExerciseCreateManyEquipmentInputEnvelope
+  connect?: Prisma.ExerciseWhereUniqueInput | Prisma.ExerciseWhereUniqueInput[]
+}
+
+export type ExerciseUncheckedCreateNestedManyWithoutEquipmentInput = {
+  create?: Prisma.XOR<Prisma.ExerciseCreateWithoutEquipmentInput, Prisma.ExerciseUncheckedCreateWithoutEquipmentInput> | Prisma.ExerciseCreateWithoutEquipmentInput[] | Prisma.ExerciseUncheckedCreateWithoutEquipmentInput[]
+  connectOrCreate?: Prisma.ExerciseCreateOrConnectWithoutEquipmentInput | Prisma.ExerciseCreateOrConnectWithoutEquipmentInput[]
+  createMany?: Prisma.ExerciseCreateManyEquipmentInputEnvelope
+  connect?: Prisma.ExerciseWhereUniqueInput | Prisma.ExerciseWhereUniqueInput[]
+}
+
+export type ExerciseUpdateManyWithoutEquipmentNestedInput = {
+  create?: Prisma.XOR<Prisma.ExerciseCreateWithoutEquipmentInput, Prisma.ExerciseUncheckedCreateWithoutEquipmentInput> | Prisma.ExerciseCreateWithoutEquipmentInput[] | Prisma.ExerciseUncheckedCreateWithoutEquipmentInput[]
+  connectOrCreate?: Prisma.ExerciseCreateOrConnectWithoutEquipmentInput | Prisma.ExerciseCreateOrConnectWithoutEquipmentInput[]
+  upsert?: Prisma.ExerciseUpsertWithWhereUniqueWithoutEquipmentInput | Prisma.ExerciseUpsertWithWhereUniqueWithoutEquipmentInput[]
+  createMany?: Prisma.ExerciseCreateManyEquipmentInputEnvelope
+  set?: Prisma.ExerciseWhereUniqueInput | Prisma.ExerciseWhereUniqueInput[]
+  disconnect?: Prisma.ExerciseWhereUniqueInput | Prisma.ExerciseWhereUniqueInput[]
+  delete?: Prisma.ExerciseWhereUniqueInput | Prisma.ExerciseWhereUniqueInput[]
+  connect?: Prisma.ExerciseWhereUniqueInput | Prisma.ExerciseWhereUniqueInput[]
+  update?: Prisma.ExerciseUpdateWithWhereUniqueWithoutEquipmentInput | Prisma.ExerciseUpdateWithWhereUniqueWithoutEquipmentInput[]
+  updateMany?: Prisma.ExerciseUpdateManyWithWhereWithoutEquipmentInput | Prisma.ExerciseUpdateManyWithWhereWithoutEquipmentInput[]
+  deleteMany?: Prisma.ExerciseScalarWhereInput | Prisma.ExerciseScalarWhereInput[]
+}
+
+export type ExerciseUncheckedUpdateManyWithoutEquipmentNestedInput = {
+  create?: Prisma.XOR<Prisma.ExerciseCreateWithoutEquipmentInput, Prisma.ExerciseUncheckedCreateWithoutEquipmentInput> | Prisma.ExerciseCreateWithoutEquipmentInput[] | Prisma.ExerciseUncheckedCreateWithoutEquipmentInput[]
+  connectOrCreate?: Prisma.ExerciseCreateOrConnectWithoutEquipmentInput | Prisma.ExerciseCreateOrConnectWithoutEquipmentInput[]
+  upsert?: Prisma.ExerciseUpsertWithWhereUniqueWithoutEquipmentInput | Prisma.ExerciseUpsertWithWhereUniqueWithoutEquipmentInput[]
+  createMany?: Prisma.ExerciseCreateManyEquipmentInputEnvelope
+  set?: Prisma.ExerciseWhereUniqueInput | Prisma.ExerciseWhereUniqueInput[]
+  disconnect?: Prisma.ExerciseWhereUniqueInput | Prisma.ExerciseWhereUniqueInput[]
+  delete?: Prisma.ExerciseWhereUniqueInput | Prisma.ExerciseWhereUniqueInput[]
+  connect?: Prisma.ExerciseWhereUniqueInput | Prisma.ExerciseWhereUniqueInput[]
+  update?: Prisma.ExerciseUpdateWithWhereUniqueWithoutEquipmentInput | Prisma.ExerciseUpdateWithWhereUniqueWithoutEquipmentInput[]
+  updateMany?: Prisma.ExerciseUpdateManyWithWhereWithoutEquipmentInput | Prisma.ExerciseUpdateManyWithWhereWithoutEquipmentInput[]
+  deleteMany?: Prisma.ExerciseScalarWhereInput | Prisma.ExerciseScalarWhereInput[]
 }
 
 export type ExerciseCreateNestedOneWithoutLogsInput = {
@@ -404,14 +494,123 @@ export type ExerciseUpdateOneRequiredWithoutTrainingDayExercisesNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.ExerciseUpdateToOneWithWhereWithoutTrainingDayExercisesInput, Prisma.ExerciseUpdateWithoutTrainingDayExercisesInput>, Prisma.ExerciseUncheckedUpdateWithoutTrainingDayExercisesInput>
 }
 
+export type ExerciseCreateWithoutMuscleGroupInput = {
+  id?: string
+  name: string
+  videoUrl: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  equipment: Prisma.EquipmentCreateNestedOneWithoutExerciseInput
+  logs?: Prisma.WorkoutLogCreateNestedManyWithoutExerciseInput
+  trainingDayExercises?: Prisma.TrainingDayExerciseCreateNestedManyWithoutExerciseInput
+}
+
+export type ExerciseUncheckedCreateWithoutMuscleGroupInput = {
+  id?: string
+  name: string
+  videoUrl: string
+  equipmentId: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  logs?: Prisma.WorkoutLogUncheckedCreateNestedManyWithoutExerciseInput
+  trainingDayExercises?: Prisma.TrainingDayExerciseUncheckedCreateNestedManyWithoutExerciseInput
+}
+
+export type ExerciseCreateOrConnectWithoutMuscleGroupInput = {
+  where: Prisma.ExerciseWhereUniqueInput
+  create: Prisma.XOR<Prisma.ExerciseCreateWithoutMuscleGroupInput, Prisma.ExerciseUncheckedCreateWithoutMuscleGroupInput>
+}
+
+export type ExerciseCreateManyMuscleGroupInputEnvelope = {
+  data: Prisma.ExerciseCreateManyMuscleGroupInput | Prisma.ExerciseCreateManyMuscleGroupInput[]
+  skipDuplicates?: boolean
+}
+
+export type ExerciseUpsertWithWhereUniqueWithoutMuscleGroupInput = {
+  where: Prisma.ExerciseWhereUniqueInput
+  update: Prisma.XOR<Prisma.ExerciseUpdateWithoutMuscleGroupInput, Prisma.ExerciseUncheckedUpdateWithoutMuscleGroupInput>
+  create: Prisma.XOR<Prisma.ExerciseCreateWithoutMuscleGroupInput, Prisma.ExerciseUncheckedCreateWithoutMuscleGroupInput>
+}
+
+export type ExerciseUpdateWithWhereUniqueWithoutMuscleGroupInput = {
+  where: Prisma.ExerciseWhereUniqueInput
+  data: Prisma.XOR<Prisma.ExerciseUpdateWithoutMuscleGroupInput, Prisma.ExerciseUncheckedUpdateWithoutMuscleGroupInput>
+}
+
+export type ExerciseUpdateManyWithWhereWithoutMuscleGroupInput = {
+  where: Prisma.ExerciseScalarWhereInput
+  data: Prisma.XOR<Prisma.ExerciseUpdateManyMutationInput, Prisma.ExerciseUncheckedUpdateManyWithoutMuscleGroupInput>
+}
+
+export type ExerciseScalarWhereInput = {
+  AND?: Prisma.ExerciseScalarWhereInput | Prisma.ExerciseScalarWhereInput[]
+  OR?: Prisma.ExerciseScalarWhereInput[]
+  NOT?: Prisma.ExerciseScalarWhereInput | Prisma.ExerciseScalarWhereInput[]
+  id?: Prisma.StringFilter<"Exercise"> | string
+  name?: Prisma.StringFilter<"Exercise"> | string
+  videoUrl?: Prisma.StringFilter<"Exercise"> | string
+  muscleGroupId?: Prisma.StringFilter<"Exercise"> | string
+  equipmentId?: Prisma.StringFilter<"Exercise"> | string
+  createdAt?: Prisma.DateTimeFilter<"Exercise"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"Exercise"> | Date | string
+}
+
+export type ExerciseCreateWithoutEquipmentInput = {
+  id?: string
+  name: string
+  videoUrl: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  muscleGroup: Prisma.MuscleGroupCreateNestedOneWithoutExerciseInput
+  logs?: Prisma.WorkoutLogCreateNestedManyWithoutExerciseInput
+  trainingDayExercises?: Prisma.TrainingDayExerciseCreateNestedManyWithoutExerciseInput
+}
+
+export type ExerciseUncheckedCreateWithoutEquipmentInput = {
+  id?: string
+  name: string
+  videoUrl: string
+  muscleGroupId: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  logs?: Prisma.WorkoutLogUncheckedCreateNestedManyWithoutExerciseInput
+  trainingDayExercises?: Prisma.TrainingDayExerciseUncheckedCreateNestedManyWithoutExerciseInput
+}
+
+export type ExerciseCreateOrConnectWithoutEquipmentInput = {
+  where: Prisma.ExerciseWhereUniqueInput
+  create: Prisma.XOR<Prisma.ExerciseCreateWithoutEquipmentInput, Prisma.ExerciseUncheckedCreateWithoutEquipmentInput>
+}
+
+export type ExerciseCreateManyEquipmentInputEnvelope = {
+  data: Prisma.ExerciseCreateManyEquipmentInput | Prisma.ExerciseCreateManyEquipmentInput[]
+  skipDuplicates?: boolean
+}
+
+export type ExerciseUpsertWithWhereUniqueWithoutEquipmentInput = {
+  where: Prisma.ExerciseWhereUniqueInput
+  update: Prisma.XOR<Prisma.ExerciseUpdateWithoutEquipmentInput, Prisma.ExerciseUncheckedUpdateWithoutEquipmentInput>
+  create: Prisma.XOR<Prisma.ExerciseCreateWithoutEquipmentInput, Prisma.ExerciseUncheckedCreateWithoutEquipmentInput>
+}
+
+export type ExerciseUpdateWithWhereUniqueWithoutEquipmentInput = {
+  where: Prisma.ExerciseWhereUniqueInput
+  data: Prisma.XOR<Prisma.ExerciseUpdateWithoutEquipmentInput, Prisma.ExerciseUncheckedUpdateWithoutEquipmentInput>
+}
+
+export type ExerciseUpdateManyWithWhereWithoutEquipmentInput = {
+  where: Prisma.ExerciseScalarWhereInput
+  data: Prisma.XOR<Prisma.ExerciseUpdateManyMutationInput, Prisma.ExerciseUncheckedUpdateManyWithoutEquipmentInput>
+}
+
 export type ExerciseCreateWithoutLogsInput = {
   id?: string
   name: string
   videoUrl: string
-  muscleGroup: string
-  equipment: string
   createdAt?: Date | string
   updatedAt?: Date | string
+  muscleGroup: Prisma.MuscleGroupCreateNestedOneWithoutExerciseInput
+  equipment: Prisma.EquipmentCreateNestedOneWithoutExerciseInput
   trainingDayExercises?: Prisma.TrainingDayExerciseCreateNestedManyWithoutExerciseInput
 }
 
@@ -419,8 +618,8 @@ export type ExerciseUncheckedCreateWithoutLogsInput = {
   id?: string
   name: string
   videoUrl: string
-  muscleGroup: string
-  equipment: string
+  muscleGroupId: string
+  equipmentId: string
   createdAt?: Date | string
   updatedAt?: Date | string
   trainingDayExercises?: Prisma.TrainingDayExerciseUncheckedCreateNestedManyWithoutExerciseInput
@@ -446,10 +645,10 @@ export type ExerciseUpdateWithoutLogsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   videoUrl?: Prisma.StringFieldUpdateOperationsInput | string
-  muscleGroup?: Prisma.StringFieldUpdateOperationsInput | string
-  equipment?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  muscleGroup?: Prisma.MuscleGroupUpdateOneRequiredWithoutExerciseNestedInput
+  equipment?: Prisma.EquipmentUpdateOneRequiredWithoutExerciseNestedInput
   trainingDayExercises?: Prisma.TrainingDayExerciseUpdateManyWithoutExerciseNestedInput
 }
 
@@ -457,8 +656,8 @@ export type ExerciseUncheckedUpdateWithoutLogsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   videoUrl?: Prisma.StringFieldUpdateOperationsInput | string
-  muscleGroup?: Prisma.StringFieldUpdateOperationsInput | string
-  equipment?: Prisma.StringFieldUpdateOperationsInput | string
+  muscleGroupId?: Prisma.StringFieldUpdateOperationsInput | string
+  equipmentId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   trainingDayExercises?: Prisma.TrainingDayExerciseUncheckedUpdateManyWithoutExerciseNestedInput
@@ -468,10 +667,10 @@ export type ExerciseCreateWithoutTrainingDayExercisesInput = {
   id?: string
   name: string
   videoUrl: string
-  muscleGroup: string
-  equipment: string
   createdAt?: Date | string
   updatedAt?: Date | string
+  muscleGroup: Prisma.MuscleGroupCreateNestedOneWithoutExerciseInput
+  equipment: Prisma.EquipmentCreateNestedOneWithoutExerciseInput
   logs?: Prisma.WorkoutLogCreateNestedManyWithoutExerciseInput
 }
 
@@ -479,8 +678,8 @@ export type ExerciseUncheckedCreateWithoutTrainingDayExercisesInput = {
   id?: string
   name: string
   videoUrl: string
-  muscleGroup: string
-  equipment: string
+  muscleGroupId: string
+  equipmentId: string
   createdAt?: Date | string
   updatedAt?: Date | string
   logs?: Prisma.WorkoutLogUncheckedCreateNestedManyWithoutExerciseInput
@@ -506,10 +705,10 @@ export type ExerciseUpdateWithoutTrainingDayExercisesInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   videoUrl?: Prisma.StringFieldUpdateOperationsInput | string
-  muscleGroup?: Prisma.StringFieldUpdateOperationsInput | string
-  equipment?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  muscleGroup?: Prisma.MuscleGroupUpdateOneRequiredWithoutExerciseNestedInput
+  equipment?: Prisma.EquipmentUpdateOneRequiredWithoutExerciseNestedInput
   logs?: Prisma.WorkoutLogUpdateManyWithoutExerciseNestedInput
 }
 
@@ -517,11 +716,91 @@ export type ExerciseUncheckedUpdateWithoutTrainingDayExercisesInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   videoUrl?: Prisma.StringFieldUpdateOperationsInput | string
-  muscleGroup?: Prisma.StringFieldUpdateOperationsInput | string
-  equipment?: Prisma.StringFieldUpdateOperationsInput | string
+  muscleGroupId?: Prisma.StringFieldUpdateOperationsInput | string
+  equipmentId?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   logs?: Prisma.WorkoutLogUncheckedUpdateManyWithoutExerciseNestedInput
+}
+
+export type ExerciseCreateManyMuscleGroupInput = {
+  id?: string
+  name: string
+  videoUrl: string
+  equipmentId: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type ExerciseUpdateWithoutMuscleGroupInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  videoUrl?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  equipment?: Prisma.EquipmentUpdateOneRequiredWithoutExerciseNestedInput
+  logs?: Prisma.WorkoutLogUpdateManyWithoutExerciseNestedInput
+  trainingDayExercises?: Prisma.TrainingDayExerciseUpdateManyWithoutExerciseNestedInput
+}
+
+export type ExerciseUncheckedUpdateWithoutMuscleGroupInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  videoUrl?: Prisma.StringFieldUpdateOperationsInput | string
+  equipmentId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  logs?: Prisma.WorkoutLogUncheckedUpdateManyWithoutExerciseNestedInput
+  trainingDayExercises?: Prisma.TrainingDayExerciseUncheckedUpdateManyWithoutExerciseNestedInput
+}
+
+export type ExerciseUncheckedUpdateManyWithoutMuscleGroupInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  videoUrl?: Prisma.StringFieldUpdateOperationsInput | string
+  equipmentId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+}
+
+export type ExerciseCreateManyEquipmentInput = {
+  id?: string
+  name: string
+  videoUrl: string
+  muscleGroupId: string
+  createdAt?: Date | string
+  updatedAt?: Date | string
+}
+
+export type ExerciseUpdateWithoutEquipmentInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  videoUrl?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  muscleGroup?: Prisma.MuscleGroupUpdateOneRequiredWithoutExerciseNestedInput
+  logs?: Prisma.WorkoutLogUpdateManyWithoutExerciseNestedInput
+  trainingDayExercises?: Prisma.TrainingDayExerciseUpdateManyWithoutExerciseNestedInput
+}
+
+export type ExerciseUncheckedUpdateWithoutEquipmentInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  videoUrl?: Prisma.StringFieldUpdateOperationsInput | string
+  muscleGroupId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  logs?: Prisma.WorkoutLogUncheckedUpdateManyWithoutExerciseNestedInput
+  trainingDayExercises?: Prisma.TrainingDayExerciseUncheckedUpdateManyWithoutExerciseNestedInput
+}
+
+export type ExerciseUncheckedUpdateManyWithoutEquipmentInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
+  videoUrl?: Prisma.StringFieldUpdateOperationsInput | string
+  muscleGroupId?: Prisma.StringFieldUpdateOperationsInput | string
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 
@@ -568,10 +847,12 @@ export type ExerciseSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs
   id?: boolean
   name?: boolean
   videoUrl?: boolean
-  muscleGroup?: boolean
-  equipment?: boolean
+  muscleGroupId?: boolean
+  equipmentId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  muscleGroup?: boolean | Prisma.MuscleGroupDefaultArgs<ExtArgs>
+  equipment?: boolean | Prisma.EquipmentDefaultArgs<ExtArgs>
   logs?: boolean | Prisma.Exercise$logsArgs<ExtArgs>
   trainingDayExercises?: boolean | Prisma.Exercise$trainingDayExercisesArgs<ExtArgs>
   _count?: boolean | Prisma.ExerciseCountOutputTypeDefaultArgs<ExtArgs>
@@ -581,44 +862,58 @@ export type ExerciseSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Exte
   id?: boolean
   name?: boolean
   videoUrl?: boolean
-  muscleGroup?: boolean
-  equipment?: boolean
+  muscleGroupId?: boolean
+  equipmentId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  muscleGroup?: boolean | Prisma.MuscleGroupDefaultArgs<ExtArgs>
+  equipment?: boolean | Prisma.EquipmentDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["exercise"]>
 
 export type ExerciseSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   name?: boolean
   videoUrl?: boolean
-  muscleGroup?: boolean
-  equipment?: boolean
+  muscleGroupId?: boolean
+  equipmentId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
+  muscleGroup?: boolean | Prisma.MuscleGroupDefaultArgs<ExtArgs>
+  equipment?: boolean | Prisma.EquipmentDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["exercise"]>
 
 export type ExerciseSelectScalar = {
   id?: boolean
   name?: boolean
   videoUrl?: boolean
-  muscleGroup?: boolean
-  equipment?: boolean
+  muscleGroupId?: boolean
+  equipmentId?: boolean
   createdAt?: boolean
   updatedAt?: boolean
 }
 
-export type ExerciseOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "videoUrl" | "muscleGroup" | "equipment" | "createdAt" | "updatedAt", ExtArgs["result"]["exercise"]>
+export type ExerciseOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "videoUrl" | "muscleGroupId" | "equipmentId" | "createdAt" | "updatedAt", ExtArgs["result"]["exercise"]>
 export type ExerciseInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  muscleGroup?: boolean | Prisma.MuscleGroupDefaultArgs<ExtArgs>
+  equipment?: boolean | Prisma.EquipmentDefaultArgs<ExtArgs>
   logs?: boolean | Prisma.Exercise$logsArgs<ExtArgs>
   trainingDayExercises?: boolean | Prisma.Exercise$trainingDayExercisesArgs<ExtArgs>
   _count?: boolean | Prisma.ExerciseCountOutputTypeDefaultArgs<ExtArgs>
 }
-export type ExerciseIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
-export type ExerciseIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
+export type ExerciseIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  muscleGroup?: boolean | Prisma.MuscleGroupDefaultArgs<ExtArgs>
+  equipment?: boolean | Prisma.EquipmentDefaultArgs<ExtArgs>
+}
+export type ExerciseIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  muscleGroup?: boolean | Prisma.MuscleGroupDefaultArgs<ExtArgs>
+  equipment?: boolean | Prisma.EquipmentDefaultArgs<ExtArgs>
+}
 
 export type $ExercisePayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "Exercise"
   objects: {
+    muscleGroup: Prisma.$MuscleGroupPayload<ExtArgs>
+    equipment: Prisma.$EquipmentPayload<ExtArgs>
     logs: Prisma.$WorkoutLogPayload<ExtArgs>[]
     trainingDayExercises: Prisma.$TrainingDayExercisePayload<ExtArgs>[]
   }
@@ -626,8 +921,8 @@ export type $ExercisePayload<ExtArgs extends runtime.Types.Extensions.InternalAr
     id: string
     name: string
     videoUrl: string
-    muscleGroup: string
-    equipment: string
+    muscleGroupId: string
+    equipmentId: string
     createdAt: Date
     updatedAt: Date
   }, ExtArgs["result"]["exercise"]>
@@ -1024,6 +1319,8 @@ readonly fields: ExerciseFieldRefs;
  */
 export interface Prisma__ExerciseClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
+  muscleGroup<T extends Prisma.MuscleGroupDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.MuscleGroupDefaultArgs<ExtArgs>>): Prisma.Prisma__MuscleGroupClient<runtime.Types.Result.GetResult<Prisma.$MuscleGroupPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
+  equipment<T extends Prisma.EquipmentDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.EquipmentDefaultArgs<ExtArgs>>): Prisma.Prisma__EquipmentClient<runtime.Types.Result.GetResult<Prisma.$EquipmentPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   logs<T extends Prisma.Exercise$logsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Exercise$logsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$WorkoutLogPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   trainingDayExercises<T extends Prisma.Exercise$trainingDayExercisesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Exercise$trainingDayExercisesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$TrainingDayExercisePayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
@@ -1058,8 +1355,8 @@ export interface ExerciseFieldRefs {
   readonly id: Prisma.FieldRef<"Exercise", 'String'>
   readonly name: Prisma.FieldRef<"Exercise", 'String'>
   readonly videoUrl: Prisma.FieldRef<"Exercise", 'String'>
-  readonly muscleGroup: Prisma.FieldRef<"Exercise", 'String'>
-  readonly equipment: Prisma.FieldRef<"Exercise", 'String'>
+  readonly muscleGroupId: Prisma.FieldRef<"Exercise", 'String'>
+  readonly equipmentId: Prisma.FieldRef<"Exercise", 'String'>
   readonly createdAt: Prisma.FieldRef<"Exercise", 'DateTime'>
   readonly updatedAt: Prisma.FieldRef<"Exercise", 'DateTime'>
 }
@@ -1316,6 +1613,10 @@ export type ExerciseCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extens
    */
   data: Prisma.ExerciseCreateManyInput | Prisma.ExerciseCreateManyInput[]
   skipDuplicates?: boolean
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ExerciseIncludeCreateManyAndReturn<ExtArgs> | null
 }
 
 /**
@@ -1386,6 +1687,10 @@ export type ExerciseUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extens
    * Limit how many Exercises to update.
    */
   limit?: number
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.ExerciseIncludeUpdateManyAndReturn<ExtArgs> | null
 }
 
 /**
