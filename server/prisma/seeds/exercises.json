@@ -1,0 +1,218 @@
+[
+	{
+		"name": "BENT-OVER BARBELL ROW (OVERHAND GRIP)",
+		"videoUrl": "",
+		"muscleGroup": "Back",
+		"equipment": "Barbell"
+	},
+	{
+		"name": "BENCH PRESS",
+		"videoUrl": "",
+		"muscleGroup": "Chest",
+		"equipment": "Barbell"
+	},
+	{
+		"name": "BENCH PRESS (1–2 SEC PAUSE ON THE CHEST)",
+		"videoUrl": "",
+		"muscleGroup": "Chest",
+		"equipment": "Barbell"
+	},
+	{
+		"name": "BENT-OVER ROWS WITH DUMBBELLS",
+		"videoUrl": "",
+		"muscleGroup": "Back",
+		"equipment": "Dumbbell"
+	},
+	{
+		"name": "BENT-OVER BARBELL ROW (OVERHAND GRIP)",
+		"videoUrl": "",
+		"muscleGroup": "Back",
+		"equipment": "Barbell"
+	},
+	{
+		"name": "BENCH PRESS",
+		"videoUrl": "",
+		"muscleGroup": "Chest",
+		"equipment": "Barbell"
+	},
+	{
+		"name": "BENCH PRESS (1–2 SEC PAUSE ON THE CHEST)",
+		"videoUrl": "",
+		"muscleGroup": "Chest",
+		"equipment": "Barbell"
+	},
+	{
+		"name": "BENT-OVER ROWS WITH DUMBBELLS",
+		"videoUrl": "",
+		"muscleGroup": "Back",
+		"equipment": "Dumbbell"
+	},
+	{
+		"name": "HYPEREXTENSIONS",
+		"videoUrl": "",
+		"muscleGroup": "Lower Back",
+		"equipment": "Bodyweight"
+	},
+	{
+		"name": "CABLE CHEST FLY",
+		"videoUrl": "",
+		"muscleGroup": "Chest",
+		"equipment": "Cable"
+	},
+	{
+		"name": "CLASSIC DEADLIFT",
+		"videoUrl": "",
+		"muscleGroup": "Back",
+		"equipment": "Barbell"
+	},
+	{
+		"name": "CLASSIC PULL-UPS",
+		"videoUrl": "",
+		"muscleGroup": "Back",
+		"equipment": "Bodyweight"
+	},
+	{
+		"name": "DIPS",
+		"videoUrl": "",
+		"muscleGroup": "Triceps",
+		"equipment": "Bodyweight"
+	},
+	{
+		"name": "DUMBBELL BENCH PRESS",
+		"videoUrl": "",
+		"muscleGroup": "Chest",
+		"equipment": "Dumbbell"
+	},
+	{
+		"name": "ROMANIAN DEADLIFT",
+		"videoUrl": "",
+		"muscleGroup": "Hamstrings",
+		"equipment": "Barbell"
+	},
+	{
+		"name": "GLUTE BRIDGE",
+		"videoUrl": "",
+		"muscleGroup": "Glutes",
+		"equipment": "Bodyweight"
+	},
+	{
+		"name": "GOBLET SQUAT",
+		"videoUrl": "",
+		"muscleGroup": "Quads",
+		"equipment": "Dumbbell"
+	},
+	{
+		"name": "HAMMER CURLS",
+		"videoUrl": "",
+		"muscleGroup": "Biceps",
+		"equipment": "Dumbbell"
+	},
+	{
+		"name": "LAT PULLDOWNS",
+		"videoUrl": "",
+		"muscleGroup": "Back",
+		"equipment": "Cable"
+	},
+	{
+		"name": "LEG CURLS",
+		"videoUrl": "",
+		"muscleGroup": "Hamstrings",
+		"equipment": "Machine"
+	},
+	{
+		"name": "LEG EXTENSIONS",
+		"videoUrl": "",
+		"muscleGroup": "Quads",
+		"equipment": "Machine"
+	},
+	{
+		"name": "INCLINE DUMBBELL BENCH PRESS",
+		"videoUrl": "",
+		"muscleGroup": "Chest",
+		"equipment": "Dumbbell"
+	},
+	{
+		"name": "LEG PRESS (WIDE STANCE)",
+		"videoUrl": "",
+		"muscleGroup": "Glutes",
+		"equipment": "Machine"
+	},
+	{
+		"name": "LEG PRESS (СLASSIC STANCE)",
+		"videoUrl": "",
+		"muscleGroup": "Quads",
+		"equipment": "Machine"
+	},
+	{
+		"name": "LOW-BAR SQUAT",
+		"videoUrl": "",
+		"muscleGroup": "Quads",
+		"equipment": "Barbell"
+	},
+	{
+		"name": "LOW BAR TRICEPS PUSH UP",
+		"videoUrl": "",
+		"muscleGroup": "Triceps",
+		"equipment": "Bodyweight"
+	},
+	{
+		"name": "NARROW-STANCE LEG PRESS (QUAD FOCUS)",
+		"videoUrl": "",
+		"muscleGroup": "Quads",
+		"equipment": "Machine"
+	},
+	{
+		"name": "NARROW-GRIP LAT PULLDOWN",
+		"videoUrl": "",
+		"muscleGroup": "Back",
+		"equipment": "Cable"
+	},
+	{
+		"name": "ONE-ARM DUMBBELL ROW",
+		"videoUrl": "",
+		"muscleGroup": "Back",
+		"equipment": "Dumbbell"
+	},
+	{
+		"name": "OVERHEAD DUMBBELL PRESS",
+		"videoUrl": "",
+		"muscleGroup": "Shoulders",
+		"equipment": "Dumbbell"
+	},
+	{
+		"name": "ROPE TRICEPS PUSHDOWNS",
+		"videoUrl": "",
+		"muscleGroup": "Triceps",
+		"equipment": "Cable"
+	},
+	{
+		"name": "PLATE HOLDS STANDING",
+		"videoUrl": "",
+		"muscleGroup": "Forearms",
+		"equipment": "Plate"
+	},
+	{
+		"name": "SEATED DUMBBELL LATERAL RAISES",
+		"videoUrl": "",
+		"muscleGroup": "Shoulders",
+		"equipment": "Dumbbell"
+	},
+	{
+		"name": "SEATED MACHINE ROW",
+		"videoUrl": "",
+		"muscleGroup": "Back",
+		"equipment": "Machine"
+	},
+	{
+		"name": "SINGLE-LEG CALF RAISES WITH DUMBBELL",
+		"videoUrl": "",
+		"muscleGroup": "Calves",
+		"equipment": "Dumbbell"
+	},
+	{
+		"name": "SUPINATED DUMBBELL CURLS ON INCLINE BENCH",
+		"videoUrl": "",
+		"muscleGroup": "Biceps",
+		"equipment": "Dumbbell"
+	}
+]
