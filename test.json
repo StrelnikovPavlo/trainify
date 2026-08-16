@@ -1,0 +1,1697 @@
+{
+	"id": "cmsuc20bv0001c4mspyebnzn3",
+	"userId": "cmqqz0vid0000g8msmnk3susv",
+	"name": "Beginner 30-Day Gym Fat Loss & Conditioning Plan",
+	"startDate": "2026-08-15T00:00:00.000Z",
+	"durationDays": 30,
+	"generatedAt": "2026-08-15T12:09:09.931Z",
+	"trainingDays": [
+		{
+			"id": "cmsuc20cg0002c4msmc5fk59a",
+			"trainingPlanId": "cmsuc20bv0001c4mspyebnzn3",
+			"date": "2026-08-15T00:00:00.000Z",
+			"isRestDay": false,
+			"status": "PLANNED",
+			"createdAt": "2026-08-15T12:09:09.931Z",
+			"exercises": [
+				{
+					"id": "cmsuc20cs0008c4msw6jo4s3a",
+					"trainingDayId": "cmsuc20cg0002c4msmc5fk59a",
+					"exerciseId": "cmsu5qse2000o9jmsz1rd20nh",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 60,
+					"order": 1,
+					"exercise": {
+						"id": "cmsu5qse2000o9jmsz1rd20nh",
+						"name": "GOBLET SQUAT",
+						"videoUrl": "",
+						"muscleGroupId": "cmsu5qse1000n9jms5c6sf2hz",
+						"equipmentId": "cmsu5qscq00039jmsqwfzzycd",
+						"createdAt": "2026-08-15T09:12:28.730Z",
+						"updatedAt": "2026-08-15T09:12:28.730Z"
+					}
+				},
+				{
+					"id": "cmsuc20cs0007c4ms5mpmsmq7",
+					"trainingDayId": "cmsuc20cg0002c4msmc5fk59a",
+					"exerciseId": "cmsu5qsds000i9jmsfhgq4rup",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 60,
+					"order": 2,
+					"exercise": {
+						"id": "cmsu5qsds000i9jmsfhgq4rup",
+						"name": "DUMBBELL BENCH PRESS",
+						"videoUrl": "",
+						"muscleGroupId": "cmsrv6s1p00033mms0909s42b",
+						"equipmentId": "cmsu5qscq00039jmsqwfzzycd",
+						"createdAt": "2026-08-15T09:12:28.720Z",
+						"updatedAt": "2026-08-15T09:12:28.720Z"
+					}
+				},
+				{
+					"id": "cmsuc20cr0006c4ms52lm6m7c",
+					"trainingDayId": "cmsuc20cg0002c4msmc5fk59a",
+					"exerciseId": "cmsu5qse9000r9jmssy89ml33",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 60,
+					"order": 3,
+					"exercise": {
+						"id": "cmsu5qse9000r9jmssy89ml33",
+						"name": "LAT PULLDOWNS",
+						"videoUrl": "",
+						"muscleGroupId": "cmsrv6s1200003mmsr4bp7zsq",
+						"equipmentId": "cmsu5qsde000c9jmswjwo45i4",
+						"createdAt": "2026-08-15T09:12:28.737Z",
+						"updatedAt": "2026-08-15T09:12:28.737Z"
+					}
+				},
+				{
+					"id": "cmsuc20cr0005c4msags4r6po",
+					"trainingDayId": "cmsuc20cg0002c4msmc5fk59a",
+					"exerciseId": "cmsu5qsdx000k9jmsx6gz7q1l",
+					"sets": 3,
+					"reps": 10,
+					"restSeconds": 75,
+					"order": 4,
+					"exercise": {
+						"id": "cmsu5qsdx000k9jmsx6gz7q1l",
+						"name": "ROMANIAN DEADLIFT",
+						"videoUrl": "",
+						"muscleGroupId": "cmsu5qsdu000j9jmsz66z47p1",
+						"equipmentId": "cmsrv6s1c00013mmsyapm2wg8",
+						"createdAt": "2026-08-15T09:12:28.725Z",
+						"updatedAt": "2026-08-15T09:12:28.725Z"
+					}
+				},
+				{
+					"id": "cmsuc20cq0004c4ms9gvsxwok",
+					"trainingDayId": "cmsuc20cg0002c4msmc5fk59a",
+					"exerciseId": "cmsu5qsf600149jms0eb6xfcf",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 60,
+					"order": 5,
+					"exercise": {
+						"id": "cmsu5qsf600149jms0eb6xfcf",
+						"name": "OVERHEAD DUMBBELL PRESS",
+						"videoUrl": "",
+						"muscleGroupId": "cmsu5qsf500139jmsym9xq8kq",
+						"equipmentId": "cmsu5qscq00039jmsqwfzzycd",
+						"createdAt": "2026-08-15T09:12:28.770Z",
+						"updatedAt": "2026-08-15T09:12:28.770Z"
+					}
+				},
+				{
+					"id": "cmsuc20cm0003c4msgewlwro3",
+					"trainingDayId": "cmsuc20cg0002c4msmc5fk59a",
+					"exerciseId": "cmsu5qsf800159jmsby967q7z",
+					"sets": 3,
+					"reps": 15,
+					"restSeconds": 45,
+					"order": 6,
+					"exercise": {
+						"id": "cmsu5qsf800159jmsby967q7z",
+						"name": "ROPE TRICEPS PUSHDOWNS",
+						"videoUrl": "",
+						"muscleGroupId": "cmsu5qsdn000g9jmsw9fwji2b",
+						"equipmentId": "cmsu5qsde000c9jmswjwo45i4",
+						"createdAt": "2026-08-15T09:12:28.772Z",
+						"updatedAt": "2026-08-15T09:12:28.772Z"
+					}
+				}
+			]
+		},
+		{
+			"id": "cmsuc20cu0009c4mscf9ljo1h",
+			"trainingPlanId": "cmsuc20bv0001c4mspyebnzn3",
+			"date": "2026-08-16T00:00:00.000Z",
+			"isRestDay": true,
+			"status": "PLANNED",
+			"createdAt": "2026-08-15T12:09:09.931Z",
+			"exercises": []
+		},
+		{
+			"id": "cmsuc20cu000ac4msryomq3fm",
+			"trainingPlanId": "cmsuc20bv0001c4mspyebnzn3",
+			"date": "2026-08-17T00:00:00.000Z",
+			"isRestDay": false,
+			"status": "PLANNED",
+			"createdAt": "2026-08-15T12:09:09.931Z",
+			"exercises": [
+				{
+					"id": "cmsuc20cx000gc4mso74z9e9b",
+					"trainingDayId": "cmsuc20cu000ac4msryomq3fm",
+					"exerciseId": "cmsu5qsel000x9jmsnx2dafbf",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 60,
+					"order": 1,
+					"exercise": {
+						"id": "cmsu5qsel000x9jmsnx2dafbf",
+						"name": "LEG PRESS (СLASSIC STANCE)",
+						"videoUrl": "",
+						"muscleGroupId": "cmsu5qse1000n9jms5c6sf2hz",
+						"equipmentId": "cmsu5qsea000s9jms4k0hpas7",
+						"createdAt": "2026-08-15T09:12:28.749Z",
+						"updatedAt": "2026-08-15T09:12:28.749Z"
+					}
+				},
+				{
+					"id": "cmsuc20cw000fc4ms2l5iqszc",
+					"trainingDayId": "cmsuc20cu000ac4msryomq3fm",
+					"exerciseId": "cmsu5qseg000v9jmsupf5kaic",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 60,
+					"order": 2,
+					"exercise": {
+						"id": "cmsu5qseg000v9jmsupf5kaic",
+						"name": "INCLINE DUMBBELL BENCH PRESS",
+						"videoUrl": "",
+						"muscleGroupId": "cmsrv6s1p00033mms0909s42b",
+						"equipmentId": "cmsu5qscq00039jmsqwfzzycd",
+						"createdAt": "2026-08-15T09:12:28.744Z",
+						"updatedAt": "2026-08-15T09:12:28.744Z"
+					}
+				},
+				{
+					"id": "cmsuc20cw000ec4ms3hcx14dd",
+					"trainingDayId": "cmsuc20cu000ac4msryomq3fm",
+					"exerciseId": "cmsu5qsff001a9jms3cl657th",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 60,
+					"order": 3,
+					"exercise": {
+						"id": "cmsu5qsff001a9jms3cl657th",
+						"name": "SEATED MACHINE ROW",
+						"videoUrl": "",
+						"muscleGroupId": "cmsrv6s1200003mmsr4bp7zsq",
+						"equipmentId": "cmsu5qsea000s9jms4k0hpas7",
+						"createdAt": "2026-08-15T09:12:28.779Z",
+						"updatedAt": "2026-08-15T09:12:28.779Z"
+					}
+				},
+				{
+					"id": "cmsuc20cv000dc4ms5novvuel",
+					"trainingDayId": "cmsuc20cu000ac4msryomq3fm",
+					"exerciseId": "cmsu5qseb000t9jmslyl92wrq",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 60,
+					"order": 4,
+					"exercise": {
+						"id": "cmsu5qseb000t9jmslyl92wrq",
+						"name": "LEG CURLS",
+						"videoUrl": "",
+						"muscleGroupId": "cmsu5qsdu000j9jmsz66z47p1",
+						"equipmentId": "cmsu5qsea000s9jms4k0hpas7",
+						"createdAt": "2026-08-15T09:12:28.739Z",
+						"updatedAt": "2026-08-15T09:12:28.739Z"
+					}
+				},
+				{
+					"id": "cmsuc20cv000cc4msf87gfxje",
+					"trainingDayId": "cmsuc20cu000ac4msryomq3fm",
+					"exerciseId": "cmsu5qsfd00199jmscoe4ky91",
+					"sets": 3,
+					"reps": 15,
+					"restSeconds": 45,
+					"order": 5,
+					"exercise": {
+						"id": "cmsu5qsfd00199jmscoe4ky91",
+						"name": "SEATED DUMBBELL LATERAL RAISES",
+						"videoUrl": "",
+						"muscleGroupId": "cmsu5qsf500139jmsym9xq8kq",
+						"equipmentId": "cmsu5qscq00039jmsqwfzzycd",
+						"createdAt": "2026-08-15T09:12:28.777Z",
+						"updatedAt": "2026-08-15T09:12:28.777Z"
+					}
+				},
+				{
+					"id": "cmsuc20cv000bc4msyh4fv5ow",
+					"trainingDayId": "cmsuc20cu000ac4msryomq3fm",
+					"exerciseId": "cmsu5qse5000q9jmsip4jx6a3",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 45,
+					"order": 6,
+					"exercise": {
+						"id": "cmsu5qse5000q9jmsip4jx6a3",
+						"name": "HAMMER CURLS",
+						"videoUrl": "",
+						"muscleGroupId": "cmsu5qse3000p9jmsz6o3djzu",
+						"equipmentId": "cmsu5qscq00039jmsqwfzzycd",
+						"createdAt": "2026-08-15T09:12:28.733Z",
+						"updatedAt": "2026-08-15T09:12:28.733Z"
+					}
+				}
+			]
+		},
+		{
+			"id": "cmsuc20cx000hc4ms1frtzb1x",
+			"trainingPlanId": "cmsuc20bv0001c4mspyebnzn3",
+			"date": "2026-08-18T00:00:00.000Z",
+			"isRestDay": true,
+			"status": "PLANNED",
+			"createdAt": "2026-08-15T12:09:09.931Z",
+			"exercises": []
+		},
+		{
+			"id": "cmsuc20cx000ic4ms4wwu9af5",
+			"trainingPlanId": "cmsuc20bv0001c4mspyebnzn3",
+			"date": "2026-08-19T00:00:00.000Z",
+			"isRestDay": false,
+			"status": "PLANNED",
+			"createdAt": "2026-08-15T12:09:09.931Z",
+			"exercises": [
+				{
+					"id": "cmsuc20d0000oc4ms3vnm4htj",
+					"trainingDayId": "cmsuc20cx000ic4ms4wwu9af5",
+					"exerciseId": "cmsu5qsej000w9jms339934be",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 60,
+					"order": 1,
+					"exercise": {
+						"id": "cmsu5qsej000w9jms339934be",
+						"name": "LEG PRESS (WIDE STANCE)",
+						"videoUrl": "",
+						"muscleGroupId": "cmsu5qsdy000l9jmso63xlixd",
+						"equipmentId": "cmsu5qsea000s9jms4k0hpas7",
+						"createdAt": "2026-08-15T09:12:28.747Z",
+						"updatedAt": "2026-08-15T09:12:28.747Z"
+					}
+				},
+				{
+					"id": "cmsuc20cz000nc4ms854qanof",
+					"trainingDayId": "cmsuc20cx000ic4ms4wwu9af5",
+					"exerciseId": "cmsrv6s1t00043mmsl9zw6ydl",
+					"sets": 3,
+					"reps": 10,
+					"restSeconds": 75,
+					"order": 2,
+					"exercise": {
+						"id": "cmsrv6s1t00043mmsl9zw6ydl",
+						"name": "BENCH PRESS",
+						"videoUrl": "",
+						"muscleGroupId": "cmsrv6s1p00033mms0909s42b",
+						"equipmentId": "cmsrv6s1c00013mmsyapm2wg8",
+						"createdAt": "2026-08-13T18:41:26.657Z",
+						"updatedAt": "2026-08-15T09:12:28.691Z"
+					}
+				},
+				{
+					"id": "cmsuc20cz000mc4ms9y0vayv9",
+					"trainingDayId": "cmsuc20cx000ic4ms4wwu9af5",
+					"exerciseId": "cmsu5qscs00049jmslk6u4prt",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 60,
+					"order": 3,
+					"exercise": {
+						"id": "cmsu5qscs00049jmslk6u4prt",
+						"name": "BENT-OVER ROWS WITH DUMBBELLS",
+						"videoUrl": "",
+						"muscleGroupId": "cmsrv6s1200003mmsr4bp7zsq",
+						"equipmentId": "cmsu5qscq00039jmsqwfzzycd",
+						"createdAt": "2026-08-15T09:12:28.684Z",
+						"updatedAt": "2026-08-15T09:12:28.699Z"
+					}
+				},
+				{
+					"id": "cmsuc20cy000lc4mspn7ph74o",
+					"trainingDayId": "cmsuc20cx000ic4ms4wwu9af5",
+					"exerciseId": "cmsu5qse0000m9jmsmbks0jy3",
+					"sets": 3,
+					"reps": 15,
+					"restSeconds": 60,
+					"order": 4,
+					"exercise": {
+						"id": "cmsu5qse0000m9jmsmbks0jy3",
+						"name": "GLUTE BRIDGE",
+						"videoUrl": "",
+						"muscleGroupId": "cmsu5qsdy000l9jmso63xlixd",
+						"equipmentId": "cmsu5qsda000a9jmspro9bhq5",
+						"createdAt": "2026-08-15T09:12:28.728Z",
+						"updatedAt": "2026-08-15T09:12:28.728Z"
+					}
+				},
+				{
+					"id": "cmsuc20cy000kc4msc4inrtj2",
+					"trainingDayId": "cmsuc20cx000ic4ms4wwu9af5",
+					"exerciseId": "cmsu5qsde000d9jmsoewc9jwg",
+					"sets": 3,
+					"reps": 15,
+					"restSeconds": 45,
+					"order": 5,
+					"exercise": {
+						"id": "cmsu5qsde000d9jmsoewc9jwg",
+						"name": "CABLE CHEST FLY",
+						"videoUrl": "",
+						"muscleGroupId": "cmsrv6s1p00033mms0909s42b",
+						"equipmentId": "cmsu5qsde000c9jmswjwo45i4",
+						"createdAt": "2026-08-15T09:12:28.706Z",
+						"updatedAt": "2026-08-15T09:12:28.706Z"
+					}
+				},
+				{
+					"id": "cmsuc20cy000jc4mswzzy353f",
+					"trainingDayId": "cmsuc20cx000ic4ms4wwu9af5",
+					"exerciseId": "cmsu5qsfi001d9jms0icj5lqo",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 45,
+					"order": 6,
+					"exercise": {
+						"id": "cmsu5qsfi001d9jms0icj5lqo",
+						"name": "SUPINATED DUMBBELL CURLS ON INCLINE BENCH",
+						"videoUrl": "",
+						"muscleGroupId": "cmsu5qse3000p9jmsz6o3djzu",
+						"equipmentId": "cmsu5qscq00039jmsqwfzzycd",
+						"createdAt": "2026-08-15T09:12:28.782Z",
+						"updatedAt": "2026-08-15T09:12:28.782Z"
+					}
+				}
+			]
+		},
+		{
+			"id": "cmsuc20d0000pc4msofs2art6",
+			"trainingPlanId": "cmsuc20bv0001c4mspyebnzn3",
+			"date": "2026-08-20T00:00:00.000Z",
+			"isRestDay": true,
+			"status": "PLANNED",
+			"createdAt": "2026-08-15T12:09:09.931Z",
+			"exercises": []
+		},
+		{
+			"id": "cmsuc20d0000qc4msihajt6yt",
+			"trainingPlanId": "cmsuc20bv0001c4mspyebnzn3",
+			"date": "2026-08-21T00:00:00.000Z",
+			"isRestDay": true,
+			"status": "PLANNED",
+			"createdAt": "2026-08-15T12:09:09.931Z",
+			"exercises": []
+		},
+		{
+			"id": "cmsuc20d0000rc4msoc1q88aj",
+			"trainingPlanId": "cmsuc20bv0001c4mspyebnzn3",
+			"date": "2026-08-22T00:00:00.000Z",
+			"isRestDay": false,
+			"status": "PLANNED",
+			"createdAt": "2026-08-15T12:09:09.931Z",
+			"exercises": [
+				{
+					"id": "cmsuc20d6000xc4ms3aub0m0q",
+					"trainingDayId": "cmsuc20d0000rc4msoc1q88aj",
+					"exerciseId": "cmsu5qse2000o9jmsz1rd20nh",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 60,
+					"order": 1,
+					"exercise": {
+						"id": "cmsu5qse2000o9jmsz1rd20nh",
+						"name": "GOBLET SQUAT",
+						"videoUrl": "",
+						"muscleGroupId": "cmsu5qse1000n9jms5c6sf2hz",
+						"equipmentId": "cmsu5qscq00039jmsqwfzzycd",
+						"createdAt": "2026-08-15T09:12:28.730Z",
+						"updatedAt": "2026-08-15T09:12:28.730Z"
+					}
+				},
+				{
+					"id": "cmsuc20d5000wc4mskstazh4p",
+					"trainingDayId": "cmsuc20d0000rc4msoc1q88aj",
+					"exerciseId": "cmsu5qsds000i9jmsfhgq4rup",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 60,
+					"order": 2,
+					"exercise": {
+						"id": "cmsu5qsds000i9jmsfhgq4rup",
+						"name": "DUMBBELL BENCH PRESS",
+						"videoUrl": "",
+						"muscleGroupId": "cmsrv6s1p00033mms0909s42b",
+						"equipmentId": "cmsu5qscq00039jmsqwfzzycd",
+						"createdAt": "2026-08-15T09:12:28.720Z",
+						"updatedAt": "2026-08-15T09:12:28.720Z"
+					}
+				},
+				{
+					"id": "cmsuc20d4000vc4msned0b6m4",
+					"trainingDayId": "cmsuc20d0000rc4msoc1q88aj",
+					"exerciseId": "cmsu5qse9000r9jmssy89ml33",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 60,
+					"order": 3,
+					"exercise": {
+						"id": "cmsu5qse9000r9jmssy89ml33",
+						"name": "LAT PULLDOWNS",
+						"videoUrl": "",
+						"muscleGroupId": "cmsrv6s1200003mmsr4bp7zsq",
+						"equipmentId": "cmsu5qsde000c9jmswjwo45i4",
+						"createdAt": "2026-08-15T09:12:28.737Z",
+						"updatedAt": "2026-08-15T09:12:28.737Z"
+					}
+				},
+				{
+					"id": "cmsuc20d4000uc4msyzd7md87",
+					"trainingDayId": "cmsuc20d0000rc4msoc1q88aj",
+					"exerciseId": "cmsu5qsdx000k9jmsx6gz7q1l",
+					"sets": 3,
+					"reps": 10,
+					"restSeconds": 75,
+					"order": 4,
+					"exercise": {
+						"id": "cmsu5qsdx000k9jmsx6gz7q1l",
+						"name": "ROMANIAN DEADLIFT",
+						"videoUrl": "",
+						"muscleGroupId": "cmsu5qsdu000j9jmsz66z47p1",
+						"equipmentId": "cmsrv6s1c00013mmsyapm2wg8",
+						"createdAt": "2026-08-15T09:12:28.725Z",
+						"updatedAt": "2026-08-15T09:12:28.725Z"
+					}
+				},
+				{
+					"id": "cmsuc20d3000tc4msaaufiizc",
+					"trainingDayId": "cmsuc20d0000rc4msoc1q88aj",
+					"exerciseId": "cmsu5qsf600149jms0eb6xfcf",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 60,
+					"order": 5,
+					"exercise": {
+						"id": "cmsu5qsf600149jms0eb6xfcf",
+						"name": "OVERHEAD DUMBBELL PRESS",
+						"videoUrl": "",
+						"muscleGroupId": "cmsu5qsf500139jmsym9xq8kq",
+						"equipmentId": "cmsu5qscq00039jmsqwfzzycd",
+						"createdAt": "2026-08-15T09:12:28.770Z",
+						"updatedAt": "2026-08-15T09:12:28.770Z"
+					}
+				},
+				{
+					"id": "cmsuc20d3000sc4mstxrawhms",
+					"trainingDayId": "cmsuc20d0000rc4msoc1q88aj",
+					"exerciseId": "cmsu5qsf800159jmsby967q7z",
+					"sets": 3,
+					"reps": 15,
+					"restSeconds": 45,
+					"order": 6,
+					"exercise": {
+						"id": "cmsu5qsf800159jmsby967q7z",
+						"name": "ROPE TRICEPS PUSHDOWNS",
+						"videoUrl": "",
+						"muscleGroupId": "cmsu5qsdn000g9jmsw9fwji2b",
+						"equipmentId": "cmsu5qsde000c9jmswjwo45i4",
+						"createdAt": "2026-08-15T09:12:28.772Z",
+						"updatedAt": "2026-08-15T09:12:28.772Z"
+					}
+				}
+			]
+		},
+		{
+			"id": "cmsuc20d6000yc4msbjngh28m",
+			"trainingPlanId": "cmsuc20bv0001c4mspyebnzn3",
+			"date": "2026-08-23T00:00:00.000Z",
+			"isRestDay": true,
+			"status": "PLANNED",
+			"createdAt": "2026-08-15T12:09:09.931Z",
+			"exercises": []
+		},
+		{
+			"id": "cmsuc20d6000zc4ms8qabpd6c",
+			"trainingPlanId": "cmsuc20bv0001c4mspyebnzn3",
+			"date": "2026-08-24T00:00:00.000Z",
+			"isRestDay": false,
+			"status": "PLANNED",
+			"createdAt": "2026-08-15T12:09:09.931Z",
+			"exercises": [
+				{
+					"id": "cmsuc20d90015c4msqtg6fv5n",
+					"trainingDayId": "cmsuc20d6000zc4ms8qabpd6c",
+					"exerciseId": "cmsu5qsel000x9jmsnx2dafbf",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 60,
+					"order": 1,
+					"exercise": {
+						"id": "cmsu5qsel000x9jmsnx2dafbf",
+						"name": "LEG PRESS (СLASSIC STANCE)",
+						"videoUrl": "",
+						"muscleGroupId": "cmsu5qse1000n9jms5c6sf2hz",
+						"equipmentId": "cmsu5qsea000s9jms4k0hpas7",
+						"createdAt": "2026-08-15T09:12:28.749Z",
+						"updatedAt": "2026-08-15T09:12:28.749Z"
+					}
+				},
+				{
+					"id": "cmsuc20d90014c4msqjfz21u6",
+					"trainingDayId": "cmsuc20d6000zc4ms8qabpd6c",
+					"exerciseId": "cmsu5qseg000v9jmsupf5kaic",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 60,
+					"order": 2,
+					"exercise": {
+						"id": "cmsu5qseg000v9jmsupf5kaic",
+						"name": "INCLINE DUMBBELL BENCH PRESS",
+						"videoUrl": "",
+						"muscleGroupId": "cmsrv6s1p00033mms0909s42b",
+						"equipmentId": "cmsu5qscq00039jmsqwfzzycd",
+						"createdAt": "2026-08-15T09:12:28.744Z",
+						"updatedAt": "2026-08-15T09:12:28.744Z"
+					}
+				},
+				{
+					"id": "cmsuc20d90013c4msikwqtqr3",
+					"trainingDayId": "cmsuc20d6000zc4ms8qabpd6c",
+					"exerciseId": "cmsu5qsff001a9jms3cl657th",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 60,
+					"order": 3,
+					"exercise": {
+						"id": "cmsu5qsff001a9jms3cl657th",
+						"name": "SEATED MACHINE ROW",
+						"videoUrl": "",
+						"muscleGroupId": "cmsrv6s1200003mmsr4bp7zsq",
+						"equipmentId": "cmsu5qsea000s9jms4k0hpas7",
+						"createdAt": "2026-08-15T09:12:28.779Z",
+						"updatedAt": "2026-08-15T09:12:28.779Z"
+					}
+				},
+				{
+					"id": "cmsuc20d80012c4msp45atbjq",
+					"trainingDayId": "cmsuc20d6000zc4ms8qabpd6c",
+					"exerciseId": "cmsu5qseb000t9jmslyl92wrq",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 60,
+					"order": 4,
+					"exercise": {
+						"id": "cmsu5qseb000t9jmslyl92wrq",
+						"name": "LEG CURLS",
+						"videoUrl": "",
+						"muscleGroupId": "cmsu5qsdu000j9jmsz66z47p1",
+						"equipmentId": "cmsu5qsea000s9jms4k0hpas7",
+						"createdAt": "2026-08-15T09:12:28.739Z",
+						"updatedAt": "2026-08-15T09:12:28.739Z"
+					}
+				},
+				{
+					"id": "cmsuc20d70011c4msut49ttsg",
+					"trainingDayId": "cmsuc20d6000zc4ms8qabpd6c",
+					"exerciseId": "cmsu5qsfd00199jmscoe4ky91",
+					"sets": 3,
+					"reps": 15,
+					"restSeconds": 45,
+					"order": 5,
+					"exercise": {
+						"id": "cmsu5qsfd00199jmscoe4ky91",
+						"name": "SEATED DUMBBELL LATERAL RAISES",
+						"videoUrl": "",
+						"muscleGroupId": "cmsu5qsf500139jmsym9xq8kq",
+						"equipmentId": "cmsu5qscq00039jmsqwfzzycd",
+						"createdAt": "2026-08-15T09:12:28.777Z",
+						"updatedAt": "2026-08-15T09:12:28.777Z"
+					}
+				},
+				{
+					"id": "cmsuc20d70010c4mse10v597y",
+					"trainingDayId": "cmsuc20d6000zc4ms8qabpd6c",
+					"exerciseId": "cmsu5qse5000q9jmsip4jx6a3",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 45,
+					"order": 6,
+					"exercise": {
+						"id": "cmsu5qse5000q9jmsip4jx6a3",
+						"name": "HAMMER CURLS",
+						"videoUrl": "",
+						"muscleGroupId": "cmsu5qse3000p9jmsz6o3djzu",
+						"equipmentId": "cmsu5qscq00039jmsqwfzzycd",
+						"createdAt": "2026-08-15T09:12:28.733Z",
+						"updatedAt": "2026-08-15T09:12:28.733Z"
+					}
+				}
+			]
+		},
+		{
+			"id": "cmsuc20da0016c4msvrkncsco",
+			"trainingPlanId": "cmsuc20bv0001c4mspyebnzn3",
+			"date": "2026-08-25T00:00:00.000Z",
+			"isRestDay": true,
+			"status": "PLANNED",
+			"createdAt": "2026-08-15T12:09:09.931Z",
+			"exercises": []
+		},
+		{
+			"id": "cmsuc20da0017c4mslhs7xry3",
+			"trainingPlanId": "cmsuc20bv0001c4mspyebnzn3",
+			"date": "2026-08-26T00:00:00.000Z",
+			"isRestDay": false,
+			"status": "PLANNED",
+			"createdAt": "2026-08-15T12:09:09.931Z",
+			"exercises": [
+				{
+					"id": "cmsuc20dc001dc4mstabojqmt",
+					"trainingDayId": "cmsuc20da0017c4mslhs7xry3",
+					"exerciseId": "cmsu5qsej000w9jms339934be",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 60,
+					"order": 1,
+					"exercise": {
+						"id": "cmsu5qsej000w9jms339934be",
+						"name": "LEG PRESS (WIDE STANCE)",
+						"videoUrl": "",
+						"muscleGroupId": "cmsu5qsdy000l9jmso63xlixd",
+						"equipmentId": "cmsu5qsea000s9jms4k0hpas7",
+						"createdAt": "2026-08-15T09:12:28.747Z",
+						"updatedAt": "2026-08-15T09:12:28.747Z"
+					}
+				},
+				{
+					"id": "cmsuc20dc001cc4mskglefrqy",
+					"trainingDayId": "cmsuc20da0017c4mslhs7xry3",
+					"exerciseId": "cmsrv6s1t00043mmsl9zw6ydl",
+					"sets": 3,
+					"reps": 10,
+					"restSeconds": 75,
+					"order": 2,
+					"exercise": {
+						"id": "cmsrv6s1t00043mmsl9zw6ydl",
+						"name": "BENCH PRESS",
+						"videoUrl": "",
+						"muscleGroupId": "cmsrv6s1p00033mms0909s42b",
+						"equipmentId": "cmsrv6s1c00013mmsyapm2wg8",
+						"createdAt": "2026-08-13T18:41:26.657Z",
+						"updatedAt": "2026-08-15T09:12:28.691Z"
+					}
+				},
+				{
+					"id": "cmsuc20db001bc4msj1u7unpj",
+					"trainingDayId": "cmsuc20da0017c4mslhs7xry3",
+					"exerciseId": "cmsu5qscs00049jmslk6u4prt",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 60,
+					"order": 3,
+					"exercise": {
+						"id": "cmsu5qscs00049jmslk6u4prt",
+						"name": "BENT-OVER ROWS WITH DUMBBELLS",
+						"videoUrl": "",
+						"muscleGroupId": "cmsrv6s1200003mmsr4bp7zsq",
+						"equipmentId": "cmsu5qscq00039jmsqwfzzycd",
+						"createdAt": "2026-08-15T09:12:28.684Z",
+						"updatedAt": "2026-08-15T09:12:28.699Z"
+					}
+				},
+				{
+					"id": "cmsuc20db001ac4mskb7nhn8w",
+					"trainingDayId": "cmsuc20da0017c4mslhs7xry3",
+					"exerciseId": "cmsu5qse0000m9jmsmbks0jy3",
+					"sets": 3,
+					"reps": 15,
+					"restSeconds": 60,
+					"order": 4,
+					"exercise": {
+						"id": "cmsu5qse0000m9jmsmbks0jy3",
+						"name": "GLUTE BRIDGE",
+						"videoUrl": "",
+						"muscleGroupId": "cmsu5qsdy000l9jmso63xlixd",
+						"equipmentId": "cmsu5qsda000a9jmspro9bhq5",
+						"createdAt": "2026-08-15T09:12:28.728Z",
+						"updatedAt": "2026-08-15T09:12:28.728Z"
+					}
+				},
+				{
+					"id": "cmsuc20da0019c4msex475tw6",
+					"trainingDayId": "cmsuc20da0017c4mslhs7xry3",
+					"exerciseId": "cmsu5qsde000d9jmsoewc9jwg",
+					"sets": 3,
+					"reps": 15,
+					"restSeconds": 45,
+					"order": 5,
+					"exercise": {
+						"id": "cmsu5qsde000d9jmsoewc9jwg",
+						"name": "CABLE CHEST FLY",
+						"videoUrl": "",
+						"muscleGroupId": "cmsrv6s1p00033mms0909s42b",
+						"equipmentId": "cmsu5qsde000c9jmswjwo45i4",
+						"createdAt": "2026-08-15T09:12:28.706Z",
+						"updatedAt": "2026-08-15T09:12:28.706Z"
+					}
+				},
+				{
+					"id": "cmsuc20da0018c4ms2gyf15l1",
+					"trainingDayId": "cmsuc20da0017c4mslhs7xry3",
+					"exerciseId": "cmsu5qsfi001d9jms0icj5lqo",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 45,
+					"order": 6,
+					"exercise": {
+						"id": "cmsu5qsfi001d9jms0icj5lqo",
+						"name": "SUPINATED DUMBBELL CURLS ON INCLINE BENCH",
+						"videoUrl": "",
+						"muscleGroupId": "cmsu5qse3000p9jmsz6o3djzu",
+						"equipmentId": "cmsu5qscq00039jmsqwfzzycd",
+						"createdAt": "2026-08-15T09:12:28.782Z",
+						"updatedAt": "2026-08-15T09:12:28.782Z"
+					}
+				}
+			]
+		},
+		{
+			"id": "cmsuc20dc001ec4msh8m27tmn",
+			"trainingPlanId": "cmsuc20bv0001c4mspyebnzn3",
+			"date": "2026-08-27T00:00:00.000Z",
+			"isRestDay": true,
+			"status": "PLANNED",
+			"createdAt": "2026-08-15T12:09:09.931Z",
+			"exercises": []
+		},
+		{
+			"id": "cmsuc20dd001fc4msidjfgd8m",
+			"trainingPlanId": "cmsuc20bv0001c4mspyebnzn3",
+			"date": "2026-08-28T00:00:00.000Z",
+			"isRestDay": true,
+			"status": "PLANNED",
+			"createdAt": "2026-08-15T12:09:09.931Z",
+			"exercises": []
+		},
+		{
+			"id": "cmsuc20dd001gc4msldwkit05",
+			"trainingPlanId": "cmsuc20bv0001c4mspyebnzn3",
+			"date": "2026-08-29T00:00:00.000Z",
+			"isRestDay": false,
+			"status": "PLANNED",
+			"createdAt": "2026-08-15T12:09:09.931Z",
+			"exercises": [
+				{
+					"id": "cmsuc20df001mc4msmydj2k3g",
+					"trainingDayId": "cmsuc20dd001gc4msldwkit05",
+					"exerciseId": "cmsu5qse2000o9jmsz1rd20nh",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 60,
+					"order": 1,
+					"exercise": {
+						"id": "cmsu5qse2000o9jmsz1rd20nh",
+						"name": "GOBLET SQUAT",
+						"videoUrl": "",
+						"muscleGroupId": "cmsu5qse1000n9jms5c6sf2hz",
+						"equipmentId": "cmsu5qscq00039jmsqwfzzycd",
+						"createdAt": "2026-08-15T09:12:28.730Z",
+						"updatedAt": "2026-08-15T09:12:28.730Z"
+					}
+				},
+				{
+					"id": "cmsuc20df001lc4msg5xbttql",
+					"trainingDayId": "cmsuc20dd001gc4msldwkit05",
+					"exerciseId": "cmsu5qsds000i9jmsfhgq4rup",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 60,
+					"order": 2,
+					"exercise": {
+						"id": "cmsu5qsds000i9jmsfhgq4rup",
+						"name": "DUMBBELL BENCH PRESS",
+						"videoUrl": "",
+						"muscleGroupId": "cmsrv6s1p00033mms0909s42b",
+						"equipmentId": "cmsu5qscq00039jmsqwfzzycd",
+						"createdAt": "2026-08-15T09:12:28.720Z",
+						"updatedAt": "2026-08-15T09:12:28.720Z"
+					}
+				},
+				{
+					"id": "cmsuc20df001kc4msdvqo4p82",
+					"trainingDayId": "cmsuc20dd001gc4msldwkit05",
+					"exerciseId": "cmsu5qse9000r9jmssy89ml33",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 60,
+					"order": 3,
+					"exercise": {
+						"id": "cmsu5qse9000r9jmssy89ml33",
+						"name": "LAT PULLDOWNS",
+						"videoUrl": "",
+						"muscleGroupId": "cmsrv6s1200003mmsr4bp7zsq",
+						"equipmentId": "cmsu5qsde000c9jmswjwo45i4",
+						"createdAt": "2026-08-15T09:12:28.737Z",
+						"updatedAt": "2026-08-15T09:12:28.737Z"
+					}
+				},
+				{
+					"id": "cmsuc20de001jc4msiprhbey6",
+					"trainingDayId": "cmsuc20dd001gc4msldwkit05",
+					"exerciseId": "cmsu5qsdx000k9jmsx6gz7q1l",
+					"sets": 3,
+					"reps": 10,
+					"restSeconds": 75,
+					"order": 4,
+					"exercise": {
+						"id": "cmsu5qsdx000k9jmsx6gz7q1l",
+						"name": "ROMANIAN DEADLIFT",
+						"videoUrl": "",
+						"muscleGroupId": "cmsu5qsdu000j9jmsz66z47p1",
+						"equipmentId": "cmsrv6s1c00013mmsyapm2wg8",
+						"createdAt": "2026-08-15T09:12:28.725Z",
+						"updatedAt": "2026-08-15T09:12:28.725Z"
+					}
+				},
+				{
+					"id": "cmsuc20de001ic4mshrjv6a7q",
+					"trainingDayId": "cmsuc20dd001gc4msldwkit05",
+					"exerciseId": "cmsu5qsf600149jms0eb6xfcf",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 60,
+					"order": 5,
+					"exercise": {
+						"id": "cmsu5qsf600149jms0eb6xfcf",
+						"name": "OVERHEAD DUMBBELL PRESS",
+						"videoUrl": "",
+						"muscleGroupId": "cmsu5qsf500139jmsym9xq8kq",
+						"equipmentId": "cmsu5qscq00039jmsqwfzzycd",
+						"createdAt": "2026-08-15T09:12:28.770Z",
+						"updatedAt": "2026-08-15T09:12:28.770Z"
+					}
+				},
+				{
+					"id": "cmsuc20dd001hc4msd4fgst4p",
+					"trainingDayId": "cmsuc20dd001gc4msldwkit05",
+					"exerciseId": "cmsu5qsf800159jmsby967q7z",
+					"sets": 3,
+					"reps": 15,
+					"restSeconds": 45,
+					"order": 6,
+					"exercise": {
+						"id": "cmsu5qsf800159jmsby967q7z",
+						"name": "ROPE TRICEPS PUSHDOWNS",
+						"videoUrl": "",
+						"muscleGroupId": "cmsu5qsdn000g9jmsw9fwji2b",
+						"equipmentId": "cmsu5qsde000c9jmswjwo45i4",
+						"createdAt": "2026-08-15T09:12:28.772Z",
+						"updatedAt": "2026-08-15T09:12:28.772Z"
+					}
+				}
+			]
+		},
+		{
+			"id": "cmsuc20dg001nc4msdro0i8fa",
+			"trainingPlanId": "cmsuc20bv0001c4mspyebnzn3",
+			"date": "2026-08-30T00:00:00.000Z",
+			"isRestDay": true,
+			"status": "PLANNED",
+			"createdAt": "2026-08-15T12:09:09.931Z",
+			"exercises": []
+		},
+		{
+			"id": "cmsuc20dg001oc4msbo1yr5ii",
+			"trainingPlanId": "cmsuc20bv0001c4mspyebnzn3",
+			"date": "2026-08-31T00:00:00.000Z",
+			"isRestDay": false,
+			"status": "PLANNED",
+			"createdAt": "2026-08-15T12:09:09.931Z",
+			"exercises": [
+				{
+					"id": "cmsuc20di001uc4msmhuy6bzt",
+					"trainingDayId": "cmsuc20dg001oc4msbo1yr5ii",
+					"exerciseId": "cmsu5qsel000x9jmsnx2dafbf",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 60,
+					"order": 1,
+					"exercise": {
+						"id": "cmsu5qsel000x9jmsnx2dafbf",
+						"name": "LEG PRESS (СLASSIC STANCE)",
+						"videoUrl": "",
+						"muscleGroupId": "cmsu5qse1000n9jms5c6sf2hz",
+						"equipmentId": "cmsu5qsea000s9jms4k0hpas7",
+						"createdAt": "2026-08-15T09:12:28.749Z",
+						"updatedAt": "2026-08-15T09:12:28.749Z"
+					}
+				},
+				{
+					"id": "cmsuc20di001tc4msgnnbwxau",
+					"trainingDayId": "cmsuc20dg001oc4msbo1yr5ii",
+					"exerciseId": "cmsu5qseg000v9jmsupf5kaic",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 60,
+					"order": 2,
+					"exercise": {
+						"id": "cmsu5qseg000v9jmsupf5kaic",
+						"name": "INCLINE DUMBBELL BENCH PRESS",
+						"videoUrl": "",
+						"muscleGroupId": "cmsrv6s1p00033mms0909s42b",
+						"equipmentId": "cmsu5qscq00039jmsqwfzzycd",
+						"createdAt": "2026-08-15T09:12:28.744Z",
+						"updatedAt": "2026-08-15T09:12:28.744Z"
+					}
+				},
+				{
+					"id": "cmsuc20dh001sc4ms6teu2jbc",
+					"trainingDayId": "cmsuc20dg001oc4msbo1yr5ii",
+					"exerciseId": "cmsu5qsff001a9jms3cl657th",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 60,
+					"order": 3,
+					"exercise": {
+						"id": "cmsu5qsff001a9jms3cl657th",
+						"name": "SEATED MACHINE ROW",
+						"videoUrl": "",
+						"muscleGroupId": "cmsrv6s1200003mmsr4bp7zsq",
+						"equipmentId": "cmsu5qsea000s9jms4k0hpas7",
+						"createdAt": "2026-08-15T09:12:28.779Z",
+						"updatedAt": "2026-08-15T09:12:28.779Z"
+					}
+				},
+				{
+					"id": "cmsuc20dh001rc4msh8ab9rhe",
+					"trainingDayId": "cmsuc20dg001oc4msbo1yr5ii",
+					"exerciseId": "cmsu5qseb000t9jmslyl92wrq",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 60,
+					"order": 4,
+					"exercise": {
+						"id": "cmsu5qseb000t9jmslyl92wrq",
+						"name": "LEG CURLS",
+						"videoUrl": "",
+						"muscleGroupId": "cmsu5qsdu000j9jmsz66z47p1",
+						"equipmentId": "cmsu5qsea000s9jms4k0hpas7",
+						"createdAt": "2026-08-15T09:12:28.739Z",
+						"updatedAt": "2026-08-15T09:12:28.739Z"
+					}
+				},
+				{
+					"id": "cmsuc20dh001qc4mslgec2nb9",
+					"trainingDayId": "cmsuc20dg001oc4msbo1yr5ii",
+					"exerciseId": "cmsu5qsfd00199jmscoe4ky91",
+					"sets": 3,
+					"reps": 15,
+					"restSeconds": 45,
+					"order": 5,
+					"exercise": {
+						"id": "cmsu5qsfd00199jmscoe4ky91",
+						"name": "SEATED DUMBBELL LATERAL RAISES",
+						"videoUrl": "",
+						"muscleGroupId": "cmsu5qsf500139jmsym9xq8kq",
+						"equipmentId": "cmsu5qscq00039jmsqwfzzycd",
+						"createdAt": "2026-08-15T09:12:28.777Z",
+						"updatedAt": "2026-08-15T09:12:28.777Z"
+					}
+				},
+				{
+					"id": "cmsuc20dg001pc4msilgq8hfr",
+					"trainingDayId": "cmsuc20dg001oc4msbo1yr5ii",
+					"exerciseId": "cmsu5qse5000q9jmsip4jx6a3",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 45,
+					"order": 6,
+					"exercise": {
+						"id": "cmsu5qse5000q9jmsip4jx6a3",
+						"name": "HAMMER CURLS",
+						"videoUrl": "",
+						"muscleGroupId": "cmsu5qse3000p9jmsz6o3djzu",
+						"equipmentId": "cmsu5qscq00039jmsqwfzzycd",
+						"createdAt": "2026-08-15T09:12:28.733Z",
+						"updatedAt": "2026-08-15T09:12:28.733Z"
+					}
+				}
+			]
+		},
+		{
+			"id": "cmsuc20di001vc4msgjdximr7",
+			"trainingPlanId": "cmsuc20bv0001c4mspyebnzn3",
+			"date": "2026-09-01T00:00:00.000Z",
+			"isRestDay": true,
+			"status": "PLANNED",
+			"createdAt": "2026-08-15T12:09:09.931Z",
+			"exercises": []
+		},
+		{
+			"id": "cmsuc20dj001wc4ms1wehvpvm",
+			"trainingPlanId": "cmsuc20bv0001c4mspyebnzn3",
+			"date": "2026-09-02T00:00:00.000Z",
+			"isRestDay": false,
+			"status": "PLANNED",
+			"createdAt": "2026-08-15T12:09:09.931Z",
+			"exercises": [
+				{
+					"id": "cmsuc20dk0022c4mscsthyato",
+					"trainingDayId": "cmsuc20dj001wc4ms1wehvpvm",
+					"exerciseId": "cmsu5qsej000w9jms339934be",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 60,
+					"order": 1,
+					"exercise": {
+						"id": "cmsu5qsej000w9jms339934be",
+						"name": "LEG PRESS (WIDE STANCE)",
+						"videoUrl": "",
+						"muscleGroupId": "cmsu5qsdy000l9jmso63xlixd",
+						"equipmentId": "cmsu5qsea000s9jms4k0hpas7",
+						"createdAt": "2026-08-15T09:12:28.747Z",
+						"updatedAt": "2026-08-15T09:12:28.747Z"
+					}
+				},
+				{
+					"id": "cmsuc20dk0021c4msh1soopr3",
+					"trainingDayId": "cmsuc20dj001wc4ms1wehvpvm",
+					"exerciseId": "cmsrv6s1t00043mmsl9zw6ydl",
+					"sets": 3,
+					"reps": 10,
+					"restSeconds": 75,
+					"order": 2,
+					"exercise": {
+						"id": "cmsrv6s1t00043mmsl9zw6ydl",
+						"name": "BENCH PRESS",
+						"videoUrl": "",
+						"muscleGroupId": "cmsrv6s1p00033mms0909s42b",
+						"equipmentId": "cmsrv6s1c00013mmsyapm2wg8",
+						"createdAt": "2026-08-13T18:41:26.657Z",
+						"updatedAt": "2026-08-15T09:12:28.691Z"
+					}
+				},
+				{
+					"id": "cmsuc20dk0020c4msq645a9zt",
+					"trainingDayId": "cmsuc20dj001wc4ms1wehvpvm",
+					"exerciseId": "cmsu5qscs00049jmslk6u4prt",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 60,
+					"order": 3,
+					"exercise": {
+						"id": "cmsu5qscs00049jmslk6u4prt",
+						"name": "BENT-OVER ROWS WITH DUMBBELLS",
+						"videoUrl": "",
+						"muscleGroupId": "cmsrv6s1200003mmsr4bp7zsq",
+						"equipmentId": "cmsu5qscq00039jmsqwfzzycd",
+						"createdAt": "2026-08-15T09:12:28.684Z",
+						"updatedAt": "2026-08-15T09:12:28.699Z"
+					}
+				},
+				{
+					"id": "cmsuc20dj001zc4ms8p6qxtmh",
+					"trainingDayId": "cmsuc20dj001wc4ms1wehvpvm",
+					"exerciseId": "cmsu5qse0000m9jmsmbks0jy3",
+					"sets": 3,
+					"reps": 15,
+					"restSeconds": 60,
+					"order": 4,
+					"exercise": {
+						"id": "cmsu5qse0000m9jmsmbks0jy3",
+						"name": "GLUTE BRIDGE",
+						"videoUrl": "",
+						"muscleGroupId": "cmsu5qsdy000l9jmso63xlixd",
+						"equipmentId": "cmsu5qsda000a9jmspro9bhq5",
+						"createdAt": "2026-08-15T09:12:28.728Z",
+						"updatedAt": "2026-08-15T09:12:28.728Z"
+					}
+				},
+				{
+					"id": "cmsuc20dj001yc4ms4049vtdz",
+					"trainingDayId": "cmsuc20dj001wc4ms1wehvpvm",
+					"exerciseId": "cmsu5qsde000d9jmsoewc9jwg",
+					"sets": 3,
+					"reps": 15,
+					"restSeconds": 45,
+					"order": 5,
+					"exercise": {
+						"id": "cmsu5qsde000d9jmsoewc9jwg",
+						"name": "CABLE CHEST FLY",
+						"videoUrl": "",
+						"muscleGroupId": "cmsrv6s1p00033mms0909s42b",
+						"equipmentId": "cmsu5qsde000c9jmswjwo45i4",
+						"createdAt": "2026-08-15T09:12:28.706Z",
+						"updatedAt": "2026-08-15T09:12:28.706Z"
+					}
+				},
+				{
+					"id": "cmsuc20dj001xc4msplcnnmaj",
+					"trainingDayId": "cmsuc20dj001wc4ms1wehvpvm",
+					"exerciseId": "cmsu5qsfi001d9jms0icj5lqo",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 45,
+					"order": 6,
+					"exercise": {
+						"id": "cmsu5qsfi001d9jms0icj5lqo",
+						"name": "SUPINATED DUMBBELL CURLS ON INCLINE BENCH",
+						"videoUrl": "",
+						"muscleGroupId": "cmsu5qse3000p9jmsz6o3djzu",
+						"equipmentId": "cmsu5qscq00039jmsqwfzzycd",
+						"createdAt": "2026-08-15T09:12:28.782Z",
+						"updatedAt": "2026-08-15T09:12:28.782Z"
+					}
+				}
+			]
+		},
+		{
+			"id": "cmsuc20dl0023c4ms7zpicn9m",
+			"trainingPlanId": "cmsuc20bv0001c4mspyebnzn3",
+			"date": "2026-09-03T00:00:00.000Z",
+			"isRestDay": true,
+			"status": "PLANNED",
+			"createdAt": "2026-08-15T12:09:09.931Z",
+			"exercises": []
+		},
+		{
+			"id": "cmsuc20dl0024c4msvzge57ro",
+			"trainingPlanId": "cmsuc20bv0001c4mspyebnzn3",
+			"date": "2026-09-04T00:00:00.000Z",
+			"isRestDay": true,
+			"status": "PLANNED",
+			"createdAt": "2026-08-15T12:09:09.931Z",
+			"exercises": []
+		},
+		{
+			"id": "cmsuc20dl0025c4ms4rm134d7",
+			"trainingPlanId": "cmsuc20bv0001c4mspyebnzn3",
+			"date": "2026-09-05T00:00:00.000Z",
+			"isRestDay": false,
+			"status": "PLANNED",
+			"createdAt": "2026-08-15T12:09:09.931Z",
+			"exercises": [
+				{
+					"id": "cmsuc20dn002bc4mssmjn4z35",
+					"trainingDayId": "cmsuc20dl0025c4ms4rm134d7",
+					"exerciseId": "cmsu5qse2000o9jmsz1rd20nh",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 60,
+					"order": 1,
+					"exercise": {
+						"id": "cmsu5qse2000o9jmsz1rd20nh",
+						"name": "GOBLET SQUAT",
+						"videoUrl": "",
+						"muscleGroupId": "cmsu5qse1000n9jms5c6sf2hz",
+						"equipmentId": "cmsu5qscq00039jmsqwfzzycd",
+						"createdAt": "2026-08-15T09:12:28.730Z",
+						"updatedAt": "2026-08-15T09:12:28.730Z"
+					}
+				},
+				{
+					"id": "cmsuc20dm002ac4ms75nopudt",
+					"trainingDayId": "cmsuc20dl0025c4ms4rm134d7",
+					"exerciseId": "cmsu5qsds000i9jmsfhgq4rup",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 60,
+					"order": 2,
+					"exercise": {
+						"id": "cmsu5qsds000i9jmsfhgq4rup",
+						"name": "DUMBBELL BENCH PRESS",
+						"videoUrl": "",
+						"muscleGroupId": "cmsrv6s1p00033mms0909s42b",
+						"equipmentId": "cmsu5qscq00039jmsqwfzzycd",
+						"createdAt": "2026-08-15T09:12:28.720Z",
+						"updatedAt": "2026-08-15T09:12:28.720Z"
+					}
+				},
+				{
+					"id": "cmsuc20dm0029c4msx7n4913c",
+					"trainingDayId": "cmsuc20dl0025c4ms4rm134d7",
+					"exerciseId": "cmsu5qse9000r9jmssy89ml33",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 60,
+					"order": 3,
+					"exercise": {
+						"id": "cmsu5qse9000r9jmssy89ml33",
+						"name": "LAT PULLDOWNS",
+						"videoUrl": "",
+						"muscleGroupId": "cmsrv6s1200003mmsr4bp7zsq",
+						"equipmentId": "cmsu5qsde000c9jmswjwo45i4",
+						"createdAt": "2026-08-15T09:12:28.737Z",
+						"updatedAt": "2026-08-15T09:12:28.737Z"
+					}
+				},
+				{
+					"id": "cmsuc20dm0028c4mstxznlj9n",
+					"trainingDayId": "cmsuc20dl0025c4ms4rm134d7",
+					"exerciseId": "cmsu5qsdx000k9jmsx6gz7q1l",
+					"sets": 3,
+					"reps": 10,
+					"restSeconds": 75,
+					"order": 4,
+					"exercise": {
+						"id": "cmsu5qsdx000k9jmsx6gz7q1l",
+						"name": "ROMANIAN DEADLIFT",
+						"videoUrl": "",
+						"muscleGroupId": "cmsu5qsdu000j9jmsz66z47p1",
+						"equipmentId": "cmsrv6s1c00013mmsyapm2wg8",
+						"createdAt": "2026-08-15T09:12:28.725Z",
+						"updatedAt": "2026-08-15T09:12:28.725Z"
+					}
+				},
+				{
+					"id": "cmsuc20dm0027c4ms0zmrayyv",
+					"trainingDayId": "cmsuc20dl0025c4ms4rm134d7",
+					"exerciseId": "cmsu5qsf600149jms0eb6xfcf",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 60,
+					"order": 5,
+					"exercise": {
+						"id": "cmsu5qsf600149jms0eb6xfcf",
+						"name": "OVERHEAD DUMBBELL PRESS",
+						"videoUrl": "",
+						"muscleGroupId": "cmsu5qsf500139jmsym9xq8kq",
+						"equipmentId": "cmsu5qscq00039jmsqwfzzycd",
+						"createdAt": "2026-08-15T09:12:28.770Z",
+						"updatedAt": "2026-08-15T09:12:28.770Z"
+					}
+				},
+				{
+					"id": "cmsuc20dl0026c4ms07tk1sc0",
+					"trainingDayId": "cmsuc20dl0025c4ms4rm134d7",
+					"exerciseId": "cmsu5qsf800159jmsby967q7z",
+					"sets": 3,
+					"reps": 15,
+					"restSeconds": 45,
+					"order": 6,
+					"exercise": {
+						"id": "cmsu5qsf800159jmsby967q7z",
+						"name": "ROPE TRICEPS PUSHDOWNS",
+						"videoUrl": "",
+						"muscleGroupId": "cmsu5qsdn000g9jmsw9fwji2b",
+						"equipmentId": "cmsu5qsde000c9jmswjwo45i4",
+						"createdAt": "2026-08-15T09:12:28.772Z",
+						"updatedAt": "2026-08-15T09:12:28.772Z"
+					}
+				}
+			]
+		},
+		{
+			"id": "cmsuc20dn002cc4msogcj15xv",
+			"trainingPlanId": "cmsuc20bv0001c4mspyebnzn3",
+			"date": "2026-09-06T00:00:00.000Z",
+			"isRestDay": true,
+			"status": "PLANNED",
+			"createdAt": "2026-08-15T12:09:09.931Z",
+			"exercises": []
+		},
+		{
+			"id": "cmsuc20dn002dc4ms6xkp1w5z",
+			"trainingPlanId": "cmsuc20bv0001c4mspyebnzn3",
+			"date": "2026-09-07T00:00:00.000Z",
+			"isRestDay": false,
+			"status": "PLANNED",
+			"createdAt": "2026-08-15T12:09:09.931Z",
+			"exercises": [
+				{
+					"id": "cmsuc20dp002jc4msnx5tzqnk",
+					"trainingDayId": "cmsuc20dn002dc4ms6xkp1w5z",
+					"exerciseId": "cmsu5qsel000x9jmsnx2dafbf",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 60,
+					"order": 1,
+					"exercise": {
+						"id": "cmsu5qsel000x9jmsnx2dafbf",
+						"name": "LEG PRESS (СLASSIC STANCE)",
+						"videoUrl": "",
+						"muscleGroupId": "cmsu5qse1000n9jms5c6sf2hz",
+						"equipmentId": "cmsu5qsea000s9jms4k0hpas7",
+						"createdAt": "2026-08-15T09:12:28.749Z",
+						"updatedAt": "2026-08-15T09:12:28.749Z"
+					}
+				},
+				{
+					"id": "cmsuc20do002ic4ms68jlmfl9",
+					"trainingDayId": "cmsuc20dn002dc4ms6xkp1w5z",
+					"exerciseId": "cmsu5qseg000v9jmsupf5kaic",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 60,
+					"order": 2,
+					"exercise": {
+						"id": "cmsu5qseg000v9jmsupf5kaic",
+						"name": "INCLINE DUMBBELL BENCH PRESS",
+						"videoUrl": "",
+						"muscleGroupId": "cmsrv6s1p00033mms0909s42b",
+						"equipmentId": "cmsu5qscq00039jmsqwfzzycd",
+						"createdAt": "2026-08-15T09:12:28.744Z",
+						"updatedAt": "2026-08-15T09:12:28.744Z"
+					}
+				},
+				{
+					"id": "cmsuc20do002hc4ms3lxkq60t",
+					"trainingDayId": "cmsuc20dn002dc4ms6xkp1w5z",
+					"exerciseId": "cmsu5qsff001a9jms3cl657th",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 60,
+					"order": 3,
+					"exercise": {
+						"id": "cmsu5qsff001a9jms3cl657th",
+						"name": "SEATED MACHINE ROW",
+						"videoUrl": "",
+						"muscleGroupId": "cmsrv6s1200003mmsr4bp7zsq",
+						"equipmentId": "cmsu5qsea000s9jms4k0hpas7",
+						"createdAt": "2026-08-15T09:12:28.779Z",
+						"updatedAt": "2026-08-15T09:12:28.779Z"
+					}
+				},
+				{
+					"id": "cmsuc20do002gc4mszw5bi0md",
+					"trainingDayId": "cmsuc20dn002dc4ms6xkp1w5z",
+					"exerciseId": "cmsu5qseb000t9jmslyl92wrq",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 60,
+					"order": 4,
+					"exercise": {
+						"id": "cmsu5qseb000t9jmslyl92wrq",
+						"name": "LEG CURLS",
+						"videoUrl": "",
+						"muscleGroupId": "cmsu5qsdu000j9jmsz66z47p1",
+						"equipmentId": "cmsu5qsea000s9jms4k0hpas7",
+						"createdAt": "2026-08-15T09:12:28.739Z",
+						"updatedAt": "2026-08-15T09:12:28.739Z"
+					}
+				},
+				{
+					"id": "cmsuc20dn002fc4msm73q3k27",
+					"trainingDayId": "cmsuc20dn002dc4ms6xkp1w5z",
+					"exerciseId": "cmsu5qsfd00199jmscoe4ky91",
+					"sets": 3,
+					"reps": 15,
+					"restSeconds": 45,
+					"order": 5,
+					"exercise": {
+						"id": "cmsu5qsfd00199jmscoe4ky91",
+						"name": "SEATED DUMBBELL LATERAL RAISES",
+						"videoUrl": "",
+						"muscleGroupId": "cmsu5qsf500139jmsym9xq8kq",
+						"equipmentId": "cmsu5qscq00039jmsqwfzzycd",
+						"createdAt": "2026-08-15T09:12:28.777Z",
+						"updatedAt": "2026-08-15T09:12:28.777Z"
+					}
+				},
+				{
+					"id": "cmsuc20dn002ec4msmd1ilh4t",
+					"trainingDayId": "cmsuc20dn002dc4ms6xkp1w5z",
+					"exerciseId": "cmsu5qse5000q9jmsip4jx6a3",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 45,
+					"order": 6,
+					"exercise": {
+						"id": "cmsu5qse5000q9jmsip4jx6a3",
+						"name": "HAMMER CURLS",
+						"videoUrl": "",
+						"muscleGroupId": "cmsu5qse3000p9jmsz6o3djzu",
+						"equipmentId": "cmsu5qscq00039jmsqwfzzycd",
+						"createdAt": "2026-08-15T09:12:28.733Z",
+						"updatedAt": "2026-08-15T09:12:28.733Z"
+					}
+				}
+			]
+		},
+		{
+			"id": "cmsuc20dp002kc4msc0108dut",
+			"trainingPlanId": "cmsuc20bv0001c4mspyebnzn3",
+			"date": "2026-09-08T00:00:00.000Z",
+			"isRestDay": true,
+			"status": "PLANNED",
+			"createdAt": "2026-08-15T12:09:09.931Z",
+			"exercises": []
+		},
+		{
+			"id": "cmsuc20dp002lc4msdk9p20y1",
+			"trainingPlanId": "cmsuc20bv0001c4mspyebnzn3",
+			"date": "2026-09-09T00:00:00.000Z",
+			"isRestDay": false,
+			"status": "PLANNED",
+			"createdAt": "2026-08-15T12:09:09.931Z",
+			"exercises": [
+				{
+					"id": "cmsuc20dr002rc4ms5j248lyd",
+					"trainingDayId": "cmsuc20dp002lc4msdk9p20y1",
+					"exerciseId": "cmsu5qsej000w9jms339934be",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 60,
+					"order": 1,
+					"exercise": {
+						"id": "cmsu5qsej000w9jms339934be",
+						"name": "LEG PRESS (WIDE STANCE)",
+						"videoUrl": "",
+						"muscleGroupId": "cmsu5qsdy000l9jmso63xlixd",
+						"equipmentId": "cmsu5qsea000s9jms4k0hpas7",
+						"createdAt": "2026-08-15T09:12:28.747Z",
+						"updatedAt": "2026-08-15T09:12:28.747Z"
+					}
+				},
+				{
+					"id": "cmsuc20dr002qc4ms9jtv4zd5",
+					"trainingDayId": "cmsuc20dp002lc4msdk9p20y1",
+					"exerciseId": "cmsrv6s1t00043mmsl9zw6ydl",
+					"sets": 3,
+					"reps": 10,
+					"restSeconds": 75,
+					"order": 2,
+					"exercise": {
+						"id": "cmsrv6s1t00043mmsl9zw6ydl",
+						"name": "BENCH PRESS",
+						"videoUrl": "",
+						"muscleGroupId": "cmsrv6s1p00033mms0909s42b",
+						"equipmentId": "cmsrv6s1c00013mmsyapm2wg8",
+						"createdAt": "2026-08-13T18:41:26.657Z",
+						"updatedAt": "2026-08-15T09:12:28.691Z"
+					}
+				},
+				{
+					"id": "cmsuc20dr002pc4msn24hetxx",
+					"trainingDayId": "cmsuc20dp002lc4msdk9p20y1",
+					"exerciseId": "cmsu5qscs00049jmslk6u4prt",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 60,
+					"order": 3,
+					"exercise": {
+						"id": "cmsu5qscs00049jmslk6u4prt",
+						"name": "BENT-OVER ROWS WITH DUMBBELLS",
+						"videoUrl": "",
+						"muscleGroupId": "cmsrv6s1200003mmsr4bp7zsq",
+						"equipmentId": "cmsu5qscq00039jmsqwfzzycd",
+						"createdAt": "2026-08-15T09:12:28.684Z",
+						"updatedAt": "2026-08-15T09:12:28.699Z"
+					}
+				},
+				{
+					"id": "cmsuc20dq002oc4msnddsv5a0",
+					"trainingDayId": "cmsuc20dp002lc4msdk9p20y1",
+					"exerciseId": "cmsu5qse0000m9jmsmbks0jy3",
+					"sets": 3,
+					"reps": 15,
+					"restSeconds": 60,
+					"order": 4,
+					"exercise": {
+						"id": "cmsu5qse0000m9jmsmbks0jy3",
+						"name": "GLUTE BRIDGE",
+						"videoUrl": "",
+						"muscleGroupId": "cmsu5qsdy000l9jmso63xlixd",
+						"equipmentId": "cmsu5qsda000a9jmspro9bhq5",
+						"createdAt": "2026-08-15T09:12:28.728Z",
+						"updatedAt": "2026-08-15T09:12:28.728Z"
+					}
+				},
+				{
+					"id": "cmsuc20dq002nc4msgto3g5g8",
+					"trainingDayId": "cmsuc20dp002lc4msdk9p20y1",
+					"exerciseId": "cmsu5qsde000d9jmsoewc9jwg",
+					"sets": 3,
+					"reps": 15,
+					"restSeconds": 45,
+					"order": 5,
+					"exercise": {
+						"id": "cmsu5qsde000d9jmsoewc9jwg",
+						"name": "CABLE CHEST FLY",
+						"videoUrl": "",
+						"muscleGroupId": "cmsrv6s1p00033mms0909s42b",
+						"equipmentId": "cmsu5qsde000c9jmswjwo45i4",
+						"createdAt": "2026-08-15T09:12:28.706Z",
+						"updatedAt": "2026-08-15T09:12:28.706Z"
+					}
+				},
+				{
+					"id": "cmsuc20dq002mc4msyooiyoib",
+					"trainingDayId": "cmsuc20dp002lc4msdk9p20y1",
+					"exerciseId": "cmsu5qsfi001d9jms0icj5lqo",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 45,
+					"order": 6,
+					"exercise": {
+						"id": "cmsu5qsfi001d9jms0icj5lqo",
+						"name": "SUPINATED DUMBBELL CURLS ON INCLINE BENCH",
+						"videoUrl": "",
+						"muscleGroupId": "cmsu5qse3000p9jmsz6o3djzu",
+						"equipmentId": "cmsu5qscq00039jmsqwfzzycd",
+						"createdAt": "2026-08-15T09:12:28.782Z",
+						"updatedAt": "2026-08-15T09:12:28.782Z"
+					}
+				}
+			]
+		},
+		{
+			"id": "cmsuc20ds002sc4mszrx1b0vc",
+			"trainingPlanId": "cmsuc20bv0001c4mspyebnzn3",
+			"date": "2026-09-10T00:00:00.000Z",
+			"isRestDay": true,
+			"status": "PLANNED",
+			"createdAt": "2026-08-15T12:09:09.931Z",
+			"exercises": []
+		},
+		{
+			"id": "cmsuc20ds002tc4msmd19cxo7",
+			"trainingPlanId": "cmsuc20bv0001c4mspyebnzn3",
+			"date": "2026-09-11T00:00:00.000Z",
+			"isRestDay": true,
+			"status": "PLANNED",
+			"createdAt": "2026-08-15T12:09:09.931Z",
+			"exercises": []
+		},
+		{
+			"id": "cmsuc20ds002uc4mscnix9mvf",
+			"trainingPlanId": "cmsuc20bv0001c4mspyebnzn3",
+			"date": "2026-09-12T00:00:00.000Z",
+			"isRestDay": false,
+			"status": "PLANNED",
+			"createdAt": "2026-08-15T12:09:09.931Z",
+			"exercises": [
+				{
+					"id": "cmsuc20du0030c4msrmsnf8am",
+					"trainingDayId": "cmsuc20ds002uc4mscnix9mvf",
+					"exerciseId": "cmsu5qse2000o9jmsz1rd20nh",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 60,
+					"order": 1,
+					"exercise": {
+						"id": "cmsu5qse2000o9jmsz1rd20nh",
+						"name": "GOBLET SQUAT",
+						"videoUrl": "",
+						"muscleGroupId": "cmsu5qse1000n9jms5c6sf2hz",
+						"equipmentId": "cmsu5qscq00039jmsqwfzzycd",
+						"createdAt": "2026-08-15T09:12:28.730Z",
+						"updatedAt": "2026-08-15T09:12:28.730Z"
+					}
+				},
+				{
+					"id": "cmsuc20du002zc4mslw6ybfqp",
+					"trainingDayId": "cmsuc20ds002uc4mscnix9mvf",
+					"exerciseId": "cmsu5qsds000i9jmsfhgq4rup",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 60,
+					"order": 2,
+					"exercise": {
+						"id": "cmsu5qsds000i9jmsfhgq4rup",
+						"name": "DUMBBELL BENCH PRESS",
+						"videoUrl": "",
+						"muscleGroupId": "cmsrv6s1p00033mms0909s42b",
+						"equipmentId": "cmsu5qscq00039jmsqwfzzycd",
+						"createdAt": "2026-08-15T09:12:28.720Z",
+						"updatedAt": "2026-08-15T09:12:28.720Z"
+					}
+				},
+				{
+					"id": "cmsuc20dt002yc4msi69obj3u",
+					"trainingDayId": "cmsuc20ds002uc4mscnix9mvf",
+					"exerciseId": "cmsu5qse9000r9jmssy89ml33",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 60,
+					"order": 3,
+					"exercise": {
+						"id": "cmsu5qse9000r9jmssy89ml33",
+						"name": "LAT PULLDOWNS",
+						"videoUrl": "",
+						"muscleGroupId": "cmsrv6s1200003mmsr4bp7zsq",
+						"equipmentId": "cmsu5qsde000c9jmswjwo45i4",
+						"createdAt": "2026-08-15T09:12:28.737Z",
+						"updatedAt": "2026-08-15T09:12:28.737Z"
+					}
+				},
+				{
+					"id": "cmsuc20dt002xc4msdtpmtag1",
+					"trainingDayId": "cmsuc20ds002uc4mscnix9mvf",
+					"exerciseId": "cmsu5qsdx000k9jmsx6gz7q1l",
+					"sets": 3,
+					"reps": 10,
+					"restSeconds": 75,
+					"order": 4,
+					"exercise": {
+						"id": "cmsu5qsdx000k9jmsx6gz7q1l",
+						"name": "ROMANIAN DEADLIFT",
+						"videoUrl": "",
+						"muscleGroupId": "cmsu5qsdu000j9jmsz66z47p1",
+						"equipmentId": "cmsrv6s1c00013mmsyapm2wg8",
+						"createdAt": "2026-08-15T09:12:28.725Z",
+						"updatedAt": "2026-08-15T09:12:28.725Z"
+					}
+				},
+				{
+					"id": "cmsuc20dt002wc4mse9c3gt0u",
+					"trainingDayId": "cmsuc20ds002uc4mscnix9mvf",
+					"exerciseId": "cmsu5qsf600149jms0eb6xfcf",
+					"sets": 3,
+					"reps": 12,
+					"restSeconds": 60,
+					"order": 5,
+					"exercise": {
+						"id": "cmsu5qsf600149jms0eb6xfcf",
+						"name": "OVERHEAD DUMBBELL PRESS",
+						"videoUrl": "",
+						"muscleGroupId": "cmsu5qsf500139jmsym9xq8kq",
+						"equipmentId": "cmsu5qscq00039jmsqwfzzycd",
+						"createdAt": "2026-08-15T09:12:28.770Z",
+						"updatedAt": "2026-08-15T09:12:28.770Z"
+					}
+				},
+				{
+					"id": "cmsuc20ds002vc4ms1zqyqlh1",
+					"trainingDayId": "cmsuc20ds002uc4mscnix9mvf",
+					"exerciseId": "cmsu5qsf800159jmsby967q7z",
+					"sets": 3,
+					"reps": 15,
+					"restSeconds": 45,
+					"order": 6,
+					"exercise": {
+						"id": "cmsu5qsf800159jmsby967q7z",
+						"name": "ROPE TRICEPS PUSHDOWNS",
+						"videoUrl": "",
+						"muscleGroupId": "cmsu5qsdn000g9jmsw9fwji2b",
+						"equipmentId": "cmsu5qsde000c9jmswjwo45i4",
+						"createdAt": "2026-08-15T09:12:28.772Z",
+						"updatedAt": "2026-08-15T09:12:28.772Z"
+					}
+				}
+			]
+		},
+		{
+			"id": "cmsuc20du0031c4msiziup60s",
+			"trainingPlanId": "cmsuc20bv0001c4mspyebnzn3",
+			"date": "2026-09-13T00:00:00.000Z",
+			"isRestDay": true,
+			"status": "PLANNED",
+			"createdAt": "2026-08-15T12:09:09.931Z",
+			"exercises": []
+		}
+	]
+}
