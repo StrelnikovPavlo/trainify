@@ -154,6 +154,7 @@ export type TrainingPlanScalarFieldEnum = (typeof TrainingPlanScalarFieldEnum)[k
 export const TrainingDayScalarFieldEnum = {
   id: 'id',
   trainingPlanId: 'trainingPlanId',
+  name: 'name',
   date: 'date',
   isRestDay: 'isRestDay',
   status: 'status',

@@ -20,7 +20,7 @@ model RefreshToken {
   id          String   @id @default(cuid())
   hashedToken String   @unique @map("hashed_token")
   userId      String
-  user        User     @relation(fields: [userId], references: [id])
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
   expiresAt   DateTime @map("expires_at")
   createdAt   DateTime @default(now()) @map("created_at")
 
@@ -31,7 +31,7 @@ model RefreshToken {
 model UserProfile {
   id           String      @id @default(cuid())
   userId       String      @unique
-  user         User        @relation(fields: [userId], references: [id])
+  user         User        @relation(fields: [userId], references: [id], onDelete: Cascade)
   age          Int
   weight       Float
   targetWeight Float       @map("target_weight")

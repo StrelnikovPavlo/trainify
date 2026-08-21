@@ -1,4 +1,5 @@
 export interface GeneratedDay {
+	name: string
 	dayNumber?: number
 	date: string
 	isRestDay: boolean

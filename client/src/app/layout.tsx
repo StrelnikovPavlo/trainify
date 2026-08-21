@@ -2,6 +2,7 @@ import { QueryProvider } from '@/providers/query-provider'
 import type { Metadata } from 'next'
 import { Alumni_Sans, Manrope } from 'next/font/google'
 import './global.css'
+import { AuthProvider } from '@/providers/AuthProvider'
 
 const manrope = Manrope({
 	subsets: ['latin'],
@@ -30,7 +31,9 @@ export default function RootLayout({
 	return (
 		<html lang='en' className={`${manrope.variable} ${alumniSans.variable}`}>
 			<body className='min-h-full flex flex-col'>
-				<QueryProvider>{children}</QueryProvider>
+				<QueryProvider>
+					<AuthProvider>{children}</AuthProvider>
+				</QueryProvider>
 			</body>
 		</html>
 	)

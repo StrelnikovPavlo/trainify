@@ -1,12 +1,18 @@
 import { axiosInstance } from '@/lib/axios'
-import { IProfileForm } from '@/types/profile.types'
+import { IProfile, IProfileForm } from '@/types/profile.types'
 
-export const ProfileService = {
-	create: async (dto: IProfileForm) => {
-		const { data } = await axiosInstance.post('/user-profile/', dto)
+class UserService {
+	private BASE_URL = '/user-profile'
+
+	async create(dto: IProfileForm) {
+		const { data } = await axiosInstance.post<IProfile>(this.BASE_URL, dto)
 		return data
-	},
-	getProfile: async () => {
-		return await axiosInstance.get('/user-profile/me')
-	},
+	}
+
+	async getProfile() {
+		const { data } = await axiosInstance.get<IProfile>(`${this.BASE_URL}/me`)
+		return data
+	}
 }
+
+export const userService = new UserService()

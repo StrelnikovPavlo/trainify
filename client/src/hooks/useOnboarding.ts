@@ -1,5 +1,6 @@
 import { ONBOARDING_STEPS } from '@/config/onboarding.config'
-import { ProfileService } from '@/services/profile.service'
+import { userService } from '@/services/profile.service'
+import { trainingPlanService } from '@/services/training-plan.service'
 import { IProfileForm } from '@/types/profile.types'
 import axios from 'axios'
 import { useRouter } from 'next/navigation'
@@ -9,7 +10,9 @@ import { useForm } from 'react-hook-form'
 export function useOnboarding() {
 	const [currentStep, setCurrentStep] = useState(0)
 	const [errorMessage, setErrorMessage] = useState<string | null>(null)
+	const [isGenerating, setIsGenerating] = useState(false)
 	const router = useRouter()
+
 	const form = useForm<IProfileForm>({
 		mode: 'onChange',
 	})
@@ -34,16 +37,27 @@ export function useOnboarding() {
 	const onSubmit = async (data: IProfileForm) => {
 		try {
 			setErrorMessage(null)
-			await ProfileService.create(data)
+			setIsGenerating(true)
+
+			// 1. Зберігаємо дані профілю
+			await userService.create(data)
+
+			// 2. Викликаємо генерацію плану
+			await trainingPlanService.generate()
+
+			// 3. Перенаправляємо на дашборд
 			router.push('/dashboard')
 		} catch (error) {
+			setIsGenerating(false)
 			if (axios.isAxiosError(error)) {
 				const message = error.response?.data?.message
 				setErrorMessage(
 					Array.isArray(message)
 						? message[0]
-						: (message ?? 'Something went wrong'),
+						: (message ?? 'Something went wrong while generating your plan'),
 				)
+			} else {
+				setErrorMessage('An unexpected error occurred')
 			}
 		}
 	}
@@ -58,5 +72,6 @@ export function useOnboarding() {
 		onSubmit,
 		isNextDisabled,
 		errorMessage,
+		isGenerating,
 	}
 }

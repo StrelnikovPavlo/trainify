@@ -11,6 +11,8 @@ import { TrainingPlanModule } from './training-plan/training-plan.module';
 import { ExercisesModule } from './exercises/exercises.module';
 import { MuscleGroupModule } from './muscle-group/muscle-group.module';
 import { EquipmentModule } from './equipment/equipment.module';
+import { WorkoutSessionModule } from './workout-session/workout-session.module';
+import { WorkoutLogModule } from './workout-log/workout-log.module';
 
 @Module({
 	imports: [
@@ -26,7 +28,9 @@ import { EquipmentModule } from './equipment/equipment.module';
 		TrainingPlanModule,
 		ExercisesModule,
 		MuscleGroupModule,
-		EquipmentModule
+		EquipmentModule,
+		WorkoutSessionModule,
+		WorkoutLogModule
 	],
 	controllers: [],
 	providers: [

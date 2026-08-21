@@ -1,23 +1,27 @@
-import { axiosInstance } from '@/lib/axios'
+import { axiosClassic } from '@/lib/axios'
 import { IAuthResponse, ILoginDto, IRegisterDto } from '@/types/auth.types'
 
-export const AuthService = {
-	register: async (dto: IRegisterDto): Promise<IAuthResponse> => {
-		const { data } = await axiosInstance.post('/auth/register', dto)
-		return data
-	},
+class AuthService {
+	private BASE_URL = '/auth'
 
-	login: async (dto: ILoginDto): Promise<IAuthResponse> => {
-		const { data } = await axiosInstance.post('/auth/login', dto)
+	async register(dto: IRegisterDto): Promise<IAuthResponse> {
+		const { data } = await axiosClassic.post(`${this.BASE_URL}/register`, dto)
 		return data
-	},
+	}
 
-	logout: async (): Promise<void> => {
-		await axiosInstance.post('/auth/logout')
-	},
-
-	refresh: async (): Promise<IAuthResponse> => {
-		const { data } = await axiosInstance.post('/auth/refresh')
+	async login(dto: ILoginDto): Promise<IAuthResponse> {
+		const { data } = await axiosClassic.post(`${this.BASE_URL}/login`, dto)
 		return data
-	},
+	}
+
+	async refresh(): Promise<IAuthResponse> {
+		const { data } = await axiosClassic.post(`${this.BASE_URL}/refresh`)
+		return data
+	}
+
+	async logout(): Promise<void> {
+		await axiosClassic.post(`${this.BASE_URL}/logout`)
+	}
 }
+
+export const authService = new AuthService()

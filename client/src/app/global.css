@@ -3,7 +3,7 @@
 @theme {
 	--color-primary: #fff600;
 	--color-gray: #cacaca;
-	--color-green: #51ff54;
+	--color-green: #1fa812;
 	--color-red: #f02020;
 	--color-foreground: var(--foreground);
 
@@ -48,7 +48,7 @@
 	}
 
 	.btn-yellow {
-		@apply text-black bg-primary;
+		@apply text-black bg-primary hover:bg-[#e8df00];
 	}
 
 	.input {
@@ -59,15 +59,14 @@
 	}
 
 	.radio {
-    @apply flex cursor-pointer items-center justify-between rounded-[10px] border px-4 py-3 transition-all;
-  }
+		@apply flex cursor-pointer items-center justify-between rounded-[10px] border px-4 py-3 transition-all;
+	}
 
-  .radio--checked {
-    @apply border-black bg-neutral-50;
-  }
+	.radio--checked {
+		@apply border-black bg-neutral-50;
+	}
 
-  .radio--unchecked {
-    @apply border-neutral-200 hover:border-neutral-300;
-  }
-
+	.radio--unchecked {
+		@apply border-neutral-200 hover:border-neutral-300;
+	}
 }

@@ -21,6 +21,7 @@ export class TrainingPlanRepository {
 				durationDays: plan.durationDays,
 				trainingDays: {
 					create: plan.days.map(day => ({
+						name: day.name,
 						date: new Date(day.date),
 						isRestDay: day.isRestDay,
 						exercises: {

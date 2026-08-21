@@ -1,6 +1,6 @@
 model TrainingPlan {
   id           String        @id @default(cuid())
-  user         User          @relation(fields: [userId], references: [id])
+  user         User          @relation(fields: [userId], references: [id], onDelete: Cascade)
   userId       String        @unique @map("user_id")
   name         String
   startDate    DateTime      @map("start_date")
@@ -15,6 +15,7 @@ model TrainingDay {
   id             String                @id @default(cuid())
   trainingPlanId String                @map("training_plan_id")
   trainingPlan   TrainingPlan          @relation(fields: [trainingPlanId], references: [id], onDelete: Cascade)
+  name           String
   date           DateTime
   isRestDay      Boolean               @default(false) @map("is_rest_day")
   status         TrainingDayStatus     @default(PLANNED)
@@ -30,7 +31,7 @@ model TrainingDay {
 model TrainingDayExercise {
   id            String      @id @default(cuid())
   trainingDayId String      @map("training_day_id")
-  trainingDay   TrainingDay @relation(fields: [trainingDayId], references: [id])
+  trainingDay   TrainingDay @relation(fields: [trainingDayId], references: [id], onDelete: Cascade)
   exerciseId    String      @map("exercise_id")
   exercise      Exercise    @relation(fields: [exerciseId], references: [id])
   sets          Int
@@ -45,7 +46,7 @@ model TrainingDayExercise {
 model WorkoutSession {
   id            String       @id @default(cuid())
   userId        String       @map("user_id")
-  user          User         @relation(fields: [userId], references: [id])
+  user          User         @relation(fields: [userId], references: [id], onDelete: Cascade)
   trainingDayId String       @map("training_day_id")
   trainingDay   TrainingDay  @relation(fields: [trainingDayId], references: [id], onDelete: Cascade)
   logs          WorkoutLog[]

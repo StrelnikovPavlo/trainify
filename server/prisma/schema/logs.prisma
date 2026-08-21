@@ -16,7 +16,7 @@ model WorkoutLog {
 model WeightLog {
   id        String    @id @default(cuid())
   userId    String    @map("user_id")
-  user      User      @relation(fields: [userId], references: [id])
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
   weight    Float
   loggedAt  DateTime  @default(now()) @map("logged_at")
   @@map("weight_log")

@@ -10,7 +10,7 @@ export interface ILoginDto {
 	password: string
 }
 
-export interface AuthState {
+export interface IAuthState {
 	accessToken: string | null
 	setAccessToken: (token: string | null) => void
 	isAuthenticated: boolean

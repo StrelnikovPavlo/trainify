@@ -1,8 +1,6 @@
-import { Roles } from '@/auth/decorators/roles.decorator'
 import { ROUTES } from '@/constants/routes.constant'
 import { Body, Controller, Delete, Get, Param, Post, Put } from '@nestjs/common'
 import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger'
-import { Role } from 'prisma/generated/prisma/enums'
 import { CreateUserDto } from './dto/create-user.dto'
 import { UpdateUserDto } from './dto/update-user.dto'
 import { UsersService } from './users.service'
@@ -38,7 +36,7 @@ export class UsersController {
 		return this.usersService.update(id, dto)
 	}
 
-	@Roles(Role.ADMIN)
+	// @Roles(Role.ADMIN)
 	@ApiOperation({ summary: 'Remove user' })
 	@Delete(ROUTES.users.byId)
 	delete(@Param('id') id: string) {

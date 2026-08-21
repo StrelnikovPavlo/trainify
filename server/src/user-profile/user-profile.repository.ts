@@ -19,7 +19,16 @@ export class UserProfileRepository {
 
 	findById(userId: string) {
 		return this.prismaService.userProfile.findUnique({
-			where: { userId }
+			where: { userId },
+			include: {
+				user: {
+					select: {
+						username: true,
+						surname: true,
+						email: true
+					}
+				}
+			}
 		})
 	}
 }
