@@ -1,13 +1,11 @@
 'use client'
 
-import { IProfile } from '@/types/profile.types'
-import { WeightTracker } from './weight-tracker'
+import { useDashboard } from '@/hooks/useDashboard'
+import { WeightTracker } from './WeightTracker'
 
-interface IDashboardSidebarProps {
-	profile?: IProfile
-}
+export function DashboardSidebar() {
+	const { profile } = useDashboard()
 
-export function DashboardSidebar({ profile }: IDashboardSidebarProps) {
 	return (
 		<aside className='space-y-5 lg:sticky lg:top-5'>
 			<WeightTracker

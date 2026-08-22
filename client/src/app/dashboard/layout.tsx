@@ -1,6 +1,6 @@
 'use client'
 
-import Menu from '@/components/dashboard/menu'
+import Menu from '@/components/dashboard/Menu'
 import { DASHBOARD_PAGES } from '@/config/pages-url.config'
 import { useProfile } from '@/hooks/useProfile'
 import Link from 'next/link'

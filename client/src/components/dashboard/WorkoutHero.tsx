@@ -1,15 +1,19 @@
+import { DASHBOARD_PAGES } from '@/config/pages-url.config'
 import Link from 'next/link'
 import { Button } from '../ui/Button'
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function WorkoutHero({ day, dayIndex }: { day: any; dayIndex: number }) {
 	const exercises = day?.exercises ?? []
 
 	const totalSets = exercises.reduce(
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		(total: number, exercise: any) => total + (exercise.sets ?? 0),
 		0,
 	)
 
 	const totalReps = exercises.reduce(
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
 		(total: number, exercise: any) =>
 			total + (exercise.sets ?? 0) * (exercise.reps ?? 0),
 		0,
@@ -43,7 +47,7 @@ export function WorkoutHero({ day, dayIndex }: { day: any; dayIndex: number }) {
 			</div>
 
 			<Link
-				href={`/dashboard/workouts/${dayIndex + 1}`}
+				href={`${DASHBOARD_PAGES.WORKOUTS}/${dayIndex + 1}`}
 				className='mt-7 block w-full sm:inline-block sm:w-auto'
 			>
 				<Button className='btn-yellow w-full justify-center px-8 py-3.5 text-[13px] font-black uppercase tracking-wider text-black transition hover:scale-[1.02] sm:w-auto'>

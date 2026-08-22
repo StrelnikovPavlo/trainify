@@ -1,24 +1,13 @@
 'use client'
 
 import { DASHBOARD_PAGES } from '@/config/pages-url.config'
-import { ITrainingDay } from '@/types/training-plan.types'
+import { useDashboard } from '@/hooks/useDashboard'
 import Link from 'next/link'
-import { WorkoutHero } from './workout-hero'
-import { RestDay } from './rest-day'
+import { RestDay } from './RestDay'
+import { WorkoutHero } from './WorkoutHero'
 
-interface IDashboardMainProps {
-	days: ITrainingDay[]
-	todayWorkout?: ITrainingDay | null
-	todayIndex: number
-	todayDate: string
-}
-
-export function DashboardMain({
-	days,
-	todayWorkout,
-	todayIndex,
-	todayDate,
-}: IDashboardMainProps) {
+export function DashboardMain() {
+	const { days, todayIndex, todayWorkout, todayDate } = useDashboard()
 	return (
 		<main className='min-w-0 space-y-[20px] sm:space-y-6'>
 			<section className='relative overflow-hidden rounded-[28px] bg-[#18181b] p-6 text-white shadow-xl shadow-black/5 sm:p-8'>
