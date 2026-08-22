@@ -1,5 +1,6 @@
 'use client'
 
+import { GenerationError } from '@/components/onboarding/GenerationError'
 import { OnboardingLoader } from '@/components/onboarding/OnboardingLoader'
 import { Button } from '@/components/ui/Button'
 import { FormError } from '@/components/ui/Error'
@@ -16,13 +17,15 @@ export default function Onboarding() {
 		prevStep,
 		onSubmit,
 		isNextDisabled,
-		errorMessage,
-		isGenerating,
+		apiError,
+		isPending,
+		isGenerationError,
+		retryGeneration,
 	} = useOnboarding()
-	
-	if (isGenerating) {
-		return <OnboardingLoader />
-	}
+
+	if (isPending) return <OnboardingLoader />
+	if (isGenerationError)
+		return <GenerationError message={apiError!} onRetry={retryGeneration} />
 
 	return (
 		<div className='min-h-screen bg-gray-50/50 pb-12'>
@@ -69,7 +72,7 @@ export default function Onboarding() {
 								className={clsx(
 									'btn-yellow px-8 py-3 text-[12px] font-black uppercase tracking-wider',
 									isNextDisabled &&
-										'bg-neutral-200 text-gray-400 cursor-default opacity-60',
+										'bg-neutral-200 text-gray-400 cursor-none opacity-60',
 								)}
 							>
 								Next
@@ -77,6 +80,7 @@ export default function Onboarding() {
 						) : (
 							<Button
 								type='submit'
+								disabled={isNextDisabled}
 								className='btn-yellow px-10 py-3.5 text-[13px] font-black uppercase tracking-wider shadow-lg shadow-primary/20'
 							>
 								Finish
@@ -84,10 +88,10 @@ export default function Onboarding() {
 						)}
 					</div>
 
-					{errorMessage && (
-						<div className='mt-5 rounded-[18px] border border-red-200 bg-red-50 p-4 text-center'>
-							<FormError message={errorMessage} />
-						</div>
+					{apiError && (
+						<p className='text-center mt-[20px]'>
+							<FormError error={apiError} />
+						</p>
 					)}
 				</form>
 			</div>

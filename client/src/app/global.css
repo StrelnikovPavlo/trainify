@@ -59,7 +59,7 @@
 	}
 
 	.radio {
-		@apply flex cursor-pointer items-center justify-between rounded-[10px] border px-4 py-3 transition-all;
+		@apply flex cursor-pointer items-center justify-between gap-x-[5px] rounded-[10px] border px-4 py-3 transition-all;
 	}
 
 	.radio--checked {

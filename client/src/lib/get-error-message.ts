@@ -5,7 +5,8 @@ export const getErrorMessage = (
 	fallback = 'An unknown error occurred',
 ): string => {
 	if (axios.isAxiosError(error)) {
-		const message = error.response?.data.message
+		const message = error.response?.data?.message
+		console.log(error.response)
 		return Array.isArray(message) ? message[0] : (message ?? fallback)
 	}
 

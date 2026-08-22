@@ -1,17 +1,17 @@
 import { ONBOARDING_STEPS } from '@/config/onboarding.config'
+import { getErrorMessage } from '@/lib/get-error-message'
 import { userService } from '@/services/profile.service'
 import { trainingPlanService } from '@/services/training-plan.service'
 import { IProfileForm } from '@/types/profile.types'
+import { useMutation } from '@tanstack/react-query'
 import axios from 'axios'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
-import { useForm } from 'react-hook-form'
+import { SubmitHandler, useForm } from 'react-hook-form'
 
 export function useOnboarding() {
 	const [currentStep, setCurrentStep] = useState(0)
-	const [errorMessage, setErrorMessage] = useState<string | null>(null)
-	const [isGenerating, setIsGenerating] = useState(false)
-	const router = useRouter()
+	const { push } = useRouter()
 
 	const form = useForm<IProfileForm>({
 		mode: 'onChange',
@@ -34,33 +34,38 @@ export function useOnboarding() {
 		if (currentStep > 0) setCurrentStep(prev => prev - 1)
 	}
 
-	const onSubmit = async (data: IProfileForm) => {
+	const createProfile = useMutation({
+		mutationFn: (data: IProfileForm) => userService.create(data),
+	})
+
+	const generatePlan = useMutation({
+		mutationKey: ['onboarding', 'generate-plan'],
+		mutationFn: () => trainingPlanService.generate(),
+		onSuccess: () => push('/dashboard'),
+	})
+
+	const onSubmit: SubmitHandler<IProfileForm> = async data => {
 		try {
-			setErrorMessage(null)
-			setIsGenerating(true)
-
-			// 1. Зберігаємо дані профілю
-			await userService.create(data)
-
-			// 2. Викликаємо генерацію плану
-			await trainingPlanService.generate()
-
-			// 3. Перенаправляємо на дашборд
-			router.push('/dashboard')
+			await createProfile.mutateAsync(data)
 		} catch (error) {
-			setIsGenerating(false)
-			if (axios.isAxiosError(error)) {
-				const message = error.response?.data?.message
-				setErrorMessage(
-					Array.isArray(message)
-						? message[0]
-						: (message ?? 'Something went wrong while generating your plan'),
-				)
-			} else {
-				setErrorMessage('An unexpected error occurred')
-			}
+			const isAlreadyExists =
+				axios.isAxiosError(error) && error.response?.status === 409
+
+			if (!isAlreadyExists) return
 		}
+
+		generatePlan.mutate()
 	}
+
+	const retryGeneration = () => generatePlan.mutate()
+
+	const isPending = createProfile.isPending || generatePlan.isPending
+	const isGenerationError = createProfile.isSuccess && generatePlan.isError
+	const apiError = createProfile.isError
+		? getErrorMessage(createProfile.error)
+		: generatePlan.isError
+			? getErrorMessage(generatePlan.error)
+			: null
 
 	return {
 		form,
@@ -71,7 +76,9 @@ export function useOnboarding() {
 		prevStep,
 		onSubmit,
 		isNextDisabled,
-		errorMessage,
-		isGenerating,
+		isPending,
+		isGenerationError,
+		apiError,
+		retryGeneration,
 	}
 }

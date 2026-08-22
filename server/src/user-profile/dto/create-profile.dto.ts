@@ -18,8 +18,8 @@ export class UserProfileDto {
 	})
 	@IsNotEmpty()
 	@IsInt({ message: 'Age must be an integer number' })
-	@Min(8, { message: 'Age must be at least 8' })
-	@Max(116, { message: 'Age cannot be greater than 116' })
+	@Min(16, { message: 'Age must be at least 8' })
+	@Max(80, { message: 'Age cannot be greater than 116' })
 	age: number
 
 	@ApiProperty({
@@ -30,8 +30,8 @@ export class UserProfileDto {
 	})
 	@IsNotEmpty()
 	@IsNumber({}, { message: 'Weight must be a number' })
-	@Min(30, { message: 'Weight must be at least 30 kg' })
-	@Max(300, { message: 'Weight cannot exceed 300 kg' })
+	@Min(40, { message: 'Weight must be at least 30 kg' })
+	@Max(140, { message: 'Weight cannot exceed 300 kg' })
 	weight: number
 
 	@ApiProperty({
@@ -42,7 +42,7 @@ export class UserProfileDto {
 	})
 	@IsNotEmpty()
 	@IsNumber({}, { message: 'Height must be a number' })
-	@Min(100, { message: 'Height must be at least 100 cm' })
+	@Min(40, { message: 'Height must be at least 40 cm' })
 	@Max(250, { message: 'Height cannot exceed 250 cm' })
 	height: number
 
@@ -54,8 +54,8 @@ export class UserProfileDto {
 	})
 	@IsNotEmpty()
 	@IsNumber({}, { message: 'Target weight must be a number' })
-	@Min(30, { message: 'Target weight must be at least 30 kg' })
-	@Max(300, { message: 'Target weight cannot exceed 300 kg' })
+	@Min(40, { message: 'Target weight must be at least 30 kg' })
+	@Max(140, { message: 'Target weight cannot exceed 300 kg' })
 	targetWeight: number
 
 	@ApiProperty({
