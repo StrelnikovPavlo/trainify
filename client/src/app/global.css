@@ -41,10 +41,10 @@
 
 @layer components {
 	.btn {
-		@apply text-[20px] uppercase font-bold font-alumni h-[48px] rounded-[8px] py-[5px] px-[30px];
+		@apply text-[15px] uppercase font-bold font-alumni h-[48px] rounded-[8px] py-[5px] px-[30px];
 	}
 	.btn-black {
-		@apply text-white bg-foreground;
+		@apply text-white bg-foreground hover:bg-black disabled:cursor-not-allowed disabled:opacity-50 transition-all;
 	}
 
 	.btn-yellow {

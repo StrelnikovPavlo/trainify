@@ -10,12 +10,17 @@ import { SubmitHandler, useForm } from 'react-hook-form'
 export function useAuth() {
 	const { push } = useRouter()
 	const [isRegister, setIsRegister] = useState(false)
-	const { register, handleSubmit, reset } = useForm<IAuthForm>({
+	const {
+		register,
+		handleSubmit,
+		reset,
+		formState: { errors: validationErrors },
+	} = useForm<IAuthForm>({
 		mode: 'onSubmit',
 	})
 	const setAccessToken = useAuthStore(state => state.setAccessToken)
 
-	const { mutate, isPending } = useMutation({
+	const { mutate, isPending, error: apiError, reset: resetMutation } = useMutation({
 		mutationKey: ['auth'],
 		mutationFn: (data: IAuthForm) =>
 			isRegister ? authService.register(data) : authService.login(data),
@@ -28,9 +33,19 @@ export function useAuth() {
 	const toggleMode = () => {
 		setIsRegister(prev => !prev)
 		reset()
+		resetMutation()
 	}
 
 	const onSubmit: SubmitHandler<IAuthForm> = data => mutate(data)
 
-	return { toggleMode, onSubmit, register, handleSubmit, isRegister, isPending }
+	return {
+		toggleMode,
+		onSubmit,
+		register,
+		handleSubmit,
+		isRegister,
+		isPending,
+		validationErrors,
+		apiError
+	}
 }
