@@ -1,22 +1,16 @@
 import { DASHBOARD_PAGES } from '@/config/pages-url.config'
-import { ITrainingDay } from '@/types/training-plan.types'
+import { useWorkouts } from '@/hooks/useWorkouts'
 import Link from 'next/link'
 
-interface IWorkoutsHeroProps {
-	trainingDays: ITrainingDay[]
-	currentTrainingDay: ITrainingDay | undefined
-	trainingDayNumber: number
-	trainingProgress: number
-	currentDayIndex: number
-}
-
-export function WorkoutsHero({
-	trainingDays,
-	currentTrainingDay,
-	trainingDayNumber,
-	trainingProgress,
-	currentDayIndex,
-}: IWorkoutsHeroProps) {
+export function WorkoutsHero() {
+	const {
+		trainingDays,
+		currentTrainingDay,
+		currentDayIndex,
+		trainingDayNumber,
+		trainingProgress,
+	} = useWorkouts()
+	
 	return (
 		<div className='mb-8 grid grid-cols-1 gap-4 sm:gap-5 lg:grid-cols-[minmax(0,1fr)_280px]'>
 			<div className='relative overflow-hidden rounded-[26px] bg-black p-5 text-white sm:p-6'>

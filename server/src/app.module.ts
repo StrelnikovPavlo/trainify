@@ -13,6 +13,7 @@ import { MuscleGroupModule } from './muscle-group/muscle-group.module';
 import { EquipmentModule } from './equipment/equipment.module';
 import { WorkoutSessionModule } from './workout-session/workout-session.module';
 import { WorkoutLogModule } from './workout-log/workout-log.module';
+import { WeightLogModule } from './weight-log/weight-log.module';
 
 @Module({
 	imports: [
@@ -30,7 +31,8 @@ import { WorkoutLogModule } from './workout-log/workout-log.module';
 		MuscleGroupModule,
 		EquipmentModule,
 		WorkoutSessionModule,
-		WorkoutLogModule
+		WorkoutLogModule,
+		WeightLogModule
 	],
 	controllers: [],
 	providers: [

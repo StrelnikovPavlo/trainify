@@ -11,7 +11,7 @@ export function DashboardMain() {
 	return (
 		<main className='min-w-0 space-y-[20px] sm:space-y-6'>
 			<section className='relative overflow-hidden rounded-[28px] bg-[#18181b] p-6 text-white shadow-xl shadow-black/5 sm:p-8'>
-				<div className='relative z-10'>
+				<div className='relative'>
 					<div className='flex items-center justify-between'>
 						<div className='rounded-full bg-primary px-3 py-1 text-[10px] font-black uppercase tracking-wider text-black sm:text-[11px]'>
 							Today

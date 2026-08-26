@@ -53,9 +53,17 @@
 
 	.input {
 		@apply text-center w-full h-[48px] text-2xl text-foreground font-medium border border-gray rounded-[8px] px-[23px];
+		-moz-appearance: textfield;
 	}
+
 	.input::placeholder {
 		@apply text-gray;
+	}
+
+	.input::-webkit-outer-spin-button,
+	.input::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
 	}
 
 	.radio {

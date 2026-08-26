@@ -6,19 +6,7 @@ import { WorkoutsList } from '@/components/workout/list/workouts-list'
 import { useWorkouts } from '@/hooks/useWorkouts'
 
 export default function Workouts() {
-	const {
-		trainingDays,
-		isLoading,
-		isError,
-		trainingPlan,
-		currentTrainingDay,
-		currentDayIndex,
-		trainingDayNumber,
-		completedTrainingDays,
-		currentDateString,
-		trainingProgress,
-		formattedCurrentDate,
-	} = useWorkouts()
+	const { isLoading, isError, trainingPlan } = useWorkouts()
 
 	if (isLoading) {
 		return <div className='py-10 text-gray'>Loading workouts...</div>
@@ -38,24 +26,11 @@ export default function Workouts() {
 
 	return (
 		<div className='px-4 pb-12 sm:px-0'>
-			<WorkoutsHeader
-				data={trainingPlan}
-				formattedDate={formattedCurrentDate}
-			/>
+			<WorkoutsHeader />
 
-			<WorkoutsHero
-				trainingDays={trainingDays}
-				currentTrainingDay={currentTrainingDay}
-				trainingDayNumber={trainingDayNumber}
-				trainingProgress={trainingProgress}
-				currentDayIndex={currentDayIndex}
-			/>
+			<WorkoutsHero />
 
-			<WorkoutsList
-				trainingDays={trainingDays}
-				currentDateString={currentDateString}
-				completedTrainingDays={completedTrainingDays}
-			/>
+			<WorkoutsList />
 		</div>
 	)
 }

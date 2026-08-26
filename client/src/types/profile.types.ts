@@ -43,3 +43,15 @@ export interface IProfile {
 	bodyType: BodyType
 	user: IUser
 }
+
+export interface IUpdateUser {
+	username?: string
+	surname?: string
+	email?: string
+}
+
+export interface IWeightLog {
+	id: string
+	weight: number
+	loggedAt: string
+}

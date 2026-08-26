@@ -1,10 +1,12 @@
 import { DASHBOARD_PAGES } from '@/config/pages-url.config'
+import { useWorkouts } from '@/hooks/useWorkouts'
 import Link from 'next/link'
 import { Button } from '../ui/Button'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function WorkoutHero({ day, dayIndex }: { day: any; dayIndex: number }) {
 	const exercises = day?.exercises ?? []
+	const { currentTrainingDay } = useWorkouts()
 
 	const totalSets = exercises.reduce(
 		// eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -20,13 +22,13 @@ export function WorkoutHero({ day, dayIndex }: { day: any; dayIndex: number }) {
 	)
 
 	return (
-		<>
+		<div className='relative z-0'>
 			<p className='mt-6 text-[11px] font-extrabold uppercase tracking-[0.12em] text-white/40 sm:mt-8'>
 				Training session
 			</p>
 
 			<h2 className='mt-1 font-alumni text-[48px] font-bold uppercase leading-[0.9] tracking-tight sm:text-[62px]'>
-				Workout {dayIndex + 1}
+				{currentTrainingDay?.name ?? ' '}
 			</h2>
 
 			<p className='mt-3 max-w-[420px] text-[13px] leading-relaxed text-white/50 sm:text-[14px]'>
@@ -54,6 +56,6 @@ export function WorkoutHero({ day, dayIndex }: { day: any; dayIndex: number }) {
 					Start workout →
 				</Button>
 			</Link>
-		</>
+		</div>
 	)
 }

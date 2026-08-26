@@ -1,9 +1,9 @@
-import { useAuth } from '@/hooks/useAuth'
-import { Input } from '../ui/Input'
 import { AUTH_RULES } from '@/constants/auth-rules'
+import { useAuth } from '@/hooks/useAuth'
 import { ErrorMessage } from '@hookform/error-message'
 import { Button } from '../ui/Button'
 import { FormError } from '../ui/Error'
+import { Input } from '../ui/Input'
 
 export function AuthContent() {
 	const {
@@ -45,27 +45,30 @@ export function AuthContent() {
 				<form onSubmit={handleSubmit(onSubmit)} className='flex flex-col gap-4'>
 					{isRegister && (
 						<div className='grid grid-cols-2 gap-3'>
-							<Input
-								{...register('username', AUTH_RULES.username)}
-								className='h-[54px] rounded-[16px] border-black/[0.06] bg-white px-4 text-[14px] shadow-none outline-none transition-all placeholder:text-black/25 focus:border-black/20 focus:ring-0'
-								placeholder='Name'
-							/>
-							<ErrorMessage
-								name='username'
-								errors={validationErrors}
-								render={({ message }) => <FormError message={message} />}
-							/>
-
-							<Input
-								{...register('surname', AUTH_RULES.surname)}
-								className='h-[54px] rounded-[16px] border-black/[0.06] bg-white px-4 text-[14px] shadow-none outline-none transition-all placeholder:text-black/25 focus:border-black/20 focus:ring-0'
-								placeholder='Surname'
-							/>
-							<ErrorMessage
-								name='surname'
-								errors={validationErrors}
-								render={({ message }) => <FormError message={message} />}
-							/>
+							<div className='flex flex-col gap-y-[10px]'>
+								<Input
+									{...register('username', AUTH_RULES.username)}
+									className='h-[54px] rounded-[16px] border-black/[0.06] bg-white px-4 text-[14px] shadow-none outline-none transition-all placeholder:text-black/25 focus:border-black/20 focus:ring-0'
+									placeholder='Name'
+								/>
+								<ErrorMessage
+									name='username'
+									errors={validationErrors}
+									render={({ message }) => <FormError message={message} />}
+								/>
+							</div>
+							<div className='flex flex-col gap-y-[10px]'>
+								<Input
+									{...register('surname', AUTH_RULES.surname)}
+									className='h-[54px] rounded-[16px] border-black/[0.06] bg-white px-4 text-[14px] shadow-none outline-none transition-all placeholder:text-black/25 focus:border-black/20 focus:ring-0'
+									placeholder='Surname'
+								/>
+								<ErrorMessage
+									name='surname'
+									errors={validationErrors}
+									render={({ message }) => <FormError message={message} />}
+								/>
+							</div>
 						</div>
 					)}
 

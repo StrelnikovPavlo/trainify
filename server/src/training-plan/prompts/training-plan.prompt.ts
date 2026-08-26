@@ -12,251 +12,61 @@ type ExerciseWithRelations = Exercise & {
 
 export function buildTrainingPlanPrompt(
 	userProfile: UserProfile,
-	exercises: ExerciseWithRelations[],
-	durationDays: number
+	exercises: ExerciseWithRelations[]
 ) {
 	const exercisesList = exercises
 		.map(
 			ex =>
-				`- id: ${ex.id} | name: ${ex.name} | muscleGroup: ${ex.muscleGroup.name} | equipment: ${ex.equipment.name}`
+				`- id: ${ex.id} | ${ex.name} | ${ex.muscleGroup.name} | ${ex.equipment.name}`
 		)
 		.join('\n')
 
-	return `You are a professional fitness coach AI.
-
-Your task is to generate a personalized ${durationDays}-day training program based on the user's profile.
+	return `You are a professional fitness coach AI. Generate a personalized training split for this user.
 
 USER PROFILE:
-
-- Age: ${userProfile.age}
-- Weight: ${userProfile.weight} kg
-- Target weight: ${userProfile.targetWeight} kg
-- Height: ${userProfile.height} cm
-- Gender: ${userProfile.gender}
-- Experience level: ${userProfile.level}
+- Age: ${userProfile.age}, ${userProfile.gender}, ${userProfile.height}cm, ${userProfile.weight}kg → target ${userProfile.targetWeight}kg
+- Level: ${userProfile.level}
 - Goal: ${userProfile.goal}
-- Activity level: ${userProfile.activity}
-- Preferred workout type: ${userProfile.workoutType}
+- Activity: ${userProfile.activity}
+- Workout type: ${userProfile.workoutType}
 - Body type: ${userProfile.bodyType}
 
-AVAILABLE EXERCISES:
-
+AVAILABLE EXERCISES (use ONLY these exerciseId values, never invent any):
 ${exercisesList}
 
-IMPORTANT:
-You MUST only use exerciseId values from the AVAILABLE EXERCISES list.
-Never invent exercises, exercise IDs, muscle groups or equipment.
+RULES:
 
-TRAINING PROGRAM REQUIREMENTS:
+1. Duration: 3 or 4 training days total (no rest-day entries — every day is a training day). Choose 3 for lower activity/beginners, 4 for higher activity/intermediate-advanced, based on the profile.
 
-1. Generate exactly ${durationDays} days.
+2. Split, not Full Body — EXCEPT for BEGINNER level, which must use Full Body on every day.
+   Non-beginners: pick an appropriate split (e.g. Push/Pull/Legs, Upper/Lower, Push/Pull/Legs/Upper) matching level, goal and workout type. Never repeat the same primary muscle group on consecutive days unless the split calls for it.
 
-2. The program MUST use an appropriate training split based on the user's experience level.
+3. Periodization via %1RM (estimated, based on user level/goal — no real 1RM data exists):
+   - Vary intensity across days and across the week's structure, not identical sets/reps everywhere.
+   - Strength/compound-focused days: lower reps (4-6), higher %1RM (~80-90%), longer rest (90-180s).
+   - Hypertrophy-focused days: moderate reps (8-12), moderate %1RM (~65-80%), moderate rest (60-90s).
+   - Endurance/isolation work: higher reps (12-15), lower %1RM (~50-65%), shorter rest (30-60s).
+   - Beginners: stay mostly in the 65-75% %1RM range, 8-15 reps, prioritize technique over intensity.
+   - Sets: 2-5 depending on exercise role (compound vs isolation) and level.
 
-3. FULL BODY workouts are allowed ONLY for beginners.
+4. Each day: meaningful name (e.g. "Push", "Legs", "Upper Body"), non-empty exercises array, exercises matching the day's target muscle groups.
 
-4. For intermediate and advanced users, use a SPLIT program.
+5. order starts from 1 per day.
 
-Possible split structures include:
-- Push / Pull / Legs
-- Upper / Lower
-- Chest / Back / Legs
-- Chest + Shoulders / Back + Biceps / Legs + Triceps
-- Push / Pull / Legs / Rest
-- Upper / Lower / Upper / Lower
-
-Choose the split based on the user's experience level, goal, activity level and workout type.
-
-5. Do NOT use the same muscle group on consecutive training days unless this is intentional and appropriate for the selected split.
-
-6. Each TRAINING DAY must have a meaningful workout name.
-
-Examples:
-- "Chest"
-- "Back"
-- "Legs"
-- "Chest + Shoulders"
-- "Back + Biceps"
-- "Legs + Abs"
-- "Push"
-- "Pull"
-- "Upper Body"
-- "Lower Body"
-
-Workout names should describe the main muscle groups being trained.
-
-7. REST DAYS must have:
-- isRestDay: true
-- name: "Rest"
-- exercises: []
-
-8. TRAINING DAYS must have:
-- isRestDay: false
-- name describing the workout
-- non-empty exercises array
-
-PERIODIZATION:
-
-The program MUST use basic training periodization.
-
-Do not generate 7 identical workouts with the same sets and reps.
-
-Progress the training stimulus throughout the program.
-
-Use variations such as:
-- changing rep ranges
-- changing number of sets
-- changing rest periods
-- increasing training volume
-- changing intensity
-
-The progression must be realistic and appropriate for the user's experience level.
-
-For example:
-
-Beginner:
-- mostly moderate intensity
-- 8-15 reps
-- 2-4 sets
-- focus on technique and consistency
-
-Intermediate:
-- 6-12 reps for main exercises
-- 3-5 sets
-- combination of moderate and higher intensity
-- progressive overload
-
-Advanced:
-- combination of 5-12 reps
-- higher training volume
-- more structured intensity variation
-- advanced periodization
-
-Do NOT make every exercise 3 sets × 10 reps.
-
-EXERCISE REQUIREMENTS:
-
-1. Each exercise must reference a valid exerciseId.
-
-2. The "order" field starts from 1 for every training day.
-
-3. Sets should normally be between 2 and 5.
-
-4. Reps should normally be between 5 and 15 depending on the exercise and goal.
-
-5. restSeconds should normally be between 30 and 180.
-
-6. Compound exercises can use:
-- lower reps
-- higher rest
-
-7. Isolation exercises can use:
-- higher reps
-- shorter rest
-
-8. Avoid excessive exercise volume.
-
-9. Select exercises that match the workout name and target muscle groups.
-
-10. Do not randomly mix unrelated muscle groups.
-
-WEEK STRUCTURE:
-
-The program should have a logical weekly structure.
-
-Example for an intermediate user:
-
-Day 1:
-Push
-
-Day 2:
-Pull
-
-Day 3:
-Legs
-
-Day 4:
-Rest
-
-Day 5:
-Upper Body
-
-Day 6:
-Lower Body
-
-Day 7:
-Rest
-
-Example for a beginner:
-
-Day 1:
-Full Body
-
-Day 2:
-Rest
-
-Day 3:
-Full Body
-
-Day 4:
-Rest
-
-Day 5:
-Full Body
-
-Day 6:
-Rest
-
-Day 7:
-Rest
-
-Do NOT blindly copy these examples. Choose the most appropriate structure for the user.
-
-RESPONSE FORMAT:
-
-Return ONLY valid JSON.
-
-No markdown.
-No code fences.
-No explanations.
-
-The JSON must match this exact structure:
+OUTPUT: Return ONLY valid JSON, no markdown, no explanations, matching exactly:
 
 {
-  "name": "string - descriptive name of the complete training program",
-  "durationDays": ${durationDays},
+  "name": "string",
+  "durationDays": 3,
   "days": [
     {
       "dayNumber": 1,
-      "name": "Chest + Shoulders",
+      "name": "Push",
       "isRestDay": false,
       "exercises": [
-        {
-          "exerciseId": "valid exercise id",
-          "sets": 3,
-          "reps": 10,
-          "restSeconds": 90,
-          "order": 1
-        }
+        { "exerciseId": "valid id", "sets": 3, "reps": 8, "restSeconds": 90, "order": 1 }
       ]
-    },
-    {
-      "dayNumber": 2,
-      "name": "Back + Biceps",
-      "isRestDay": false,
-      "exercises": []
     }
   ]
-}
-
-The final program must:
-- contain exactly ${durationDays} days
-- use an appropriate split
-- use Full Body ONLY for beginners
-- contain workout names
-- contain logical muscle group distribution
-- use periodization
-- contain realistic sets, reps and rest
-- use ONLY exercise IDs from AVAILABLE EXERCISES
-`
+}`
 }

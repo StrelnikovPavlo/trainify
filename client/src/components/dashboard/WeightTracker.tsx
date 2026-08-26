@@ -1,17 +1,28 @@
+'use client'
+
+import { useWeightLog } from '@/hooks/useWeightLog'
+import { useState } from 'react'
 import { Button } from '../ui/Button'
+import { UpdateWeightModal } from './UpdateWeightModal'
+
+interface WeightTrackerProps {
+	initialWeight?: number
+	targetWeight?: number
+}
 
 export function WeightTracker({
-	weight,
+	initialWeight,
 	targetWeight,
-}: {
-	weight?: number
-	targetWeight?: number
-}) {
+}: WeightTrackerProps) {
+	const { latest, logWeight, isLogging } = useWeightLog()
+	const [isModalOpen, setIsModalOpen] = useState(false)
+
+	const weight = latest?.weight ?? initialWeight
+
 	const current = Number(weight)
 	const target = Number(targetWeight)
 
 	let progress = 0
-
 	if (current && target) {
 		progress = Math.min(100, Math.max(0, Math.round((current / target) * 100)))
 	}
@@ -23,7 +34,6 @@ export function WeightTracker({
 					<p className='text-[10px] font-bold uppercase tracking-[0.12em] text-black/40'>
 						Body Progress
 					</p>
-
 					<h2 className='mt-0.5 text-[18px] font-bold text-black'>
 						Weight Tracker
 					</h2>
@@ -38,7 +48,6 @@ export function WeightTracker({
 				<span className='text-[48px] font-extrabold leading-none tracking-tight text-black sm:text-[52px]'>
 					{weight ?? '-'}
 				</span>
-
 				<span className='mb-1.5 text-[14px] font-bold text-black/40'>kg</span>
 			</div>
 
@@ -53,9 +62,7 @@ export function WeightTracker({
 				<div className='h-2.5 overflow-hidden rounded-full bg-black/10'>
 					<div
 						className='h-full rounded-full bg-primary transition-all duration-500'
-						style={{
-							width: `${progress}%`,
-						}}
+						style={{ width: `${progress}%` }}
 					/>
 				</div>
 			</div>
@@ -65,7 +72,6 @@ export function WeightTracker({
 					<p className='text-[9px] font-bold uppercase tracking-wider text-black/40'>
 						Current
 					</p>
-
 					<p className='mt-1 text-[18px] font-extrabold text-black'>
 						{weight ?? '-'}
 						<span className='ml-1 text-[10px] font-bold text-black/40'>kg</span>
@@ -76,7 +82,6 @@ export function WeightTracker({
 					<p className='text-[9px] font-bold uppercase tracking-wider text-black/40'>
 						Goal
 					</p>
-
 					<p className='mt-1 text-[18px] font-extrabold text-black'>
 						{targetWeight ?? '-'}
 						<span className='ml-1 text-[10px] font-bold text-black/40'>kg</span>
@@ -84,9 +89,20 @@ export function WeightTracker({
 				</div>
 			</div>
 
-			<Button className='mt-3.5 w-full rounded-xl bg-[#18181b] py-3 text-[12px] font-bold text-white transition hover:bg-black active:scale-[0.98]'>
+			<Button
+				onClick={() => setIsModalOpen(true)}
+				className='mt-3.5 w-full rounded-xl bg-[#18181b] py-3 text-[12px] font-bold text-white transition hover:bg-black active:scale-[0.98]'
+			>
 				Update Weight
 			</Button>
+
+			<UpdateWeightModal
+				isOpen={isModalOpen}
+				currentWeight={weight}
+				onClose={() => setIsModalOpen(false)}
+				onSubmit={logWeight}
+				isSaving={isLogging}
+			/>
 		</div>
 	)
 }

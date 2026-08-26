@@ -1,4 +1,3 @@
-// src/hooks/useWorkoutSession.ts
 import { CreateWorkoutLogDto, workoutService } from '@/services/workout.service'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 

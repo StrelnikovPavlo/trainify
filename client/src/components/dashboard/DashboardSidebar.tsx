@@ -9,7 +9,7 @@ export function DashboardSidebar() {
 	return (
 		<aside className='space-y-5 lg:sticky lg:top-5'>
 			<WeightTracker
-				weight={profile?.weight}
+				initialWeight={profile?.weight}
 				targetWeight={profile?.targetWeight}
 			/>
 

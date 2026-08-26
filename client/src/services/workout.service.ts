@@ -1,4 +1,3 @@
-// src/services/workout.service.ts
 import { axiosInstance } from '@/lib/axios'
 
 export interface CreateWorkoutLogDto {
@@ -51,9 +50,7 @@ class WorkoutService {
 	}
 
 	async completeSession(sessionId: string): Promise<WorkoutSession> {
-		const { data } = await axiosInstance.put(
-			`${this.SESSION_URL}/${sessionId}`,
-		)
+		const { data } = await axiosInstance.put(`${this.SESSION_URL}/${sessionId}`)
 		return data
 	}
 }

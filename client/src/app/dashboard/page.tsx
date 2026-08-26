@@ -5,7 +5,6 @@ export const metadata: Metadata = {
 	title: 'Dashboard | Trainify platform',
 }
 
-
 export default function DashboardPage() {
 	return <Dashboard />
 }

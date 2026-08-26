@@ -23,6 +23,7 @@ export class UserProfileRepository {
 			include: {
 				user: {
 					select: {
+						id: true,
 						username: true,
 						surname: true,
 						email: true

@@ -1,17 +1,10 @@
-import { ITrainingDay } from '@/types/training-plan.types'
+import { useWorkouts } from '@/hooks/useWorkouts'
 import { WorkoutsListItem } from './workouts-list-item'
 
-interface WorkoutsListProps {
-	trainingDays: ITrainingDay[]
-	completedTrainingDays: number
-	currentDateString: string
-}
+export function WorkoutsList() {
+	const { trainingDays, completedTrainingDays, currentDateString } =
+		useWorkouts()
 
-export function WorkoutsList({
-	trainingDays,
-	currentDateString,
-	completedTrainingDays,
-}: WorkoutsListProps) {
 	return (
 		<section>
 			<div className='mb-3 flex items-center justify-between'>

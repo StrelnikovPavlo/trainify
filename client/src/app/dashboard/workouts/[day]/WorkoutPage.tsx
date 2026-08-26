@@ -1,8 +1,6 @@
-// src/components/workout/details/workout.tsx
 'use client'
 
-import { WorkoutActions } from '@/components/workout/details/workout-actions'
-import { WorkoutCard } from '@/components/workout/details/workout-card'
+import { WorkoutCard } from '@/components/workout/details/WorkoutCard'
 import { DASHBOARD_PAGES } from '@/config/pages-url.config'
 import { useTrainingPlan } from '@/hooks/useTrainingPlan'
 import Link from 'next/link'
@@ -53,13 +51,6 @@ export function Workout() {
 			</div>
 
 			<WorkoutCard day={currentDay} />
-
-			{!currentDay.isRestDay && (
-				<WorkoutActions
-					trainingDayId={currentDay.id}
-					dayName={currentDay.name}
-				/>
-			)}
 		</div>
 	)
 }
