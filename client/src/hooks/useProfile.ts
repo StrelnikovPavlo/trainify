@@ -1,7 +1,7 @@
 import { authService } from '@/services/auth.service'
 import { userService } from '@/services/profile.service'
 import { useAuthStore } from '@/store/auth.store'
-import { IUpdateUser } from '@/types/profile.types'
+import { IUpdateProfile, IUpdateUser } from '@/types/profile.types'
 import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query'
 
 export function useProfile() {
@@ -16,8 +16,18 @@ export function useProfile() {
 
 	const user = data?.user
 
-	const updateMutation = useMutation({
+	// User data
+	const updateUserMutation = useMutation({
 		mutationFn: (dto: IUpdateUser) => userService.update(user!.id, dto),
+		onSuccess: () => {
+			queryClient.invalidateQueries({ queryKey: ['profile'] })
+		},
+	})
+
+	// Physical data
+	const updatePhysicalProfileMutation = useMutation({
+		mutationFn: (dto: IUpdateProfile) =>
+			userService.updateProfile(user!.id, dto),
 		onSuccess: () => {
 			queryClient.invalidateQueries({ queryKey: ['profile'] })
 		},
@@ -38,9 +48,12 @@ export function useProfile() {
 		data,
 		user,
 		isLoading,
-		updateProfile: updateMutation.mutateAsync,
-		isUpdating: updateMutation.isPending,
-		updateError: updateMutation.error,
+		updateUser: updateUserMutation.mutateAsync,
+		updatePhysicalProfile: updatePhysicalProfileMutation.mutateAsync,
+		isUpdating:
+			updateUserMutation.isPending || updatePhysicalProfileMutation.isPending,
+		updateError:
+			updateUserMutation.error || updatePhysicalProfileMutation.error,
 		deleteAccount: deleteMutation.mutateAsync,
 		isDeleting: deleteMutation.isPending,
 	}

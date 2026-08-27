@@ -1,5 +1,10 @@
 import { axiosInstance } from '@/lib/axios'
-import { IProfile, IProfileForm, IUpdateUser } from '@/types/profile.types'
+import {
+	IProfile,
+	IProfileForm,
+	IUpdateProfile,
+	IUpdateUser,
+} from '@/types/profile.types'
 
 class UserService {
 	private BASE_URL_PROFILE = '/user-profile'
@@ -23,6 +28,14 @@ class UserService {
 	async update(userId: string, dto: IUpdateUser) {
 		const { data } = await axiosInstance.put<IUpdateUser>(
 			`${this.BASE_URL_USERS}/${userId}`,
+			dto,
+		)
+		return data
+	}
+
+	async updateProfile(userId: string, dto: IUpdateProfile) {
+		const { data } = await axiosInstance.put<IUpdateProfile>(
+			`${this.BASE_URL_PROFILE}/`,
 			dto,
 		)
 		return data

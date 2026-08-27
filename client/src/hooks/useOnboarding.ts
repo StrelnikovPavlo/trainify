@@ -3,13 +3,14 @@ import { getErrorMessage } from '@/lib/get-error-message'
 import { userService } from '@/services/profile.service'
 import { trainingPlanService } from '@/services/training-plan.service'
 import { IProfileForm } from '@/types/profile.types'
-import { useMutation } from '@tanstack/react-query'
+import { useMutation, useQueryClient } from '@tanstack/react-query'
 import axios from 'axios'
 import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
 export function useOnboarding() {
+	const queryClient = useQueryClient()
 	const [currentStep, setCurrentStep] = useState(0)
 	const { push } = useRouter()
 
@@ -41,7 +42,11 @@ export function useOnboarding() {
 	const generatePlan = useMutation({
 		mutationKey: ['onboarding', 'generate-plan'],
 		mutationFn: () => trainingPlanService.generate(),
-		onSuccess: () => push('/dashboard'),
+		onSuccess: () => {
+			queryClient.invalidateQueries({ queryKey: ['training-plan'] })
+			queryClient.invalidateQueries({ queryKey: ['profile'] })
+			push('/dashboard')
+		},
 	})
 
 	const onSubmit: SubmitHandler<IProfileForm> = async data => {

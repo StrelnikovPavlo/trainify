@@ -1,8 +1,9 @@
 import { CurrentUser } from '@/auth/decorators/current-user.decorator'
 import { ROUTES } from '@/constants/routes.constant'
-import { Body, Controller, Get, Post } from '@nestjs/common'
+import { Body, Controller, Get, Post, Put } from '@nestjs/common'
 import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger'
 import { UserProfileDto } from './dto/create-profile.dto'
+import { UpdateUserProfileDto } from './dto/update-profile.dto'
 import { UserProfileService } from './user-profile.service'
 
 @ApiBearerAuth()
@@ -21,5 +22,11 @@ export class UserProfileController {
 	@Get(ROUTES.userProfile.me)
 	getProfile(@CurrentUser('id') userId: string) {
 		return this.userProfileService.findByUserId(userId)
+	}
+
+	@ApiOperation({ summary: 'Update current user profile' })
+	@Put()
+	update(@CurrentUser('id') userId: string, @Body() dto: UpdateUserProfileDto) {
+		return this.userProfileService.update(userId, dto)
 	}
 }

@@ -4,19 +4,19 @@ import { IUpdateUser, IUser } from '@/types/profile.types'
 import { useState } from 'react'
 import { EditProfileForm } from './EditProfileForm'
 
-interface ProfileDetailsCardProps {
+interface ProfileUserDataProps {
 	user?: IUser
 	onSave: (dto: IUpdateUser) => Promise<unknown>
 	isSaving: boolean
 	saveError: unknown
 }
 
-export function ProfileDetailsCard({
+export function ProfileUserData({
 	user,
 	onSave,
 	isSaving,
 	saveError,
-}: ProfileDetailsCardProps) {
+}: ProfileUserDataProps) {
 	const [isEditing, setIsEditing] = useState(false)
 
 	const handleSave = async (dto: IUpdateUser) => {
