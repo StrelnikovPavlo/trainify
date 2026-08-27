@@ -15,7 +15,7 @@ export class AiService {
 	private readonly logger = new Logger(AiService.name)
 	private readonly ai: GoogleGenAI
 	private readonly model: string
-	private readonly fallbackModel = 'gemini-1.5-flash'
+	private readonly fallbackModel = 'gemini-3.5-flash-lite'
 
 	constructor(private readonly configService: ConfigService) {
 		this.ai = new GoogleGenAI({
@@ -24,7 +24,7 @@ export class AiService {
 
 		this.model = this.configService.get<string>(
 			'GEMINI_MODEL',
-			'gemini-2.5-flash'
+			'gemini-3.6-flash'
 		)
 	}
 
@@ -68,7 +68,7 @@ export class AiService {
 			contents: prompt
 		})
 
-		return res.text ?? ' '
+		return res.text?.trim() ?? ' '
 	}
 
 	private statusKod(error: unknown): number | undefined {

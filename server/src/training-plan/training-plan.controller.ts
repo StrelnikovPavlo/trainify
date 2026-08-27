@@ -1,6 +1,6 @@
 import { CurrentUser } from '@/auth/decorators/current-user.decorator'
 import { ROUTES } from '@/constants/routes.constant'
-import { Controller, Get, Post } from '@nestjs/common'
+import { Controller, Delete, Get, Post } from '@nestjs/common'
 import { ApiBearerAuth, ApiOperation, ApiTags } from '@nestjs/swagger'
 import { TrainingPlanService } from './training-plan.service'
 
@@ -16,6 +16,14 @@ export class TrainingPlanController {
 	@Post(ROUTES.trainingPlan.generate)
 	generate(@CurrentUser('id') userId: string) {
 		return this.trainingPlanService.generate(userId)
+	}
+
+	@ApiOperation({
+		summary: 'Delete training plan for the current user'
+	})
+	@Delete()
+	delete(@CurrentUser('id') userId: string) {
+		return this.trainingPlanService.delete(userId)
 	}
 
 	@ApiOperation({

@@ -12,7 +12,8 @@ export class TrainingPlanRepository {
 		})
 	}
 
-	create(userId: string, plan: GeneratedPlan) {
+	async create(userId: string, plan: GeneratedPlan) {
+		await this.delete(userId)
 		return this.prismaServices.trainingPlan.create({
 			data: {
 				userId,
@@ -53,6 +54,12 @@ export class TrainingPlanRepository {
 					orderBy: { date: 'asc' }
 				}
 			}
+		})
+	}
+
+	delete(userId: string) {
+		return this.prismaServices.trainingPlan.deleteMany({
+			where: { userId }
 		})
 	}
 }

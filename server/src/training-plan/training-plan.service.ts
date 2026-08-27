@@ -1,6 +1,6 @@
 import { AiService } from '@/ai/ai.service'
 import { UserProfileService } from '@/user-profile/user-profile.service'
-import { Injectable } from '@nestjs/common'
+import { Injectable, NotFoundException } from '@nestjs/common'
 import { buildTrainingPlanPrompt } from './prompts/training-plan.prompt'
 import { TrainingPlanRepository } from './training-plan.repository'
 import { GeneratedPlan } from './types/generated-plan.type'
@@ -14,8 +14,24 @@ export class TrainingPlanService {
 		private readonly userProfileService: UserProfileService
 	) {}
 
-	findByUserId(userId: string) {
-		return this.trainingPlanRepository.findByUserId(userId)
+	async findByUserId(userId: string) {
+		const plan = await this.trainingPlanRepository.findByUserId(userId)
+
+		if (!plan) {
+			throw new NotFoundException('Training plan not found')
+		}
+
+		return plan
+	}
+
+	async delete(userId: string) {
+		const deleted = await this.trainingPlanRepository.delete(userId)
+
+		if (!deleted) {
+			throw new NotFoundException('Training plan not found')
+		}
+
+		return deleted
 	}
 
 	async generate(userId: string) {
