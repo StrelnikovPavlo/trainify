@@ -1,15 +1,21 @@
 import { GoogleGenAI } from '@google/genai'
-import { Injectable, Logger, ServiceUnavailableException } from '@nestjs/common'
+import {
+	Injectable,
+	InternalServerErrorException,
+	Logger,
+	ServiceUnavailableException
+} from '@nestjs/common'
 import { ConfigService } from '@nestjs/config'
 
 @Injectable()
 export class AiService {
+	RETRIES = 3
+	DELAY_MS = 1000
+
+	private readonly logger = new Logger(AiService.name)
 	private readonly ai: GoogleGenAI
 	private readonly model: string
-	private readonly fallbackModel = 'gemini-3.6-flash'
-	private readonly logger = new Logger(AiService.name)
-
-	private readonly MAX_RETRIES = 3
+	private readonly fallbackModel = 'gemini-1.5-flash'
 
 	constructor(private readonly configService: ConfigService) {
 		this.ai = new GoogleGenAI({
@@ -18,102 +24,63 @@ export class AiService {
 
 		this.model = this.configService.get<string>(
 			'GEMINI_MODEL',
-			'gemini-3.7-flash'
+			'gemini-2.5-flash'
 		)
 	}
 
 	async generate(prompt: string): Promise<string> {
-		try {
-			return await this.generateWithRetry(this.model, prompt)
-		} catch (error) {
-			if (!this.isRetryableError(error)) {
-				this.logger.error('AI request failed', error)
+		for (let attempt = 0; attempt <= this.RETRIES; attempt++) {
+			const model = attempt < this.RETRIES ? this.model : this.fallbackModel
 
-				throw new ServiceUnavailableException(
-					'AI service is temporarily unavailable.'
-				)
-			}
-
-			this.logger.warn(
-				`Primary model ${this.model} failed. Trying fallback model ${this.fallbackModel}`
-			)
-		}
-
-		try {
-			return await this.generateWithRetry(this.fallbackModel, prompt)
-		} catch (error) {
-			this.logger.error(`Fallback model ${this.fallbackModel} failed`, error)
-
-			throw new ServiceUnavailableException(
-				'AI service is temporarily unavailable. Please try again later.'
-			)
-		}
-	}
-
-	private async generateWithRetry(
-		model: string,
-		prompt: string
-	): Promise<string> {
-		for (let attempt = 1; attempt <= this.MAX_RETRIES; attempt++) {
 			try {
-				this.logger.log(
-					`AI request: model=${model}, attempt=${attempt}/${this.MAX_RETRIES}`
-				)
-
-				const response = await this.ai.models.generateContent({
-					model,
-					contents: prompt
-				})
-
-				const text = response.text?.trim()
-
-				if (!text) {
-					throw new Error('AI returned an empty response')
-				}
-
-				return text
+				return await this.generateContent(prompt, model)
 			} catch (error) {
-				const retryable = this.isRetryableError(error)
-				const lastAttempt = attempt === this.MAX_RETRIES
+				const status = this.statusKod(error)
+				const isRetryable = status === 429 || status === 503
+				const isLastAttempt = attempt === this.RETRIES
 
-				this.logger.warn(
-					`AI request failed: model=${model}, attempt=${attempt}, retryable=${retryable}`
-				)
+				if (!isRetryable || isLastAttempt) {
+					this.logger.error(this.getErrorMessage(error))
 
-				if (!retryable || lastAttempt) {
-					throw error
+					throw status === 429
+						? new ServiceUnavailableException(
+								'AI service is overloaded, please try again later'
+							)
+						: new InternalServerErrorException(
+								'Failed to generate a response from AI'
+							)
 				}
 
-				const delay = this.getRetryDelay(attempt)
-
-				this.logger.warn(`Retrying AI request in ${delay}ms`)
-
-				await this.sleep(delay)
+				await this.sleep(this.DELAY_MS * 2 ** attempt)
 			}
 		}
-
-		throw new Error('AI request failed unexpectedly')
+		throw new InternalServerErrorException(
+			'Failed to generate a response from AI'
+		)
 	}
 
-	private isRetryableError(error: unknown): boolean {
-		if (!error || typeof error !== 'object') {
-			return false
-		}
+	private async generateContent(
+		prompt: string,
+		model: string
+	): Promise<string> {
+		const res = await this.ai.models.generateContent({
+			model,
+			contents: prompt
+		})
 
-		if (!('status' in error)) {
-			return false
-		}
-
-		const status = (error as { status?: number }).status
-
-		return status === 429 || status === 500 || status === 502 || status === 503
+		return res.text ?? ' '
 	}
 
-	private getRetryDelay(attempt: number): number {
-		const baseDelay = 2000
-		const maxDelay = 10000
+	private statusKod(error: unknown): number | undefined {
+		if (typeof error === 'object' && error !== null) {
+			const err = error as { status?: number; code?: number }
+			return err.status ?? err.code
+		}
+		return undefined
+	}
 
-		return Math.min(baseDelay * 2 ** (attempt - 1), maxDelay)
+	private getErrorMessage(error: unknown): string {
+		return error instanceof Error ? error.message : String(error)
 	}
 
 	private sleep(ms: number): Promise<void> {
