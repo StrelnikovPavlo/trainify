@@ -10,10 +10,10 @@ export function WorkoutsHero() {
 		trainingDayNumber,
 		trainingProgress,
 	} = useWorkouts()
-	
+
 	return (
 		<div className='mb-8 grid grid-cols-1 gap-4 sm:gap-5 lg:grid-cols-[minmax(0,1fr)_280px]'>
-			<div className='relative overflow-hidden rounded-[26px] bg-black p-5 text-white sm:p-6'>
+			<div className='relative overflow-hidden rounded-[26px] bg-[#18181b] p-5 text-white sm:p-6'>
 				<div className='relative z-10'>
 					<div className='mb-3 inline-flex rounded-full bg-primary px-2.5 py-1 text-[10px] font-black uppercase text-black sm:text-[11px]'>
 						Today
@@ -64,8 +64,8 @@ export function WorkoutsHero() {
 					)}
 				</div>
 
-				<div className='absolute -right-12 -top-16 h-48 w-48 rounded-full bg-primary/10 sm:h-56 sm:w-56' />
-				<div className='absolute -bottom-20 right-16 h-48 w-48 rounded-full bg-primary/5 sm:h-56 sm:w-56' />
+				<div className='absolute -right-20 -top-24 h-80 w-80 rounded-full border-[50px] border-white/[0.03]' />
+				<div className='absolute -bottom-28 -right-10 h-72 w-72 rounded-full bg-primary/10 blur-3xl' />
 			</div>
 
 			{/* Progress */}

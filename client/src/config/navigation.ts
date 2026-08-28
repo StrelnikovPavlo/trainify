@@ -13,4 +13,8 @@ export const NAVIGATION = [
 		url: DASHBOARD_PAGES.MEAL,
 		value: 'Meal Plan',
 	},
+	{
+		url: DASHBOARD_PAGES.EXERCISES,
+		value: 'Exercises',
+	},
 ] as const

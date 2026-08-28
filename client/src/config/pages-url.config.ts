@@ -6,6 +6,7 @@ class DASHBOARD {
 	MEAL = `${this.root}/meal-plan`
 	PROFILE = `${this.root}/profile`
 	ONBOARDING = `/onboarding`
+	EXERCISES = `${this.root}/exercises`
 }
 
 export const DASHBOARD_PAGES = new DASHBOARD()
