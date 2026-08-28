@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { Button } from '../ui/Button'
 
 interface UpdateWeightModalProps {
 	isOpen: boolean
@@ -51,20 +52,20 @@ export function UpdateWeightModal({
 				/>
 
 				<div className='mt-5 flex gap-2'>
-					<button
+					<Button
 						type='submit'
 						disabled={isSaving}
 						className='btn btn-black flex-1 py-3 text-[12px] font-black uppercase tracking-wide disabled:opacity-50'
 					>
 						{isSaving ? 'Saving...' : 'Save'}
-					</button>
-					<button
+					</Button>
+					<Button
 						type='button'
 						onClick={onClose}
 						className='flex-1 rounded-2xl border border-black/[0.08] py-3 text-[12px] font-bold uppercase tracking-wide text-black/50'
 					>
 						Cancel
-					</button>
+					</Button>
 				</div>
 			</form>
 		</div>

@@ -1,3 +1,5 @@
+import { Button } from '../ui/Button'
+
 interface GenerationErrorProps {
 	message: string
 	onRetry: () => void
@@ -29,13 +31,13 @@ export function GenerationError({ message, onRetry }: GenerationErrorProps) {
 
 				<p className='mt-3 text-[14px] text-black/40'>{message}</p>
 
-				<button
+				<Button
 					type='button'
 					onClick={onRetry}
 					className='btn-yellow mt-8 w-full px-8 py-3.5 text-[13px] font-black uppercase tracking-wider'
 				>
 					Try again
-				</button>
+				</Button>
 			</div>
 		</div>
 	)

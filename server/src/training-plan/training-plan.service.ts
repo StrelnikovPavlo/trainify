@@ -7,7 +7,7 @@ import { GeneratedPlan } from './types/generated-plan.type'
 
 @Injectable()
 export class TrainingPlanService {
-	private readonly TRAINING_PLAN_DURATION_DAYS = 7
+	private readonly TRAINING_PLAN_DURATION_DAYS = 14
 	constructor(
 		private readonly trainingPlanRepository: TrainingPlanRepository,
 		private readonly aiService: AiService,

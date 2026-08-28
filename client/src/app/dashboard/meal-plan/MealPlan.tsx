@@ -1,6 +1,6 @@
 'use client'
 
-import { MealPlanItem } from '@/components/MealPlanItem'
+import { MealPlanItem } from '@/components/meal-plan/MealPlanItem'
 import { MEAL_PDFS } from '@/constants/meal-plan'
 
 export default function MealPlan() {

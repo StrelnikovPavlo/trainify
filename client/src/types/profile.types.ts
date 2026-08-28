@@ -44,8 +44,6 @@ export interface IProfile {
 	user: IUser
 }
 
-export type IUpdateProfile = Partial<Omit<IProfile, 'user'>>
-
 export interface IUpdateUser {
 	username?: string
 	surname?: string
@@ -57,3 +55,5 @@ export interface IWeightLog {
 	weight: number
 	loggedAt: string
 }
+
+export type IUpdateProfile = Partial<Omit<IProfile, 'user'>>

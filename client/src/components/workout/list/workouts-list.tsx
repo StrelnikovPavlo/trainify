@@ -25,7 +25,7 @@ export function WorkoutsList() {
 
 			<div className='relative -mx-4 w-[calc(100%+2rem)] sm:mx-0 sm:w-full'>
 				<div className='no-scrollbar flex snap-x snap-mandatory gap-3 overflow-x-auto scroll-smooth px-4 pb-4 pt-1 sm:gap-4 sm:px-0'>
-					{trainingDays.slice(0, 7).map((trainingDay, index) => (
+					{trainingDays.slice(0, 14).map((trainingDay, index) => (
 						<WorkoutsListItem
 							key={trainingDay.id ?? index}
 							trainingDay={trainingDay}

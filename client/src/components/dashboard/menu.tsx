@@ -54,7 +54,7 @@ export default function Menu() {
               `}
 						>
 							{isActive && (
-								<span className='absolute -top-2 h-1 w-1 rounded-full bg-primary animate-pulse' />
+								<span className='absolute top-0.5 h-1 w-1 rounded-full bg-primary animate-pulse' />
 							)}
 
 							<span>{item.value}</span>

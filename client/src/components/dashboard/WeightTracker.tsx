@@ -4,6 +4,7 @@ import { useWeightLog } from '@/hooks/useWeightLog'
 import { useState } from 'react'
 import { Button } from '../ui/Button'
 import { UpdateWeightModal } from './UpdateWeightModal'
+import { Scale } from 'lucide-react'
 
 interface WeightTrackerProps {
 	initialWeight?: number
@@ -40,7 +41,7 @@ export function WeightTracker({
 				</div>
 
 				<span className='flex h-8 w-8 items-center justify-center rounded-full bg-gray-100 text-xs'>
-					⚖️
+					<Scale className='h-5 w-5 text-gray-500' strokeWidth={1.5} />
 				</span>
 			</div>
 

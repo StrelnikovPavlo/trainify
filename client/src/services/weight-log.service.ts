@@ -1,17 +1,27 @@
 import { axiosInstance } from '@/lib/axios'
 import { IWeightLog } from '@/types/profile.types'
 
-export const weightLogService = {
-	log: (weight: number) =>
-		axiosInstance
-			.post<IWeightLog>('/weight-log', { weight })
-			.then(res => res.data),
+class WeightLogService {
+	private BASE_URL = '/weight-log'
 
-	getLatest: () =>
-		axiosInstance
-			.get<IWeightLog | null>('/weight-log/latest')
-			.then(res => res.data),
+	async log(weight: number): Promise<IWeightLog> {
+		const response = await axiosInstance.post<IWeightLog>(this.BASE_URL, {
+			weight,
+		})
+		return response.data
+	}
 
-	getHistory: () =>
-		axiosInstance.get<IWeightLog[]>('/weight-log').then(res => res.data),
+	async getLatest(): Promise<IWeightLog | null> {
+		const response = await axiosInstance.get<IWeightLog | null>(
+			`${this.BASE_URL}/latest`,
+		)
+		return response.data
+	}
+
+	async getHistory(): Promise<IWeightLog[]> {
+		const response = await axiosInstance.get<IWeightLog[]>(this.BASE_URL)
+		return response.data
+	}
 }
+
+export const weightLogService = new WeightLogService()

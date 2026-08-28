@@ -105,8 +105,8 @@ export function WorkoutCard({ day }: WorkoutCardProps) {
 	}
 
 	return (
-		<div className='grid gap-6 lg:grid-cols-[1fr_320px]'>
-			<div>
+		<div className="flex flex-col items-start gap-6 lg:flex-row">
+			<div className="flex-1">
 				{!hasStarted ? (
 					<div className='rounded-[32px] bg-black p-8 text-white'>
 						<span className='rounded-full bg-primary px-3 py-1 text-[11px] font-bold uppercase text-black'>
