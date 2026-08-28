@@ -1368,6 +1368,7 @@ export const ExerciseScalarFieldEnum = {
   videoUrl: 'videoUrl',
   muscleGroupId: 'muscleGroupId',
   equipmentId: 'equipmentId',
+  type: 'type',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const
@@ -1553,6 +1554,20 @@ export type ListDateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaM
 
 
 /**
+ * Reference to a field of type 'WorkoutType'
+ */
+export type EnumWorkoutTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'WorkoutType'>
+    
+
+
+/**
+ * Reference to a field of type 'WorkoutType[]'
+ */
+export type ListEnumWorkoutTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'WorkoutType[]'>
+    
+
+
+/**
  * Reference to a field of type 'Int'
  */
 export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
@@ -1668,20 +1683,6 @@ export type EnumActivityFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaM
  * Reference to a field of type 'Activity[]'
  */
 export type ListEnumActivityFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Activity[]'>
-    
-
-
-/**
- * Reference to a field of type 'WorkoutType'
- */
-export type EnumWorkoutTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'WorkoutType'>
-    
-
-
-/**
- * Reference to a field of type 'WorkoutType[]'
- */
-export type ListEnumWorkoutTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'WorkoutType[]'>
     
 
 

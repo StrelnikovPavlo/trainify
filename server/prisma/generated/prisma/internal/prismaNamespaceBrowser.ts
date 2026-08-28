@@ -107,6 +107,7 @@ export const ExerciseScalarFieldEnum = {
   videoUrl: 'videoUrl',
   muscleGroupId: 'muscleGroupId',
   equipmentId: 'equipmentId',
+  type: 'type',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const

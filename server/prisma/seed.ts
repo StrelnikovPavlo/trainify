@@ -2,13 +2,14 @@ import { ConfigService } from '@nestjs/config'
 import { PrismaPg } from '@prisma/adapter-pg'
 import { readFile } from 'node:fs/promises'
 import { join } from 'node:path'
-import { PrismaClient } from './generated/prisma/client'
+import { PrismaClient, WorkoutType } from './generated/prisma/client'
 
 interface ExerciseSeed {
 	name: string
 	videoUrl: string
 	muscleGroup: string
 	equipment: string
+	type: WorkoutType
 }
 
 const configService = new ConfigService()
@@ -56,13 +57,15 @@ async function main() {
 			update: {
 				videoUrl: exercise.videoUrl,
 				muscleGroupId: muscleGroup.id,
-				equipmentId: equipment.id
+				equipmentId: equipment.id,
+				type: exercise.type
 			},
 			create: {
 				name: exercise.name,
 				videoUrl: exercise.videoUrl,
 				muscleGroupId: muscleGroup.id,
-				equipmentId: equipment.id
+				equipmentId: equipment.id,
+				type: exercise.type
 			}
 		})
 	}

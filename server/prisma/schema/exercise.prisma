@@ -21,11 +21,12 @@ model Equipment {
 }
 
 model Exercise {
-  id            String @id @default(cuid())
-  name          String @unique
-  videoUrl      String @map("video_url")
-  muscleGroupId String @map("muscle_group_id")
-  equipmentId   String @map("equipment_id")
+  id            String      @id @default(cuid())
+  name          String      @unique
+  videoUrl      String      @map("video_url")
+  muscleGroupId String      @map("muscle_group_id")
+  equipmentId   String      @map("equipment_id")
+  type          WorkoutType @default(GYM) @map("type")
 
   muscleGroup MuscleGroup @relation(fields: [muscleGroupId], references: [id])
   equipment   Equipment   @relation(fields: [equipmentId], references: [id])

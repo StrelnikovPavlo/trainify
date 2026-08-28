@@ -1,97 +1,97 @@
 [
 	{
 		"name": "BENT-OVER BARBELL ROW (OVERHAND GRIP)",
-		"videoUrl": "/video/test.mp4",
+		"videoUrl": "/video/BENT_OVER_BARBELL_ROW.mp4",
 		"muscleGroup": "Back",
 		"equipment": "Barbell",
 		"type": "GYM"
 	},
 	{
 		"name": "BENCH PRESS",
-		"videoUrl": "/video/test.mp4",
+		"videoUrl": "/video/BENCH_PRESS.mp4",
 		"muscleGroup": "Chest",
 		"equipment": "Barbell",
 		"type": "GYM"
 	},
 	{
 		"name": "BENCH PRESS (1–2 SEC PAUSE ON THE CHEST)",
-		"videoUrl": "/video/test.mp4",
+		"videoUrl": "/video/BENCH_PRESS_PAUSE.mp4",
 		"muscleGroup": "Chest",
 		"equipment": "Barbell",
 		"type": "GYM"
 	},
 	{
 		"name": "BENT-OVER ROWS WITH DUMBBELLS",
-		"videoUrl": "/video/test.mp4",
+		"videoUrl": "",
 		"muscleGroup": "Back",
 		"equipment": "Dumbbell",
 		"type": "GYM"
 	},
 	{
 		"name": "HYPEREXTENSIONS",
-		"videoUrl": "/video/test.mp4",
+		"videoUrl": "",
 		"muscleGroup": "Lower Back",
 		"equipment": "Bodyweight",
 		"type": "GYM"
 	},
 	{
 		"name": "CABLE CHEST FLY",
-		"videoUrl": "/video/test.mp4",
+		"videoUrl": "",
 		"muscleGroup": "Chest",
 		"equipment": "Cable",
 		"type": "GYM"
 	},
 	{
 		"name": "CLASSIC DEADLIFT",
-		"videoUrl": "/video/test.mp4",
+		"videoUrl": "/video/CLASSIC_DEADLIFT.mp4",
 		"muscleGroup": "Back",
 		"equipment": "Barbell",
 		"type": "GYM"
 	},
 	{
 		"name": "CLASSIC PULL-UPS",
-		"videoUrl": "/video/test.mp4",
+		"videoUrl": "/video/PULL_UPS.mp4",
 		"muscleGroup": "Back",
 		"equipment": "Bodyweight",
 		"type": "GYM"
 	},
 	{
 		"name": "DIPS",
-		"videoUrl": "/video/test.mp4",
+		"videoUrl": "",
 		"muscleGroup": "Triceps",
 		"equipment": "Bodyweight",
 		"type": "GYM"
 	},
 	{
 		"name": "DUMBBELL BENCH PRESS",
-		"videoUrl": "/video/test.mp4",
+		"videoUrl": "",
 		"muscleGroup": "Chest",
 		"equipment": "Dumbbell",
 		"type": "GYM"
 	},
 	{
 		"name": "ROMANIAN DEADLIFT",
-		"videoUrl": "/video/test.mp4",
+		"videoUrl": "",
 		"muscleGroup": "Hamstrings",
 		"equipment": "Barbell",
 		"type": "GYM"
 	},
 	{
 		"name": "GLUTE BRIDGE",
-		"videoUrl": "/video/test.mp4",
+		"videoUrl": "",
 		"muscleGroup": "Glutes",
 		"equipment": "Bodyweight",
 		"type": "GYM"
 	},
 	{
 		"name": "GOBLET SQUAT",
-		"videoUrl": "/video/test.mp4",
+		"videoUrl": "",
 		"muscleGroup": "Quads",
 		"equipment": "Dumbbell",
 		"type": "GYM"
 	},
 	{
-		"name": "HAMMER CURLS",
+		"name": "",
 		"videoUrl": "/video/test.mp4",
 		"muscleGroup": "Biceps",
 		"equipment": "Dumbbell",
@@ -99,237 +99,232 @@
 	},
 	{
 		"name": "LAT PULLDOWNS",
-		"videoUrl": "/video/test.mp4",
+		"videoUrl": "",
 		"muscleGroup": "Back",
 		"equipment": "Cable",
 		"type": "GYM"
 	},
 	{
 		"name": "LEG CURLS",
-		"videoUrl": "/video/test.mp4",
+		"videoUrl": "",
 		"muscleGroup": "Hamstrings",
 		"equipment": "Machine",
 		"type": "GYM"
 	},
 	{
 		"name": "LEG EXTENSIONS",
-		"videoUrl": "/video/test.mp4",
+		"videoUrl": "",
 		"muscleGroup": "Quads",
 		"equipment": "Machine",
 		"type": "GYM"
 	},
 	{
 		"name": "INCLINE DUMBBELL BENCH PRESS",
-		"videoUrl": "/video/test.mp4",
+		"videoUrl": "",
 		"muscleGroup": "Chest",
 		"equipment": "Dumbbell",
 		"type": "GYM"
 	},
 	{
 		"name": "LEG PRESS (WIDE STANCE)",
-		"videoUrl": "/video/test.mp4",
+		"videoUrl": "",
 		"muscleGroup": "Glutes",
 		"equipment": "Machine",
 		"type": "GYM"
 	},
 	{
 		"name": "LEG PRESS (СLASSIC STANCE)",
-		"videoUrl": "/video/test.mp4",
+		"videoUrl": "",
 		"muscleGroup": "Quads",
 		"equipment": "Machine",
 		"type": "GYM"
 	},
 	{
 		"name": "LOW-BAR SQUAT",
-		"videoUrl": "/video/test.mp4",
+		"videoUrl": "/video/LOW_BAR_SQUAT.mp4",
 		"muscleGroup": "Quads",
 		"equipment": "Barbell",
 		"type": "GYM"
 	},
 	{
 		"name": "LOW BAR TRICEPS PUSH UP",
-		"videoUrl": "/video/test.mp4",
+		"videoUrl": "",
 		"muscleGroup": "Triceps",
 		"equipment": "Bodyweight",
 		"type": "GYM"
 	},
 	{
 		"name": "NARROW-STANCE LEG PRESS (QUAD FOCUS)",
-		"videoUrl": "/video/test.mp4",
+		"videoUrl": "",
 		"muscleGroup": "Quads",
 		"equipment": "Machine",
 		"type": "GYM"
 	},
 	{
 		"name": "NARROW-GRIP LAT PULLDOWN",
-		"videoUrl": "/video/test.mp4",
+		"videoUrl": "",
 		"muscleGroup": "Back",
 		"equipment": "Cable",
 		"type": "GYM"
 	},
 	{
 		"name": "ONE-ARM DUMBBELL ROW",
-		"videoUrl": "/video/test.mp4",
+		"videoUrl": "",
 		"muscleGroup": "Back",
 		"equipment": "Dumbbell",
 		"type": "GYM"
 	},
 	{
 		"name": "OVERHEAD DUMBBELL PRESS",
-		"videoUrl": "/video/test.mp4",
+		"videoUrl": "",
 		"muscleGroup": "Shoulders",
 		"equipment": "Dumbbell",
 		"type": "GYM"
 	},
 	{
 		"name": "ROPE TRICEPS PUSHDOWNS",
-		"videoUrl": "/video/test.mp4",
+		"videoUrl": "",
 		"muscleGroup": "Triceps",
 		"equipment": "Cable",
 		"type": "GYM"
 	},
 	{
 		"name": "PLATE HOLDS STANDING",
-		"videoUrl": "/video/test.mp4",
+		"videoUrl": "",
 		"muscleGroup": "Forearms",
 		"equipment": "Plate",
 		"type": "GYM"
 	},
 	{
 		"name": "SEATED DUMBBELL LATERAL RAISES",
-		"videoUrl": "/video/test.mp4",
+		"videoUrl": "",
 		"muscleGroup": "Shoulders",
 		"equipment": "Dumbbell",
 		"type": "GYM"
 	},
 	{
 		"name": "SEATED MACHINE ROW",
-		"videoUrl": "/video/test.mp4",
+		"videoUrl": "",
 		"muscleGroup": "Back",
 		"equipment": "Machine",
 		"type": "GYM"
 	},
 	{
 		"name": "SINGLE-LEG CALF RAISES WITH DUMBBELL",
-		"videoUrl": "/video/test.mp4",
+		"videoUrl": "",
 		"muscleGroup": "Calves",
 		"equipment": "Dumbbell",
 		"type": "GYM"
 	},
 	{
 		"name": "SUPINATED DUMBBELL CURLS ON INCLINE BENCH",
-		"videoUrl": "/video/test.mp4",
+		"videoUrl": "",
 		"muscleGroup": "Biceps",
 		"equipment": "Dumbbell",
 		"type": "GYM"
 	},
 
-
-
-
-
-	
 	{
 		"name": "CLAP PUSH-UPS",
-		"videoUrl": "/video/clap-push-ups.mp4",
+		"videoUrl": "",
 		"muscleGroup": "Chest",
 		"equipment": "Bodyweight",
 		"type": "HOME"
 	},
 	{
 		"name": "DIAMOND PUSH-UPS",
-		"videoUrl": "/video/diamond-push-ups.mp4",
+		"videoUrl": "",
 		"muscleGroup": "Triceps",
 		"equipment": "Bodyweight",
 		"type": "HOME"
 	},
 	{
 		"name": "DYNAMIC LUNGES",
-		"videoUrl": "/video/dynamic-lunges.mp4",
+		"videoUrl": "",
 		"muscleGroup": "Legs",
 		"equipment": "Bodyweight",
 		"type": "HOME"
 	},
 	{
 		"name": "JUMPING JACKS",
-		"videoUrl": "/video/jumping-jacks.mp4",
+		"videoUrl": "",
 		"muscleGroup": "Cardio",
 		"equipment": "Bodyweight",
 		"type": "HOME"
 	},
 	{
 		"name": "JUMP SQUATS",
-		"videoUrl": "/video/jump-squats.mp4",
+		"videoUrl": "",
 		"muscleGroup": "Legs",
 		"equipment": "Bodyweight",
 		"type": "HOME"
 	},
 	{
 		"name": "KNEE PUSH-UPS",
-		"videoUrl": "/video/knee-push-ups.mp4",
+		"videoUrl": "",
 		"muscleGroup": "Chest",
 		"equipment": "Bodyweight",
 		"type": "HOME"
 	},
 	{
 		"name": "NEGATIVE PUSH-UPS",
-		"videoUrl": "/video/negative-push-ups.mp4",
+		"videoUrl": "",
 		"muscleGroup": "Chest",
 		"equipment": "Bodyweight",
 		"type": "HOME"
 	},
 	{
 		"name": "PLANK",
-		"videoUrl": "/video/plank.mp4",
+		"videoUrl": "",
 		"muscleGroup": "Core",
 		"equipment": "Bodyweight",
 		"type": "HOME"
 	},
 	{
 		"name": "PRONE LAT PULLDOWNS",
-		"videoUrl": "/video/prone-lat-pulldowns.mp4",
+		"videoUrl": "",
 		"muscleGroup": "Back",
 		"equipment": "Bodyweight",
 		"type": "HOME"
 	},
 	{
 		"name": "PUSH-UPS",
-		"videoUrl": "/video/push-ups.mp4",
+		"videoUrl": "",
 		"muscleGroup": "Chest",
 		"equipment": "Bodyweight",
 		"type": "HOME"
 	},
 	{
 		"name": "RUNNING IN PLACE",
-		"videoUrl": "/video/running-in-place.mp4",
+		"videoUrl": "",
 		"muscleGroup": "Cardio",
 		"equipment": "Bodyweight",
 		"type": "HOME"
 	},
 	{
 		"name": "SCISSORS",
-		"videoUrl": "/video/scissors.mp4",
+		"videoUrl": "",
 		"muscleGroup": "Core",
 		"equipment": "Bodyweight",
 		"type": "HOME"
 	},
 	{
 		"name": "SQUAT PULSES",
-		"videoUrl": "/video/squat-pulses.mp4",
+		"videoUrl": "",
 		"muscleGroup": "Legs",
 		"equipment": "Bodyweight",
 		"type": "HOME"
 	},
 	{
 		"name": "TEMPO PUSH-UPS",
-		"videoUrl": "/video/tempo-push-ups.mp4",
+		"videoUrl": "",
 		"muscleGroup": "Chest",
 		"equipment": "Bodyweight",
 		"type": "HOME"
 	},
 	{
 		"name": "WIDE-GRIP PUSH-UPS",
-		"videoUrl": "/video/wide-grip-push-ups.mp4",
+		"videoUrl": "",
 		"muscleGroup": "Chest",
 		"equipment": "Bodyweight",
 		"type": "HOME"
