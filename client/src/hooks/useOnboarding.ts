@@ -64,12 +64,17 @@ export function useOnboarding() {
 
 	const retryGeneration = () => generatePlan.mutate()
 
+	const profileOk =
+		createProfile.isSuccess ||
+		(axios.isAxiosError(createProfile.error) &&
+			createProfile.error.response?.status === 409)
+
 	const isPending = createProfile.isPending || generatePlan.isPending
-	const isGenerationError = createProfile.isSuccess && generatePlan.isError
-	const apiError = createProfile.isError
-		? getErrorMessage(createProfile.error)
-		: generatePlan.isError
-			? getErrorMessage(generatePlan.error)
+	const isGenerationError = profileOk && generatePlan.isError
+	const apiError = generatePlan.isError
+		? getErrorMessage(generatePlan.error)
+		: createProfile.isError && !profileOk
+			? getErrorMessage(createProfile.error)
 			: null
 
 	return {

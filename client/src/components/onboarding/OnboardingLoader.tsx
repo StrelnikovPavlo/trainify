@@ -49,7 +49,7 @@ export function OnboardingLoader() {
 					</div>
 					<p className='text-[12px] font-medium text-white/40 leading-relaxed'>
 						This may take up to{' '}
-						<span className='text-white/70 font-semibold'>1 minute</span> as AI
+						<span className='text-white/70 font-semibold'>1 minute</span>  as AI
 						creates your customized program. Please don&apos;t close this page.
 					</p>
 				</div>
