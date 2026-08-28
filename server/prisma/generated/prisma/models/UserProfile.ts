@@ -620,10 +620,6 @@ export type EnumActivityFieldUpdateOperationsInput = {
   set?: $Enums.Activity
 }
 
-export type EnumWorkoutTypeFieldUpdateOperationsInput = {
-  set?: $Enums.WorkoutType
-}
-
 export type EnumBodyTypeFieldUpdateOperationsInput = {
   set?: $Enums.BodyType
 }

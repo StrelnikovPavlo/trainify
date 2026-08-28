@@ -58,7 +58,7 @@ export class AuthService {
 			throw new UnauthorizedException('Invalid or expired refresh token')
 		}
 
-		await this.prismaService.refreshToken.delete({
+		await this.prismaService.refreshToken.deleteMany({
 			where: { id: stored.id }
 		})
 

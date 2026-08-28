@@ -8,6 +8,8 @@
  *
  * 🟢 You can import this file directly.
  */
+export type * from './models/MuscleGroup.js'
+export type * from './models/Equipment.js'
 export type * from './models/Exercise.js'
 export type * from './models/WorkoutLog.js'
 export type * from './models/WeightLog.js'

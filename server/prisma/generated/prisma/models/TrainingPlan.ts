@@ -241,17 +241,17 @@ export type TrainingPlanOrderByWithRelationInput = {
 
 export type TrainingPlanWhereUniqueInput = Prisma.AtLeast<{
   id?: string
+  userId?: string
   AND?: Prisma.TrainingPlanWhereInput | Prisma.TrainingPlanWhereInput[]
   OR?: Prisma.TrainingPlanWhereInput[]
   NOT?: Prisma.TrainingPlanWhereInput | Prisma.TrainingPlanWhereInput[]
-  userId?: Prisma.StringFilter<"TrainingPlan"> | string
   name?: Prisma.StringFilter<"TrainingPlan"> | string
   startDate?: Prisma.DateTimeFilter<"TrainingPlan"> | Date | string
   durationDays?: Prisma.IntFilter<"TrainingPlan"> | number
   generatedAt?: Prisma.DateTimeFilter<"TrainingPlan"> | Date | string
   user?: Prisma.XOR<Prisma.UserScalarRelationFilter, Prisma.UserWhereInput>
   trainingDays?: Prisma.TrainingDayListRelationFilter
-}, "id">
+}, "id" | "userId">
 
 export type TrainingPlanOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
@@ -385,14 +385,9 @@ export type TrainingPlanScalarRelationFilter = {
   isNot?: Prisma.TrainingPlanWhereInput
 }
 
-export type TrainingPlanListRelationFilter = {
-  every?: Prisma.TrainingPlanWhereInput
-  some?: Prisma.TrainingPlanWhereInput
-  none?: Prisma.TrainingPlanWhereInput
-}
-
-export type TrainingPlanOrderByRelationAggregateInput = {
-  _count?: Prisma.SortOrder
+export type TrainingPlanNullableScalarRelationFilter = {
+  is?: Prisma.TrainingPlanWhereInput | null
+  isNot?: Prisma.TrainingPlanWhereInput | null
 }
 
 export type TrainingPlanCreateNestedOneWithoutTrainingDaysInput = {
@@ -409,46 +404,36 @@ export type TrainingPlanUpdateOneRequiredWithoutTrainingDaysNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.TrainingPlanUpdateToOneWithWhereWithoutTrainingDaysInput, Prisma.TrainingPlanUpdateWithoutTrainingDaysInput>, Prisma.TrainingPlanUncheckedUpdateWithoutTrainingDaysInput>
 }
 
-export type TrainingPlanCreateNestedManyWithoutUserInput = {
-  create?: Prisma.XOR<Prisma.TrainingPlanCreateWithoutUserInput, Prisma.TrainingPlanUncheckedCreateWithoutUserInput> | Prisma.TrainingPlanCreateWithoutUserInput[] | Prisma.TrainingPlanUncheckedCreateWithoutUserInput[]
-  connectOrCreate?: Prisma.TrainingPlanCreateOrConnectWithoutUserInput | Prisma.TrainingPlanCreateOrConnectWithoutUserInput[]
-  createMany?: Prisma.TrainingPlanCreateManyUserInputEnvelope
-  connect?: Prisma.TrainingPlanWhereUniqueInput | Prisma.TrainingPlanWhereUniqueInput[]
+export type TrainingPlanCreateNestedOneWithoutUserInput = {
+  create?: Prisma.XOR<Prisma.TrainingPlanCreateWithoutUserInput, Prisma.TrainingPlanUncheckedCreateWithoutUserInput>
+  connectOrCreate?: Prisma.TrainingPlanCreateOrConnectWithoutUserInput
+  connect?: Prisma.TrainingPlanWhereUniqueInput
 }
 
-export type TrainingPlanUncheckedCreateNestedManyWithoutUserInput = {
-  create?: Prisma.XOR<Prisma.TrainingPlanCreateWithoutUserInput, Prisma.TrainingPlanUncheckedCreateWithoutUserInput> | Prisma.TrainingPlanCreateWithoutUserInput[] | Prisma.TrainingPlanUncheckedCreateWithoutUserInput[]
-  connectOrCreate?: Prisma.TrainingPlanCreateOrConnectWithoutUserInput | Prisma.TrainingPlanCreateOrConnectWithoutUserInput[]
-  createMany?: Prisma.TrainingPlanCreateManyUserInputEnvelope
-  connect?: Prisma.TrainingPlanWhereUniqueInput | Prisma.TrainingPlanWhereUniqueInput[]
+export type TrainingPlanUncheckedCreateNestedOneWithoutUserInput = {
+  create?: Prisma.XOR<Prisma.TrainingPlanCreateWithoutUserInput, Prisma.TrainingPlanUncheckedCreateWithoutUserInput>
+  connectOrCreate?: Prisma.TrainingPlanCreateOrConnectWithoutUserInput
+  connect?: Prisma.TrainingPlanWhereUniqueInput
 }
 
-export type TrainingPlanUpdateManyWithoutUserNestedInput = {
-  create?: Prisma.XOR<Prisma.TrainingPlanCreateWithoutUserInput, Prisma.TrainingPlanUncheckedCreateWithoutUserInput> | Prisma.TrainingPlanCreateWithoutUserInput[] | Prisma.TrainingPlanUncheckedCreateWithoutUserInput[]
-  connectOrCreate?: Prisma.TrainingPlanCreateOrConnectWithoutUserInput | Prisma.TrainingPlanCreateOrConnectWithoutUserInput[]
-  upsert?: Prisma.TrainingPlanUpsertWithWhereUniqueWithoutUserInput | Prisma.TrainingPlanUpsertWithWhereUniqueWithoutUserInput[]
-  createMany?: Prisma.TrainingPlanCreateManyUserInputEnvelope
-  set?: Prisma.TrainingPlanWhereUniqueInput | Prisma.TrainingPlanWhereUniqueInput[]
-  disconnect?: Prisma.TrainingPlanWhereUniqueInput | Prisma.TrainingPlanWhereUniqueInput[]
-  delete?: Prisma.TrainingPlanWhereUniqueInput | Prisma.TrainingPlanWhereUniqueInput[]
-  connect?: Prisma.TrainingPlanWhereUniqueInput | Prisma.TrainingPlanWhereUniqueInput[]
-  update?: Prisma.TrainingPlanUpdateWithWhereUniqueWithoutUserInput | Prisma.TrainingPlanUpdateWithWhereUniqueWithoutUserInput[]
-  updateMany?: Prisma.TrainingPlanUpdateManyWithWhereWithoutUserInput | Prisma.TrainingPlanUpdateManyWithWhereWithoutUserInput[]
-  deleteMany?: Prisma.TrainingPlanScalarWhereInput | Prisma.TrainingPlanScalarWhereInput[]
+export type TrainingPlanUpdateOneWithoutUserNestedInput = {
+  create?: Prisma.XOR<Prisma.TrainingPlanCreateWithoutUserInput, Prisma.TrainingPlanUncheckedCreateWithoutUserInput>
+  connectOrCreate?: Prisma.TrainingPlanCreateOrConnectWithoutUserInput
+  upsert?: Prisma.TrainingPlanUpsertWithoutUserInput
+  disconnect?: Prisma.TrainingPlanWhereInput | boolean
+  delete?: Prisma.TrainingPlanWhereInput | boolean
+  connect?: Prisma.TrainingPlanWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.TrainingPlanUpdateToOneWithWhereWithoutUserInput, Prisma.TrainingPlanUpdateWithoutUserInput>, Prisma.TrainingPlanUncheckedUpdateWithoutUserInput>
 }
 
-export type TrainingPlanUncheckedUpdateManyWithoutUserNestedInput = {
-  create?: Prisma.XOR<Prisma.TrainingPlanCreateWithoutUserInput, Prisma.TrainingPlanUncheckedCreateWithoutUserInput> | Prisma.TrainingPlanCreateWithoutUserInput[] | Prisma.TrainingPlanUncheckedCreateWithoutUserInput[]
-  connectOrCreate?: Prisma.TrainingPlanCreateOrConnectWithoutUserInput | Prisma.TrainingPlanCreateOrConnectWithoutUserInput[]
-  upsert?: Prisma.TrainingPlanUpsertWithWhereUniqueWithoutUserInput | Prisma.TrainingPlanUpsertWithWhereUniqueWithoutUserInput[]
-  createMany?: Prisma.TrainingPlanCreateManyUserInputEnvelope
-  set?: Prisma.TrainingPlanWhereUniqueInput | Prisma.TrainingPlanWhereUniqueInput[]
-  disconnect?: Prisma.TrainingPlanWhereUniqueInput | Prisma.TrainingPlanWhereUniqueInput[]
-  delete?: Prisma.TrainingPlanWhereUniqueInput | Prisma.TrainingPlanWhereUniqueInput[]
-  connect?: Prisma.TrainingPlanWhereUniqueInput | Prisma.TrainingPlanWhereUniqueInput[]
-  update?: Prisma.TrainingPlanUpdateWithWhereUniqueWithoutUserInput | Prisma.TrainingPlanUpdateWithWhereUniqueWithoutUserInput[]
-  updateMany?: Prisma.TrainingPlanUpdateManyWithWhereWithoutUserInput | Prisma.TrainingPlanUpdateManyWithWhereWithoutUserInput[]
-  deleteMany?: Prisma.TrainingPlanScalarWhereInput | Prisma.TrainingPlanScalarWhereInput[]
+export type TrainingPlanUncheckedUpdateOneWithoutUserNestedInput = {
+  create?: Prisma.XOR<Prisma.TrainingPlanCreateWithoutUserInput, Prisma.TrainingPlanUncheckedCreateWithoutUserInput>
+  connectOrCreate?: Prisma.TrainingPlanCreateOrConnectWithoutUserInput
+  upsert?: Prisma.TrainingPlanUpsertWithoutUserInput
+  disconnect?: Prisma.TrainingPlanWhereInput | boolean
+  delete?: Prisma.TrainingPlanWhereInput | boolean
+  connect?: Prisma.TrainingPlanWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.TrainingPlanUpdateToOneWithWhereWithoutUserInput, Prisma.TrainingPlanUpdateWithoutUserInput>, Prisma.TrainingPlanUncheckedUpdateWithoutUserInput>
 }
 
 export type TrainingPlanCreateWithoutTrainingDaysInput = {
@@ -526,45 +511,15 @@ export type TrainingPlanCreateOrConnectWithoutUserInput = {
   create: Prisma.XOR<Prisma.TrainingPlanCreateWithoutUserInput, Prisma.TrainingPlanUncheckedCreateWithoutUserInput>
 }
 
-export type TrainingPlanCreateManyUserInputEnvelope = {
-  data: Prisma.TrainingPlanCreateManyUserInput | Prisma.TrainingPlanCreateManyUserInput[]
-  skipDuplicates?: boolean
-}
-
-export type TrainingPlanUpsertWithWhereUniqueWithoutUserInput = {
-  where: Prisma.TrainingPlanWhereUniqueInput
+export type TrainingPlanUpsertWithoutUserInput = {
   update: Prisma.XOR<Prisma.TrainingPlanUpdateWithoutUserInput, Prisma.TrainingPlanUncheckedUpdateWithoutUserInput>
   create: Prisma.XOR<Prisma.TrainingPlanCreateWithoutUserInput, Prisma.TrainingPlanUncheckedCreateWithoutUserInput>
+  where?: Prisma.TrainingPlanWhereInput
 }
 
-export type TrainingPlanUpdateWithWhereUniqueWithoutUserInput = {
-  where: Prisma.TrainingPlanWhereUniqueInput
+export type TrainingPlanUpdateToOneWithWhereWithoutUserInput = {
+  where?: Prisma.TrainingPlanWhereInput
   data: Prisma.XOR<Prisma.TrainingPlanUpdateWithoutUserInput, Prisma.TrainingPlanUncheckedUpdateWithoutUserInput>
-}
-
-export type TrainingPlanUpdateManyWithWhereWithoutUserInput = {
-  where: Prisma.TrainingPlanScalarWhereInput
-  data: Prisma.XOR<Prisma.TrainingPlanUpdateManyMutationInput, Prisma.TrainingPlanUncheckedUpdateManyWithoutUserInput>
-}
-
-export type TrainingPlanScalarWhereInput = {
-  AND?: Prisma.TrainingPlanScalarWhereInput | Prisma.TrainingPlanScalarWhereInput[]
-  OR?: Prisma.TrainingPlanScalarWhereInput[]
-  NOT?: Prisma.TrainingPlanScalarWhereInput | Prisma.TrainingPlanScalarWhereInput[]
-  id?: Prisma.StringFilter<"TrainingPlan"> | string
-  userId?: Prisma.StringFilter<"TrainingPlan"> | string
-  name?: Prisma.StringFilter<"TrainingPlan"> | string
-  startDate?: Prisma.DateTimeFilter<"TrainingPlan"> | Date | string
-  durationDays?: Prisma.IntFilter<"TrainingPlan"> | number
-  generatedAt?: Prisma.DateTimeFilter<"TrainingPlan"> | Date | string
-}
-
-export type TrainingPlanCreateManyUserInput = {
-  id?: string
-  name: string
-  startDate: Date | string
-  durationDays: number
-  generatedAt?: Date | string
 }
 
 export type TrainingPlanUpdateWithoutUserInput = {
@@ -583,14 +538,6 @@ export type TrainingPlanUncheckedUpdateWithoutUserInput = {
   durationDays?: Prisma.IntFieldUpdateOperationsInput | number
   generatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   trainingDays?: Prisma.TrainingDayUncheckedUpdateManyWithoutTrainingPlanNestedInput
-}
-
-export type TrainingPlanUncheckedUpdateManyWithoutUserInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  name?: Prisma.StringFieldUpdateOperationsInput | string
-  startDate?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  durationDays?: Prisma.IntFieldUpdateOperationsInput | number
-  generatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 

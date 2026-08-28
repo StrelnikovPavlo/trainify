@@ -27,6 +27,7 @@ export type AggregateTrainingDay = {
 export type TrainingDayMinAggregateOutputType = {
   id: string | null
   trainingPlanId: string | null
+  name: string | null
   date: Date | null
   isRestDay: boolean | null
   status: $Enums.TrainingDayStatus | null
@@ -36,6 +37,7 @@ export type TrainingDayMinAggregateOutputType = {
 export type TrainingDayMaxAggregateOutputType = {
   id: string | null
   trainingPlanId: string | null
+  name: string | null
   date: Date | null
   isRestDay: boolean | null
   status: $Enums.TrainingDayStatus | null
@@ -45,6 +47,7 @@ export type TrainingDayMaxAggregateOutputType = {
 export type TrainingDayCountAggregateOutputType = {
   id: number
   trainingPlanId: number
+  name: number
   date: number
   isRestDay: number
   status: number
@@ -56,6 +59,7 @@ export type TrainingDayCountAggregateOutputType = {
 export type TrainingDayMinAggregateInputType = {
   id?: true
   trainingPlanId?: true
+  name?: true
   date?: true
   isRestDay?: true
   status?: true
@@ -65,6 +69,7 @@ export type TrainingDayMinAggregateInputType = {
 export type TrainingDayMaxAggregateInputType = {
   id?: true
   trainingPlanId?: true
+  name?: true
   date?: true
   isRestDay?: true
   status?: true
@@ -74,6 +79,7 @@ export type TrainingDayMaxAggregateInputType = {
 export type TrainingDayCountAggregateInputType = {
   id?: true
   trainingPlanId?: true
+  name?: true
   date?: true
   isRestDay?: true
   status?: true
@@ -156,6 +162,7 @@ export type TrainingDayGroupByArgs<ExtArgs extends runtime.Types.Extensions.Inte
 export type TrainingDayGroupByOutputType = {
   id: string
   trainingPlanId: string
+  name: string
   date: Date
   isRestDay: boolean
   status: $Enums.TrainingDayStatus
@@ -186,6 +193,7 @@ export type TrainingDayWhereInput = {
   NOT?: Prisma.TrainingDayWhereInput | Prisma.TrainingDayWhereInput[]
   id?: Prisma.StringFilter<"TrainingDay"> | string
   trainingPlanId?: Prisma.StringFilter<"TrainingDay"> | string
+  name?: Prisma.StringFilter<"TrainingDay"> | string
   date?: Prisma.DateTimeFilter<"TrainingDay"> | Date | string
   isRestDay?: Prisma.BoolFilter<"TrainingDay"> | boolean
   status?: Prisma.EnumTrainingDayStatusFilter<"TrainingDay"> | $Enums.TrainingDayStatus
@@ -198,6 +206,7 @@ export type TrainingDayWhereInput = {
 export type TrainingDayOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   trainingPlanId?: Prisma.SortOrder
+  name?: Prisma.SortOrder
   date?: Prisma.SortOrder
   isRestDay?: Prisma.SortOrder
   status?: Prisma.SortOrder
@@ -214,6 +223,7 @@ export type TrainingDayWhereUniqueInput = Prisma.AtLeast<{
   OR?: Prisma.TrainingDayWhereInput[]
   NOT?: Prisma.TrainingDayWhereInput | Prisma.TrainingDayWhereInput[]
   trainingPlanId?: Prisma.StringFilter<"TrainingDay"> | string
+  name?: Prisma.StringFilter<"TrainingDay"> | string
   date?: Prisma.DateTimeFilter<"TrainingDay"> | Date | string
   isRestDay?: Prisma.BoolFilter<"TrainingDay"> | boolean
   status?: Prisma.EnumTrainingDayStatusFilter<"TrainingDay"> | $Enums.TrainingDayStatus
@@ -226,6 +236,7 @@ export type TrainingDayWhereUniqueInput = Prisma.AtLeast<{
 export type TrainingDayOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   trainingPlanId?: Prisma.SortOrder
+  name?: Prisma.SortOrder
   date?: Prisma.SortOrder
   isRestDay?: Prisma.SortOrder
   status?: Prisma.SortOrder
@@ -241,6 +252,7 @@ export type TrainingDayScalarWhereWithAggregatesInput = {
   NOT?: Prisma.TrainingDayScalarWhereWithAggregatesInput | Prisma.TrainingDayScalarWhereWithAggregatesInput[]
   id?: Prisma.StringWithAggregatesFilter<"TrainingDay"> | string
   trainingPlanId?: Prisma.StringWithAggregatesFilter<"TrainingDay"> | string
+  name?: Prisma.StringWithAggregatesFilter<"TrainingDay"> | string
   date?: Prisma.DateTimeWithAggregatesFilter<"TrainingDay"> | Date | string
   isRestDay?: Prisma.BoolWithAggregatesFilter<"TrainingDay"> | boolean
   status?: Prisma.EnumTrainingDayStatusWithAggregatesFilter<"TrainingDay"> | $Enums.TrainingDayStatus
@@ -249,6 +261,7 @@ export type TrainingDayScalarWhereWithAggregatesInput = {
 
 export type TrainingDayCreateInput = {
   id?: string
+  name: string
   date: Date | string
   isRestDay?: boolean
   status?: $Enums.TrainingDayStatus
@@ -261,6 +274,7 @@ export type TrainingDayCreateInput = {
 export type TrainingDayUncheckedCreateInput = {
   id?: string
   trainingPlanId: string
+  name: string
   date: Date | string
   isRestDay?: boolean
   status?: $Enums.TrainingDayStatus
@@ -271,6 +285,7 @@ export type TrainingDayUncheckedCreateInput = {
 
 export type TrainingDayUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   isRestDay?: Prisma.BoolFieldUpdateOperationsInput | boolean
   status?: Prisma.EnumTrainingDayStatusFieldUpdateOperationsInput | $Enums.TrainingDayStatus
@@ -283,6 +298,7 @@ export type TrainingDayUpdateInput = {
 export type TrainingDayUncheckedUpdateInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   trainingPlanId?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   isRestDay?: Prisma.BoolFieldUpdateOperationsInput | boolean
   status?: Prisma.EnumTrainingDayStatusFieldUpdateOperationsInput | $Enums.TrainingDayStatus
@@ -294,6 +310,7 @@ export type TrainingDayUncheckedUpdateInput = {
 export type TrainingDayCreateManyInput = {
   id?: string
   trainingPlanId: string
+  name: string
   date: Date | string
   isRestDay?: boolean
   status?: $Enums.TrainingDayStatus
@@ -302,6 +319,7 @@ export type TrainingDayCreateManyInput = {
 
 export type TrainingDayUpdateManyMutationInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   isRestDay?: Prisma.BoolFieldUpdateOperationsInput | boolean
   status?: Prisma.EnumTrainingDayStatusFieldUpdateOperationsInput | $Enums.TrainingDayStatus
@@ -311,6 +329,7 @@ export type TrainingDayUpdateManyMutationInput = {
 export type TrainingDayUncheckedUpdateManyInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   trainingPlanId?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   isRestDay?: Prisma.BoolFieldUpdateOperationsInput | boolean
   status?: Prisma.EnumTrainingDayStatusFieldUpdateOperationsInput | $Enums.TrainingDayStatus
@@ -335,6 +354,7 @@ export type TrainingDayTrainingPlanIdDateCompoundUniqueInput = {
 export type TrainingDayCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   trainingPlanId?: Prisma.SortOrder
+  name?: Prisma.SortOrder
   date?: Prisma.SortOrder
   isRestDay?: Prisma.SortOrder
   status?: Prisma.SortOrder
@@ -344,6 +364,7 @@ export type TrainingDayCountOrderByAggregateInput = {
 export type TrainingDayMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   trainingPlanId?: Prisma.SortOrder
+  name?: Prisma.SortOrder
   date?: Prisma.SortOrder
   isRestDay?: Prisma.SortOrder
   status?: Prisma.SortOrder
@@ -353,6 +374,7 @@ export type TrainingDayMaxOrderByAggregateInput = {
 export type TrainingDayMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   trainingPlanId?: Prisma.SortOrder
+  name?: Prisma.SortOrder
   date?: Prisma.SortOrder
   isRestDay?: Prisma.SortOrder
   status?: Prisma.SortOrder
@@ -444,6 +466,7 @@ export type TrainingDayUpdateOneRequiredWithoutSessionsNestedInput = {
 
 export type TrainingDayCreateWithoutTrainingPlanInput = {
   id?: string
+  name: string
   date: Date | string
   isRestDay?: boolean
   status?: $Enums.TrainingDayStatus
@@ -454,6 +477,7 @@ export type TrainingDayCreateWithoutTrainingPlanInput = {
 
 export type TrainingDayUncheckedCreateWithoutTrainingPlanInput = {
   id?: string
+  name: string
   date: Date | string
   isRestDay?: boolean
   status?: $Enums.TrainingDayStatus
@@ -494,6 +518,7 @@ export type TrainingDayScalarWhereInput = {
   NOT?: Prisma.TrainingDayScalarWhereInput | Prisma.TrainingDayScalarWhereInput[]
   id?: Prisma.StringFilter<"TrainingDay"> | string
   trainingPlanId?: Prisma.StringFilter<"TrainingDay"> | string
+  name?: Prisma.StringFilter<"TrainingDay"> | string
   date?: Prisma.DateTimeFilter<"TrainingDay"> | Date | string
   isRestDay?: Prisma.BoolFilter<"TrainingDay"> | boolean
   status?: Prisma.EnumTrainingDayStatusFilter<"TrainingDay"> | $Enums.TrainingDayStatus
@@ -502,6 +527,7 @@ export type TrainingDayScalarWhereInput = {
 
 export type TrainingDayCreateWithoutExercisesInput = {
   id?: string
+  name: string
   date: Date | string
   isRestDay?: boolean
   status?: $Enums.TrainingDayStatus
@@ -513,6 +539,7 @@ export type TrainingDayCreateWithoutExercisesInput = {
 export type TrainingDayUncheckedCreateWithoutExercisesInput = {
   id?: string
   trainingPlanId: string
+  name: string
   date: Date | string
   isRestDay?: boolean
   status?: $Enums.TrainingDayStatus
@@ -538,6 +565,7 @@ export type TrainingDayUpdateToOneWithWhereWithoutExercisesInput = {
 
 export type TrainingDayUpdateWithoutExercisesInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   isRestDay?: Prisma.BoolFieldUpdateOperationsInput | boolean
   status?: Prisma.EnumTrainingDayStatusFieldUpdateOperationsInput | $Enums.TrainingDayStatus
@@ -549,6 +577,7 @@ export type TrainingDayUpdateWithoutExercisesInput = {
 export type TrainingDayUncheckedUpdateWithoutExercisesInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   trainingPlanId?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   isRestDay?: Prisma.BoolFieldUpdateOperationsInput | boolean
   status?: Prisma.EnumTrainingDayStatusFieldUpdateOperationsInput | $Enums.TrainingDayStatus
@@ -558,6 +587,7 @@ export type TrainingDayUncheckedUpdateWithoutExercisesInput = {
 
 export type TrainingDayCreateWithoutSessionsInput = {
   id?: string
+  name: string
   date: Date | string
   isRestDay?: boolean
   status?: $Enums.TrainingDayStatus
@@ -569,6 +599,7 @@ export type TrainingDayCreateWithoutSessionsInput = {
 export type TrainingDayUncheckedCreateWithoutSessionsInput = {
   id?: string
   trainingPlanId: string
+  name: string
   date: Date | string
   isRestDay?: boolean
   status?: $Enums.TrainingDayStatus
@@ -594,6 +625,7 @@ export type TrainingDayUpdateToOneWithWhereWithoutSessionsInput = {
 
 export type TrainingDayUpdateWithoutSessionsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   isRestDay?: Prisma.BoolFieldUpdateOperationsInput | boolean
   status?: Prisma.EnumTrainingDayStatusFieldUpdateOperationsInput | $Enums.TrainingDayStatus
@@ -605,6 +637,7 @@ export type TrainingDayUpdateWithoutSessionsInput = {
 export type TrainingDayUncheckedUpdateWithoutSessionsInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
   trainingPlanId?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   isRestDay?: Prisma.BoolFieldUpdateOperationsInput | boolean
   status?: Prisma.EnumTrainingDayStatusFieldUpdateOperationsInput | $Enums.TrainingDayStatus
@@ -614,6 +647,7 @@ export type TrainingDayUncheckedUpdateWithoutSessionsInput = {
 
 export type TrainingDayCreateManyTrainingPlanInput = {
   id?: string
+  name: string
   date: Date | string
   isRestDay?: boolean
   status?: $Enums.TrainingDayStatus
@@ -622,6 +656,7 @@ export type TrainingDayCreateManyTrainingPlanInput = {
 
 export type TrainingDayUpdateWithoutTrainingPlanInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   isRestDay?: Prisma.BoolFieldUpdateOperationsInput | boolean
   status?: Prisma.EnumTrainingDayStatusFieldUpdateOperationsInput | $Enums.TrainingDayStatus
@@ -632,6 +667,7 @@ export type TrainingDayUpdateWithoutTrainingPlanInput = {
 
 export type TrainingDayUncheckedUpdateWithoutTrainingPlanInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   isRestDay?: Prisma.BoolFieldUpdateOperationsInput | boolean
   status?: Prisma.EnumTrainingDayStatusFieldUpdateOperationsInput | $Enums.TrainingDayStatus
@@ -642,6 +678,7 @@ export type TrainingDayUncheckedUpdateWithoutTrainingPlanInput = {
 
 export type TrainingDayUncheckedUpdateManyWithoutTrainingPlanInput = {
   id?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   isRestDay?: Prisma.BoolFieldUpdateOperationsInput | boolean
   status?: Prisma.EnumTrainingDayStatusFieldUpdateOperationsInput | $Enums.TrainingDayStatus
@@ -691,6 +728,7 @@ export type TrainingDayCountOutputTypeCountSessionsArgs<ExtArgs extends runtime.
 export type TrainingDaySelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   trainingPlanId?: boolean
+  name?: boolean
   date?: boolean
   isRestDay?: boolean
   status?: boolean
@@ -704,6 +742,7 @@ export type TrainingDaySelect<ExtArgs extends runtime.Types.Extensions.InternalA
 export type TrainingDaySelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   trainingPlanId?: boolean
+  name?: boolean
   date?: boolean
   isRestDay?: boolean
   status?: boolean
@@ -714,6 +753,7 @@ export type TrainingDaySelectCreateManyAndReturn<ExtArgs extends runtime.Types.E
 export type TrainingDaySelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   trainingPlanId?: boolean
+  name?: boolean
   date?: boolean
   isRestDay?: boolean
   status?: boolean
@@ -724,13 +764,14 @@ export type TrainingDaySelectUpdateManyAndReturn<ExtArgs extends runtime.Types.E
 export type TrainingDaySelectScalar = {
   id?: boolean
   trainingPlanId?: boolean
+  name?: boolean
   date?: boolean
   isRestDay?: boolean
   status?: boolean
   createdAt?: boolean
 }
 
-export type TrainingDayOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "trainingPlanId" | "date" | "isRestDay" | "status" | "createdAt", ExtArgs["result"]["trainingDay"]>
+export type TrainingDayOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "trainingPlanId" | "name" | "date" | "isRestDay" | "status" | "createdAt", ExtArgs["result"]["trainingDay"]>
 export type TrainingDayInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   trainingPlan?: boolean | Prisma.TrainingPlanDefaultArgs<ExtArgs>
   exercises?: boolean | Prisma.TrainingDay$exercisesArgs<ExtArgs>
@@ -754,6 +795,7 @@ export type $TrainingDayPayload<ExtArgs extends runtime.Types.Extensions.Interna
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
     trainingPlanId: string
+    name: string
     date: Date
     isRestDay: boolean
     status: $Enums.TrainingDayStatus
@@ -1186,6 +1228,7 @@ export interface Prisma__TrainingDayClient<T, Null = never, ExtArgs extends runt
 export interface TrainingDayFieldRefs {
   readonly id: Prisma.FieldRef<"TrainingDay", 'String'>
   readonly trainingPlanId: Prisma.FieldRef<"TrainingDay", 'String'>
+  readonly name: Prisma.FieldRef<"TrainingDay", 'String'>
   readonly date: Prisma.FieldRef<"TrainingDay", 'DateTime'>
   readonly isRestDay: Prisma.FieldRef<"TrainingDay", 'Boolean'>
   readonly status: Prisma.FieldRef<"TrainingDay", 'TrainingDayStatus'>

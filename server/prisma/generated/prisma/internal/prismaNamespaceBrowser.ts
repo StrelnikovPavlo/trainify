@@ -51,6 +51,8 @@ export const AnyNull = runtime.AnyNull
 
 
 export const ModelName = {
+  MuscleGroup: 'MuscleGroup',
+  Equipment: 'Equipment',
   Exercise: 'Exercise',
   WorkoutLog: 'WorkoutLog',
   WeightLog: 'WeightLog',
@@ -79,12 +81,33 @@ export const TransactionIsolationLevel = runtime.makeStrictEnum({
 export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
+export const MuscleGroupScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type MuscleGroupScalarFieldEnum = (typeof MuscleGroupScalarFieldEnum)[keyof typeof MuscleGroupScalarFieldEnum]
+
+
+export const EquipmentScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type EquipmentScalarFieldEnum = (typeof EquipmentScalarFieldEnum)[keyof typeof EquipmentScalarFieldEnum]
+
+
 export const ExerciseScalarFieldEnum = {
   id: 'id',
   name: 'name',
   videoUrl: 'videoUrl',
-  muscleGroup: 'muscleGroup',
-  equipment: 'equipment',
+  muscleGroupId: 'muscleGroupId',
+  equipmentId: 'equipmentId',
+  type: 'type',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 } as const
@@ -132,6 +155,7 @@ export type TrainingPlanScalarFieldEnum = (typeof TrainingPlanScalarFieldEnum)[k
 export const TrainingDayScalarFieldEnum = {
   id: 'id',
   trainingPlanId: 'trainingPlanId',
+  name: 'name',
   date: 'date',
   isRestDay: 'isRestDay',
   status: 'status',

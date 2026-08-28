@@ -1,0 +1,80 @@
+@import 'tailwindcss';
+
+@theme {
+	--color-primary: #fff600;
+	--color-gray: #cacaca;
+	--color-green: #1fa812;
+	--color-red: #f02020;
+	--color-foreground: var(--foreground);
+
+	--font-sans: var(--font-manrope);
+	--font-alumni: var(--font-alumniSans);
+}
+
+:root {
+	--background: #f6f6f6;
+	--foreground: #231f1f;
+}
+
+@layer base {
+	body {
+		background: var(--background);
+		color: var(--foreground);
+	}
+
+	button {
+		cursor: pointer;
+	}
+
+	input {
+		outline-color: var(--foreground);
+	}
+
+	input[placeholder]:not([data-placeholder-nohiden])::placeholder {
+		transition: opacity 0.2s;
+	}
+
+	input[placeholder]:not([data-placeholder-nohiden]):focus::placeholder {
+		opacity: 0;
+	}
+}
+
+@layer components {
+	.btn {
+		@apply text-[15px] uppercase font-bold font-alumni h-[48px] rounded-[8px] py-[5px] px-[30px];
+	}
+	.btn-black {
+		@apply text-white bg-foreground hover:bg-black disabled:cursor-not-allowed disabled:opacity-50 transition-all;
+	}
+
+	.btn-yellow {
+		@apply text-black bg-primary hover:bg-[#e8df00];
+	}
+
+	.input {
+		@apply text-center w-full h-[48px] text-2xl text-foreground font-medium border border-gray rounded-[8px] px-[23px];
+		-moz-appearance: textfield;
+	}
+
+	.input::placeholder {
+		@apply text-gray;
+	}
+
+	.input::-webkit-outer-spin-button,
+	.input::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+
+	.radio {
+		@apply flex cursor-pointer items-center justify-between gap-x-[5px] rounded-[10px] border px-4 py-3 transition-all;
+	}
+
+	.radio--checked {
+		@apply border-black bg-neutral-50;
+	}
+
+	.radio--unchecked {
+		@apply border-neutral-200 hover:border-neutral-300;
+	}
+}

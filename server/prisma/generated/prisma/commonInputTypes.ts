@@ -72,6 +72,23 @@ export type DateTimeWithAggregatesFilter<$PrismaModel = never> = {
   _max?: Prisma.NestedDateTimeFilter<$PrismaModel>
 }
 
+export type EnumWorkoutTypeFilter<$PrismaModel = never> = {
+  equals?: $Enums.WorkoutType | Prisma.EnumWorkoutTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.WorkoutType[] | Prisma.ListEnumWorkoutTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.WorkoutType[] | Prisma.ListEnumWorkoutTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumWorkoutTypeFilter<$PrismaModel> | $Enums.WorkoutType
+}
+
+export type EnumWorkoutTypeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.WorkoutType | Prisma.EnumWorkoutTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.WorkoutType[] | Prisma.ListEnumWorkoutTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.WorkoutType[] | Prisma.ListEnumWorkoutTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumWorkoutTypeWithAggregatesFilter<$PrismaModel> | $Enums.WorkoutType
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumWorkoutTypeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumWorkoutTypeFilter<$PrismaModel>
+}
+
 export type IntFilter<$PrismaModel = never> = {
   equals?: number | Prisma.IntFieldRefInput<$PrismaModel>
   in?: number[] | Prisma.ListIntFieldRefInput<$PrismaModel>
@@ -258,13 +275,6 @@ export type EnumActivityFilter<$PrismaModel = never> = {
   not?: Prisma.NestedEnumActivityFilter<$PrismaModel> | $Enums.Activity
 }
 
-export type EnumWorkoutTypeFilter<$PrismaModel = never> = {
-  equals?: $Enums.WorkoutType | Prisma.EnumWorkoutTypeFieldRefInput<$PrismaModel>
-  in?: $Enums.WorkoutType[] | Prisma.ListEnumWorkoutTypeFieldRefInput<$PrismaModel>
-  notIn?: $Enums.WorkoutType[] | Prisma.ListEnumWorkoutTypeFieldRefInput<$PrismaModel>
-  not?: Prisma.NestedEnumWorkoutTypeFilter<$PrismaModel> | $Enums.WorkoutType
-}
-
 export type EnumBodyTypeFilter<$PrismaModel = never> = {
   equals?: $Enums.BodyType | Prisma.EnumBodyTypeFieldRefInput<$PrismaModel>
   in?: $Enums.BodyType[] | Prisma.ListEnumBodyTypeFieldRefInput<$PrismaModel>
@@ -310,16 +320,6 @@ export type EnumActivityWithAggregatesFilter<$PrismaModel = never> = {
   _count?: Prisma.NestedIntFilter<$PrismaModel>
   _min?: Prisma.NestedEnumActivityFilter<$PrismaModel>
   _max?: Prisma.NestedEnumActivityFilter<$PrismaModel>
-}
-
-export type EnumWorkoutTypeWithAggregatesFilter<$PrismaModel = never> = {
-  equals?: $Enums.WorkoutType | Prisma.EnumWorkoutTypeFieldRefInput<$PrismaModel>
-  in?: $Enums.WorkoutType[] | Prisma.ListEnumWorkoutTypeFieldRefInput<$PrismaModel>
-  notIn?: $Enums.WorkoutType[] | Prisma.ListEnumWorkoutTypeFieldRefInput<$PrismaModel>
-  not?: Prisma.NestedEnumWorkoutTypeWithAggregatesFilter<$PrismaModel> | $Enums.WorkoutType
-  _count?: Prisma.NestedIntFilter<$PrismaModel>
-  _min?: Prisma.NestedEnumWorkoutTypeFilter<$PrismaModel>
-  _max?: Prisma.NestedEnumWorkoutTypeFilter<$PrismaModel>
 }
 
 export type EnumBodyTypeWithAggregatesFilter<$PrismaModel = never> = {
@@ -397,6 +397,23 @@ export type NestedDateTimeWithAggregatesFilter<$PrismaModel = never> = {
   _count?: Prisma.NestedIntFilter<$PrismaModel>
   _min?: Prisma.NestedDateTimeFilter<$PrismaModel>
   _max?: Prisma.NestedDateTimeFilter<$PrismaModel>
+}
+
+export type NestedEnumWorkoutTypeFilter<$PrismaModel = never> = {
+  equals?: $Enums.WorkoutType | Prisma.EnumWorkoutTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.WorkoutType[] | Prisma.ListEnumWorkoutTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.WorkoutType[] | Prisma.ListEnumWorkoutTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumWorkoutTypeFilter<$PrismaModel> | $Enums.WorkoutType
+}
+
+export type NestedEnumWorkoutTypeWithAggregatesFilter<$PrismaModel = never> = {
+  equals?: $Enums.WorkoutType | Prisma.EnumWorkoutTypeFieldRefInput<$PrismaModel>
+  in?: $Enums.WorkoutType[] | Prisma.ListEnumWorkoutTypeFieldRefInput<$PrismaModel>
+  notIn?: $Enums.WorkoutType[] | Prisma.ListEnumWorkoutTypeFieldRefInput<$PrismaModel>
+  not?: Prisma.NestedEnumWorkoutTypeWithAggregatesFilter<$PrismaModel> | $Enums.WorkoutType
+  _count?: Prisma.NestedIntFilter<$PrismaModel>
+  _min?: Prisma.NestedEnumWorkoutTypeFilter<$PrismaModel>
+  _max?: Prisma.NestedEnumWorkoutTypeFilter<$PrismaModel>
 }
 
 export type NestedFloatNullableFilter<$PrismaModel = never> = {
@@ -580,13 +597,6 @@ export type NestedEnumActivityFilter<$PrismaModel = never> = {
   not?: Prisma.NestedEnumActivityFilter<$PrismaModel> | $Enums.Activity
 }
 
-export type NestedEnumWorkoutTypeFilter<$PrismaModel = never> = {
-  equals?: $Enums.WorkoutType | Prisma.EnumWorkoutTypeFieldRefInput<$PrismaModel>
-  in?: $Enums.WorkoutType[] | Prisma.ListEnumWorkoutTypeFieldRefInput<$PrismaModel>
-  notIn?: $Enums.WorkoutType[] | Prisma.ListEnumWorkoutTypeFieldRefInput<$PrismaModel>
-  not?: Prisma.NestedEnumWorkoutTypeFilter<$PrismaModel> | $Enums.WorkoutType
-}
-
 export type NestedEnumBodyTypeFilter<$PrismaModel = never> = {
   equals?: $Enums.BodyType | Prisma.EnumBodyTypeFieldRefInput<$PrismaModel>
   in?: $Enums.BodyType[] | Prisma.ListEnumBodyTypeFieldRefInput<$PrismaModel>
@@ -632,16 +642,6 @@ export type NestedEnumActivityWithAggregatesFilter<$PrismaModel = never> = {
   _count?: Prisma.NestedIntFilter<$PrismaModel>
   _min?: Prisma.NestedEnumActivityFilter<$PrismaModel>
   _max?: Prisma.NestedEnumActivityFilter<$PrismaModel>
-}
-
-export type NestedEnumWorkoutTypeWithAggregatesFilter<$PrismaModel = never> = {
-  equals?: $Enums.WorkoutType | Prisma.EnumWorkoutTypeFieldRefInput<$PrismaModel>
-  in?: $Enums.WorkoutType[] | Prisma.ListEnumWorkoutTypeFieldRefInput<$PrismaModel>
-  notIn?: $Enums.WorkoutType[] | Prisma.ListEnumWorkoutTypeFieldRefInput<$PrismaModel>
-  not?: Prisma.NestedEnumWorkoutTypeWithAggregatesFilter<$PrismaModel> | $Enums.WorkoutType
-  _count?: Prisma.NestedIntFilter<$PrismaModel>
-  _min?: Prisma.NestedEnumWorkoutTypeFilter<$PrismaModel>
-  _max?: Prisma.NestedEnumWorkoutTypeFilter<$PrismaModel>
 }
 
 export type NestedEnumBodyTypeWithAggregatesFilter<$PrismaModel = never> = {
