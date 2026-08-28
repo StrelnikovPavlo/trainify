@@ -1,8 +1,9 @@
 import { ApiProperty } from '@nestjs/swagger'
-import { IsNotEmpty, IsString, IsUrl, MaxLength } from 'class-validator'
+import { IsEnum, IsNotEmpty, IsString, IsUrl, MaxLength } from 'class-validator'
+import { WorkoutType } from 'prisma/generated/prisma/enums'
 
 export class CreateExerciseDto {
-	@ApiProperty({ example: 'Bench Press', description: 'Exercise name' })
+	@ApiProperty({ example: 'CABLE CHEST FLY' })
 	@IsString()
 	@IsNotEmpty()
 	@MaxLength(100)
@@ -16,7 +17,15 @@ export class CreateExerciseDto {
 	videoUrl: string
 
 	@ApiProperty({
-		example: 'cku1234567890',
+		example: WorkoutType.GYM,
+		enum: WorkoutType,
+		description: 'Whether the exercise is intended for gym or home workouts'
+	})
+	@IsEnum(WorkoutType)
+	type: WorkoutType
+
+	@ApiProperty({
+		example: 'cmsrv6s1p00033mms0909s42b',
 		description: 'Identifier of the related muscle group'
 	})
 	@IsString()
@@ -24,7 +33,7 @@ export class CreateExerciseDto {
 	muscleGroupId: string
 
 	@ApiProperty({
-		example: 'cku0987654321',
+		example: 'cmsu5qsde000c9jmswjwo45i4',
 		description: 'Identifier of the related equipment'
 	})
 	@IsString()

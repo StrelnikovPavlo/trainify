@@ -1,3 +1,4 @@
+import { ExercisesService } from '@/exercises/exercises.service'
 import {
 	BadRequestException,
 	ForbiddenException,
@@ -9,7 +10,10 @@ import { WorkoutLogRepository } from './workout-log.repository'
 
 @Injectable()
 export class WorkoutLogService {
-	constructor(private readonly workoutLogRepository: WorkoutLogRepository) {}
+	constructor(
+		private readonly workoutLogRepository: WorkoutLogRepository,
+		private readonly exercisesService: ExercisesService
+	) {}
 
 	async create(userId: string, dto: CreateWorkoutLogDto) {
 		const session = await this.workoutLogRepository.findSessionWithUser(
@@ -27,6 +31,14 @@ export class WorkoutLogService {
 		if (session.completedAt) {
 			throw new BadRequestException(
 				'Cannot add log to a completed workout session'
+			)
+		}
+
+		const exercise = await this.exercisesService.findById(dto.exerciseId)
+
+		if (!exercise) {
+			throw new NotFoundException(
+				`Exercise with id "${dto.exerciseId}" not found`
 			)
 		}
 

@@ -1,3 +1,5 @@
+import { EquipmentService } from '@/equipment/equipment.service'
+import { MuscleGroupService } from '@/muscle-group/muscle-group.service'
 import { Injectable, NotFoundException } from '@nestjs/common'
 import { Exercise } from 'prisma/generated/prisma/client'
 import { CreateExerciseDto } from './dto/create-exercise.dto'
@@ -6,7 +8,11 @@ import { ExercisesRepository } from './exercises.repository'
 
 @Injectable()
 export class ExercisesService {
-	constructor(private readonly exercisesRepository: ExercisesRepository) {}
+	constructor(
+		private readonly exercisesRepository: ExercisesRepository,
+		private readonly muscleGroupService: MuscleGroupService,
+		private readonly equipmentService: EquipmentService
+	) {}
 
 	findMany(): Promise<Exercise[]> {
 		return this.exercisesRepository.findMany()
@@ -22,8 +28,22 @@ export class ExercisesService {
 		return exercise
 	}
 
-	create(dto: CreateExerciseDto): Promise<Exercise> {
+	async create(dto: CreateExerciseDto): Promise<Exercise> {
 		const { muscleGroupId, equipmentId, ...rest } = dto
+
+		const muscleGroup = await this.muscleGroupService.findById(muscleGroupId)
+		if (!muscleGroup) {
+			throw new NotFoundException(
+				`Muscle group with id "${muscleGroupId}" not found`
+			)
+		}
+
+		const equipment = await this.equipmentService.findById(equipmentId)
+		if (!equipment) {
+			throw new NotFoundException(
+				`Equipment with id "${equipmentId}" not found`
+			)
+		}
 
 		return this.exercisesRepository.create({
 			...rest,

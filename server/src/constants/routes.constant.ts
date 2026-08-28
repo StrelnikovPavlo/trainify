@@ -34,5 +34,17 @@ export const ROUTES = {
 	users: {
 		base: 'users',
 		byId: ':id'
+	},
+	weightLog: {
+		base: 'weight-log',
+		latest: 'latest'
+	},
+	workoutLog: {
+		base: 'workout-log'
+	},
+	workoutSession: {
+		base: 'workout-session',
+		trainingId: '/:trainingDayId',
+		byId: ':id'
 	}
 } as const

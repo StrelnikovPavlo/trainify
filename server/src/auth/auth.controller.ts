@@ -8,7 +8,14 @@ import {
 	Res,
 	UnauthorizedException
 } from '@nestjs/common'
-import { ApiOperation, ApiTags } from '@nestjs/swagger'
+import {
+	ApiConflictResponse,
+	ApiCreatedResponse,
+	ApiOkResponse,
+	ApiOperation,
+	ApiTags,
+	ApiUnauthorizedResponse
+} from '@nestjs/swagger'
 import type { Request, Response } from 'express'
 import { AuthService } from './auth.service'
 import { Public } from './decorators/public.decorator'
@@ -24,6 +31,8 @@ export class AuthController {
 
 	@Public()
 	@ApiOperation({ summary: 'Registration' })
+	@ApiCreatedResponse({ description: 'User registered, access token returned' })
+	@ApiConflictResponse({ description: 'A user with this email already exists' })
 	@Post(ROUTES.auth.register)
 	async register(
 		@Body() dto: CreateUserDto,
@@ -36,6 +45,8 @@ export class AuthController {
 
 	@Public()
 	@ApiOperation({ summary: 'Login' })
+	@ApiOkResponse({ description: 'Login successful, access token returned' })
+	@ApiUnauthorizedResponse({ description: 'Invalid email or password' })
 	@Post(ROUTES.auth.login)
 	async login(
 		@Body() dto: LoginDto,
@@ -48,6 +59,7 @@ export class AuthController {
 
 	@Public()
 	@ApiOperation({ summary: 'Logout' })
+	@ApiOkResponse({ description: 'Logged out successfully' })
 	@Post(ROUTES.auth.logout)
 	async logout(@Req() req: Request, @Res({ passthrough: true }) res: Response) {
 		const rawRefreshToken = req.cookies?.[this.REFRESH_TOKEN_NAME] as
@@ -64,6 +76,7 @@ export class AuthController {
 
 	@Public()
 	@ApiOperation({ summary: 'Refresh access token' })
+	@ApiOkResponse({ description: 'New access token issued' })
 	@Post(ROUTES.auth.refresh)
 	async refresh(
 		@Req() req: Request,
