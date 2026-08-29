@@ -7,7 +7,7 @@ docker-compose up --build
 ```
 
 - Client: [http://localhost:3001](http://localhost:3001)
-- Swagger-documentation API: [http://localhost:3101/api](http://localhost:3101/api)
+- Swagger-documentation API: [http://localhost:3101/api/docs](http://localhost:3101/api/docs)
 
 ## Connect to Postgresql
 
