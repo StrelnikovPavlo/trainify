@@ -23,4 +23,4 @@ COPY --from=build /app/prisma.config.ts ./prisma.config.ts
 COPY package.json pnpm-workspace.yaml pnpm-lock.yaml ./
 
 EXPOSE 3100
-CMD ["sh", "-c", "pnpm prisma migrate deploy && node dist/src/main.js"]
+CMD ["sh", "-c", "pnpm prisma migrate deploy && pnpm prisma db seed && node dist/src/main.js"]

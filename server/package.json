@@ -7,6 +7,7 @@
 	"license": "UNLICENSED",
 	"packageManager": "pnpm@11.22.0",
 	"scripts": {
+		"seed": "node dist/prisma/seed.js",
 		"build": "nest build",
 		"format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
 		"start": "cross-env NODE_ENV=production nest start",
@@ -42,6 +43,7 @@
 		"passport-jwt": "^4.0.1",
 		"pg": "^8.21.0",
 		"reflect-metadata": "^0.2.2",
+		"tsx": "^4.23.12",
 		"rxjs": "^7.8.1",
 		"prisma": "^7.8.0"
 	},
@@ -70,7 +72,6 @@
 		"ts-loader": "^9.5.2",
 		"ts-node": "^10.9.2",
 		"tsconfig-paths": "^4.2.0",
-		"tsx": "^4.23.12",
 		"typescript": "^5.7.3",
 		"typescript-eslint": "^8.20.0"
 	},
